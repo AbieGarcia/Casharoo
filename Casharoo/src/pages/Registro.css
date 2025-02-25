@@ -1,0 +1,136 @@
+#BtnRosa {
+    --background: #FFEAF1;
+    --background-hover: #FFEAF1;
+    --background-activated: #f8c9d9;
+    --background-focused: #f8c9d9;
+  
+    --border-radius: 53px;
+  
+    --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 158px;
+    height: 224px;
+    position:absolute;
+    top: 3px;
+    left: 3.7px;
+  
+  }
+
+#BtnAzul {
+    --background: rgba(234, 252, 255, 0.64);
+    --background-hover: rgba(234, 252, 255, 0.64);    
+    --background-activated: rgba(128, 236, 255, 0.897);
+    --background-focused: rgba(128, 236, 255, 0.897);
+  
+    --border-radius: 53px;
+  
+    --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 158px;
+    height: 224px;
+    position:absolute;
+    top: 3px;
+    left: 3.7px;
+  
+  }
+
+.Logo{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+}
+
+#LogoImg{
+    position: absolute;
+    top: 670px;
+}
+
+.rectangle-container{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+}
+
+.rectangulochico{
+
+    width: 171px;
+    height: 237px;
+    border-radius: 46px;
+    position:absolute;
+    top: 240px;
+    z-index: 2;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+#rect1 {
+    left: 40px;
+    background-color:#FF0099;
+}
+
+#rect2 {
+    right: 39px;
+    background-color:#52d9f6;
+}
+
+.rectangulotitulo {
+    width: 327px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 33px;
+    position:absolute;
+    top: 140px;
+    left: 50px;
+    z-index: 2;
+    background-color:#FFEE7A;
+    box-shadow: 0px 6px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.rectangle {
+    width: 368px;
+    height: 422px;
+    background-color: #FF7BCC;
+    border-radius: 46px;
+    box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25), 2px 6px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    position:absolute;
+    flex-shrink: 0;
+    top: 110px;
+    left: 30px;
+    z-index: 1;
+}
+
+.Nombre {
+    width: 368px;
+    height: 80px;
+    border-radius: 21px;
+    background-color: #FF7BCC;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    position: absolute;
+    top: 560px;
+    left: 30px;
+    z-index: 1;
+}
+
+#NomTexto{
+    position: absolute;
+    left:20px;
+}
+
+#InputNom{
+    width: 175px;
+    height: 40px;
+    background-color:rgba(255, 238, 122, 0.80);
+    color: #684f06;
+    left: 183px;
+    top: 20px;
+    z-index: 2;
+}
+
+h1{
+    color: #F09;
+    text-align: center;
+    font-family:cursive;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }

@@ -6,7 +6,7 @@ import './Registro.css';
 const Registro: React.FC = () => {
   return (
     <IonPage>
-      <IonContent  color="dark" className="ion-padding" scrollY={false}>
+      <IonContent className="ion-padding" scrollY={false}>
         <IonHeader collapse="condense">
           </IonHeader>
 

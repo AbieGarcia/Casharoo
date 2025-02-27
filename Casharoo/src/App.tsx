@@ -32,6 +32,9 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Inicio2 from './pages/Inicio2';
+import Crear_Meta from './pages/Crear_Meta';
+import Ahorro from './pages/Ahorro';
 
 setupIonicReact();
 
@@ -44,6 +47,15 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />
+        </Route>
+        <Route exact path="/inicio2">
+          <Inicio2 />
+        </Route>
+        <Route exact path="/ahorro">
+          <Ahorro />
+        </Route>
+        <Route exact path="/crear-meta">
+          <Crear_Meta />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

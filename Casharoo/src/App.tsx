@@ -35,6 +35,8 @@ import './theme/variables.css';
 import Inicio2 from './pages/Inicio2';
 import Crear_Meta from './pages/Crear_Meta';
 import Ahorro from './pages/Ahorro';
+import MenuInicial from './pages/MenuInicial';
+import Registro from './pages/Registro';
 
 setupIonicReact();
 
@@ -42,11 +44,17 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
+        <Route exact path="/oli">
           <Home />
         </Route>
+        <Route exact path="/menu">
+          <MenuInicial />
+        </Route>
+        <Route exact path="/registro">
+          <Registro />
+        </Route>
         <Route exact path="/">
-          <Redirect to="/home" />
+          <Redirect to="/oli" />
         </Route>
         <Route exact path="/inicio2">
           <Inicio2 />

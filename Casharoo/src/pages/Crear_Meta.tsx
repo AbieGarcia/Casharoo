@@ -4,14 +4,14 @@ import './Crear_Meta.css';
 const Crear_Meta: React.FC = () => {
   return (
     <IonPage>
-      <IonContent>
+      <IonContent className='contenido'>
         <IonHeader>
           <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet"></link>
         </IonHeader>
         <div className='Nueva-meta'>
           <p className='p1-crear-meta'>Nueva meta</p>
         </div>
-        <div className='Nombre'>
+        <div className='nombre-crear-meta'>
           <p className='p2-crear-meta' id='p-nombre'>Nombre:</p>
           <IonInput id='input-nombre' placeholder='Nombre de la meta'
             clearInput={true} ></IonInput>

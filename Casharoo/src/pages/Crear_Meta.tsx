@@ -28,7 +28,7 @@ const Crear_Meta: React.FC = () => {
           <p className='p2-crear-meta' id='p-icono'>Icono:</p>
         </div>
         <div className='Agregar-plazo'>
-        <IonSelect label="Agregar plazo" interface="popover" id='select-plazo' placeholder='Plazo'>
+        <IonSelect label="Agregar plazo" interface="popover" class='select-plazo' placeholder='Plazo'>
           <IonSelectOption value="semanal" id='seleccion-plazo'>Semanal</IonSelectOption>
           <IonSelectOption value="mensual" id='seleccion-plazo'>Mensual</IonSelectOption>
           <IonSelectOption value="anual"id='seleccion-plazo'>Anual</IonSelectOption>

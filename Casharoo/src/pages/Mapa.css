@@ -1,0 +1,54 @@
+
+.btn{
+    --background: #ffffff00;
+    --background-hover: #ffffff00;
+    --background-activated: #ffffff00;
+    --background-focused: #ffffff00;
+}
+
+.monedaDesactivada{
+    opacity: 0.6; 
+}
+
+#M1{
+    position: absolute;
+    top: 90px;
+    left: 35px;
+    z-index: 1;
+}
+#M2{
+    position: absolute;
+    top: 171px;
+    left: 128px;
+    z-index: 1;
+}
+#M3{
+    position: absolute;
+    top: 263px;
+    left: 227px;
+    z-index: 1;
+}
+#M4{
+    position: absolute;
+    top: 378px;
+    left: 193px;
+    z-index: 1;
+}
+#M5{
+    position: absolute;
+    top: 467px;
+    left: 43px;
+    z-index: 1;
+}
+#M6{
+    position: absolute;
+    top: 559px;
+    left: 113px;
+    z-index: 1;
+}
+#M7{
+    position: absolute;
+    top: 627px;
+    left: 249px;
+    z-index: 1;
+}

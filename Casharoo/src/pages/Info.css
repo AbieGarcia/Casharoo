@@ -1,0 +1,143 @@
+
+.contendorLogo{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height: 100px;
+    width: 430px;
+}
+#logo{
+    position: absolute;
+    top: 28px;
+    left: 67px;
+}
+
+.contenedorBtns{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width: 430px;
+    height: 100vph;
+    top: 110px;
+
+}
+#Cap1{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width: 430px;
+    height: 109px;
+    top: 10px;
+}
+
+#Cap2{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width: 430px;
+    height: 109px;
+    top: 139px;
+}
+#Cap3{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width: 430px;
+    height: 109px;
+    top: 268px;
+}
+#Cap4{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width: 430px;
+    height: 109px;
+    top: 397px;
+}
+#Cap5{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width: 430px;
+    height: 109px;
+    top: 526px;
+}
+#Cap6{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width: 430px;
+    height: 109px;
+    top: 655px;
+}
+#Cap7{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width: 430px;
+    height: 109px;
+    top: 784px;
+    margin-bottom: 20px;
+}
+
+
+.btnInfo{
+    position: relative;
+    width: 350px;
+    height: 109px;
+    border-radius: 26px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 20px;
+    right: 15px;
+}
+
+
+#R{
+    --background: #FF7BCC;
+    --background-hover: #FF7BCC;
+    --background-activated: #ffa7dd;
+    --background-focused: #ffa7dd;
+}
+#Am{
+    --background: #FFEE7A;
+    --background-hover: #FFEE7A;
+    --background-activated: #faefa7;
+    --background-focused: #faefa7;
+}
+#Az{
+    --background: #52D9F6;
+    --background-hover: #52D9F6;
+    --background-activated: #8be8fd;
+    --background-focused: #8be8fd;
+}
+
+
+h2{
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-family:Baloo;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+#textDisabled{
+    filter: blur(2px);
+}
+
+#candado{
+    width: 55px;
+    height: 57.292px;
+    margin-left: 5px;
+}

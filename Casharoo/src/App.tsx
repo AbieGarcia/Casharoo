@@ -28,7 +28,6 @@ import '@ionic/react/css/display.css';
 
 /* import '@ionic/react/css/palettes/dark.always.css'; */
 /* import '@ionic/react/css/palettes/dark.class.css'; */
-import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
@@ -37,6 +36,10 @@ import Crear_Meta from './pages/Crear_Meta';
 import Ahorro from './pages/Ahorro';
 import MenuInicial from './pages/MenuInicial';
 import Registro from './pages/Registro';
+import Info from './pages/Info';
+import Perfil from './pages/Perfil';
+import Mapa from './pages/Mapa';
+
 
 setupIonicReact();
 
@@ -52,6 +55,15 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/registro">
           <Registro />
+        </Route>
+        <Route exact path="/info">
+          <Info />
+        </Route>
+        <Route exact path="/perfil">
+          <Perfil />
+        </Route>
+        <Route exact path="/mapa">
+          <Mapa />
         </Route>
         <Route exact path="/">
           <Redirect to="/oli" />

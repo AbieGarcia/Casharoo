@@ -1,0 +1,159 @@
+.Nueva-meta {
+    width: 311px;
+    height: 72px;
+    top: 35px;
+    left: 59.5px;
+    border-radius: 20px;
+    background: #D1F7FF;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+}
+
+.nombre-crear-meta {
+    width: 360px;
+    height: 70px;
+    top: 147px;
+    left: 35px;
+    border-radius: 20px;
+    background: #FFB1CA;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.Dinero-a-ahorrar {
+    width: 345px;
+    height: 70px;
+    top: 257px;
+    left: 42.5px;
+    border-radius: 20px;
+    background: #FFEE7A;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Color {
+    width: 345px;
+    height: 114px;
+    top: 367px;
+    left: 42.5px;
+    background: #F5F5F5;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Icono {
+    width: 345px;
+    height: 126px;
+    top: 521px;
+    left: 42.5px;
+    background: #52D9F6;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Agregar-plazo{
+    width: 345px;
+    height: 70px;
+    top: 687px;
+    left: 42.5px;
+    border-radius: 20px;
+    background: #FFB1CA;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.p1-crear-meta {
+    color: #40C5E1;
+    font-family: 'Baloo 2';
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 62.96px;
+    text-align: center;
+}
+
+.p2-crear-meta {
+    font-family: 'Baloo 2';
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 50.37px;
+    text-align: center;
+    top: 2px;
+    position: relative;
+}
+
+#p-nombre {
+    color: #FF3274;
+}
+
+#p-dinero-a-ahorrar {
+    color: #D4A003;
+}
+
+#p-color {
+    color: #6F6F6F;
+}
+
+#p-icono {
+    color: #045364;
+}
+
+#input-nombre {
+    fill: solid;
+    width: 165px;
+    margin: 12px;
+    color: #f1519c;
+    background-color: #fabbc9;
+}
+
+#input-dinero-a-ahorrar {
+    fill: solid;
+    width: 110px;
+    margin: 12px;
+    color: #cfad48;
+    background-color: #fddf8b;
+}
+
+.select-plazo{
+    position: relative;
+    font-family: 'Baloo 2';
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 50.37px;
+    margin: 25px;
+    cursor: pointer;
+}
+
+#seleccion-plazo{
+    color:#f1519c;
+    background-color:#f1519c;
+    font-family: 'Baloo 2';
+    font-weight: bold;
+    font-size: 15px;
+
+}
+

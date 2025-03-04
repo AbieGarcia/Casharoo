@@ -31,6 +31,9 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Inicio2 from './pages/Inicio2';
+import Crear_Meta from './pages/Crear_Meta';
+import Ahorro from './pages/Ahorro';
 import MenuInicial from './pages/MenuInicial';
 import Registro from './pages/Registro';
 import Info from './pages/Info';
@@ -64,6 +67,15 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/">
           <Redirect to="/oli" />
+        </Route>
+        <Route exact path="/inicio2">
+          <Inicio2 />
+        </Route>
+        <Route exact path="/ahorro">
+          <Ahorro />
+        </Route>
+        <Route exact path="/crear-meta">
+          <Crear_Meta />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

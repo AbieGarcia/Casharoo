@@ -11,26 +11,23 @@ import './MenuInicial.css';
 function MenuInicial() {
   return (
     <IonPage>
-      <div className='logo'>
-        <img src="../../assets/logo.png" height={100} width={360}/>
-      </div>  
+        <div className='logo'>
+          <img src="../../assets/logo.png" height={100} width={360} />
+        </div>
 
-      <IonFooter>
-        <IonToolbar>
-          <IonButton>
-            <img src="../../assets/home.png"/>
-          </IonButton>
-          <IonButton>
-          <img src="../../assets/info.png"/>
-          </IonButton>
-          <IonButton>
-          <img src="../../assets/perfil.png"/>
-          </IonButton>
-        </IonToolbar>
-      </IonFooter>
-       
-  
-   
+        <IonFooter>
+          <IonToolbar>
+            <IonButton>
+              <img src="../../assets/home.png" />
+            </IonButton>
+            <IonButton>
+              <img src="../../assets/info.png" />
+            </IonButton>
+            <IonButton>
+              <img src="../../assets/perfil.png" />
+            </IonButton>
+          </IonToolbar>
+        </IonFooter>
     </IonPage>
   );
 }

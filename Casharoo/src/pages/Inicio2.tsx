@@ -4,7 +4,7 @@ import './Inicio2.css';
 const Inicio2: React.FC = () => {
   return (
     <IonPage>
-      <IonContent>
+      <IonContent className='contenido'>
 
         <div className='imagen-casharoo'>
           <img src="..\..\assets\logo.png"></img>

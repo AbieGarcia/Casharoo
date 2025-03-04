@@ -11,7 +11,7 @@
     height: 224px;
     position:absolute;
     top: 3px;
-    left: 3.7px;
+    left: 4px;
   
   }
 
@@ -56,6 +56,8 @@
     width: 171px;
     height: 237px;
     border-radius: 46px;
+    justify-content: center;
+    align-items:center;
     position:absolute;
     top: 240px;
     z-index: 2;
@@ -128,7 +130,7 @@
 h1{
     color: #F09;
     text-align: center;
-    font-family:cursive;
+    font-family: Baloo;
     font-size: 30px;
     font-style: normal;
     font-weight: 400;

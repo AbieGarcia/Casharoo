@@ -17,13 +17,13 @@ function MenuInicial() {
 
       <IonFooter>
         <IonToolbar>
-          <IonButton>
+          <IonButton className='btnMenu'>
             <img src="../../assets/home.png"/>
           </IonButton>
-          <IonButton>
+          <IonButton  className='btnMenu'>
           <img src="../../assets/info.png"/>
           </IonButton>
-          <IonButton>
+          <IonButton className='btnMenu'>
           <img src="../../assets/perfil.png"/>
           </IonButton>
         </IonToolbar>

@@ -7,8 +7,7 @@ const Registro: React.FC = () => {
   return (
     <IonPage>
       <IonContent className="ion-padding" scrollY={false}>
-        <IonHeader collapse="condense">
-          </IonHeader>
+
 
             <div className="rectangle-container" /*SECCION DONDE ESTARÁN LOS CUADROS*/> 
               

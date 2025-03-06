@@ -37,6 +37,8 @@ import Crear_Meta from './pages/Crear_Meta';
 import Ahorro from './pages/Ahorro';
 import MenuInicial from './pages/MenuInicial';
 import Registro from './pages/Registro';
+import Info_Extra_Ahorro from './pages/Info_Extra_Ahorro';
+import Info_Intro_Ahorro from './pages/Info_Intro_Ahorro';
 
 setupIonicReact();
 
@@ -64,6 +66,12 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/crear-meta">
           <Crear_Meta />
+        </Route>
+        <Route exact path="/info-extra-ahorro">
+          <Info_Extra_Ahorro />
+        </Route>
+        <Route exact path="/info-intro-ahorro">
+          <Info_Intro_Ahorro />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

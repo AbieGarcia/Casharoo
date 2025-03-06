@@ -39,8 +39,8 @@ const Mapa: React.FC = () => {
 
   return (
     <IonPage>
-      <IonContent className="ion-padding" scrollY={false}>
-
+      <IonContent  scrollY={false}>
+        <div className='pagina'>
         <IonButton className='btn' id='M1'>
             {
               monedaCap[0].disabled === false ?
@@ -112,7 +112,7 @@ const Mapa: React.FC = () => {
               </>
             }
         </IonButton>
-
+        </div>
       </IonContent>
 
             <IonFooter>

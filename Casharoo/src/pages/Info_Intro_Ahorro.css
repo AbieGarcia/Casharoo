@@ -75,6 +75,7 @@
     font-family: 'Baloo 2';
     color: #000000;
     font-weight: bold;
+    text-align: left;
     font-size: 20px;
     line-height: 100%;
     letter-spacing: 0%;
@@ -101,16 +102,18 @@
     align-items: center;
     position: absolute;
 }
+
 .rectangulo3-info-intro-invisible {
     width: 347px;
     height: 96px;
     top: 563px;
-    left: 70px;
+    left: 50px;
     flex-shrink: 0;
     justify-content: center;
     align-items: center;
     position: absolute;
 }
+
 .rectangulo4-info-intro-invisible {
     width: 347px;
     height: 96px;
@@ -121,6 +124,7 @@
     align-items: center;
     position: absolute;
 }
+
 .rectangulo5-info-intro-invisible {
     width: 347px;
     height: 96px;
@@ -153,7 +157,28 @@
     font-size: 18px;
     line-height: 100%;
     letter-spacing: 0%;
-    text-align: justify;
+    text-align: center;
     vertical-align: middle;
     color: #FFFFFF;
+}
+
+.punto {
+    position: absolute;
+    left: 25px;
+}
+
+#punto1 {
+    top: 525px;
+}
+
+#punto2 {
+    top: 595px;
+}
+
+#punto3 {
+    top: 680px;
+}
+
+#punto4 {
+    top: 750px;
 }

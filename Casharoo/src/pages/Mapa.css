@@ -1,0 +1,62 @@
+.pagina {
+
+    height: 100vh; 
+    background-image: url('../../assets/fondo.png'); 
+    background-size: cover; 
+    background-position:center; 
+}
+
+
+.btn{
+    --background: #ffffff00;
+    --background-hover: #ffffff00;
+    --background-activated: #ffffff00;
+    --background-focused: #ffffff00;
+}
+
+.monedaDesactivada{
+    opacity: 0.6; 
+}
+
+#M1{
+    position: absolute;
+    top: 60px;
+    left: 110px;
+    z-index: 1;
+}
+#M2{
+    position: absolute;
+    top: 171px;
+    left: 108px;
+    z-index: 1;
+}
+#M3{
+    position: absolute;
+    top: 263px;
+    left: 150px;
+    z-index: 1;
+}
+#M4{
+    position: absolute;
+    top: 365px;
+    left: 200px;
+    z-index: 1;
+}
+#M5{
+    position: absolute;
+    top: 467px;
+    left: 200px;
+    z-index: 1;
+}
+#M6{
+    position: absolute;
+    top: 559px;
+    left: 140px;
+    z-index: 1;
+}
+#M7{
+    position: absolute;
+    top: 650px;
+    left: 95px;
+    z-index: 1;
+}

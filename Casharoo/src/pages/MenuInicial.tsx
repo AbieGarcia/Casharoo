@@ -11,9 +11,12 @@ import './MenuInicial.css';
 function MenuInicial() {
   return (
     <IonPage>
-        <div className='logo'>
-          <img src="../../assets/logo.png" height={100} width={360} />
-        </div>
+      <div className='logo'>
+        <img src="../../assets/logo.png" height={100} width={360}/>
+      </div>  
+      <div className='piggy'>
+        <img src="../../assets/piggy.PNG" height={460} width={500}/>
+      </div>  
 
       <IonFooter>
         <IonToolbar>

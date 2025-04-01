@@ -1,4 +1,4 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
@@ -35,6 +35,8 @@ import Crear_Meta from './pages/Crear_Meta';
 import Ahorro from './pages/Ahorro';
 import MenuInicial from './pages/MenuInicial';
 import Registro from './pages/Registro';
+import Cap1 from './pages/Cap1';
+import Juego1 from './pages/Juego1';
 import Login from './pages/Login';
 import Info_Extra_Ahorro from './pages/Info_Extra_Ahorro';
 import Info_Intro_Ahorro from './pages/Info_Intro_Ahorro';
@@ -77,6 +79,12 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/crear-meta">
           <Crear_Meta />
+        </Route>
+        <Route exact path="/cap1">
+          <Cap1 />
+        </Route>
+        <Route exact path="/Juego1">
+          <Juego1 />
         </Route>
         <Route exact path="/info-extra-ahorro">
           <Info_Extra_Ahorro />

@@ -35,6 +35,7 @@ import Crear_Meta from './pages/Crear_Meta';
 import Ahorro from './pages/Ahorro';
 import MenuInicial from './pages/MenuInicial';
 import Registro from './pages/Registro';
+import Login from './pages/Login';
 import Info_Extra_Ahorro from './pages/Info_Extra_Ahorro';
 import Info_Intro_Ahorro from './pages/Info_Intro_Ahorro';
 import Info from './pages/Info';
@@ -52,6 +53,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/registro">
           <Registro />
+        </Route>
+        <Route exact path="/login">
+          <Login />
         </Route>
         <Route exact path="/info">
           <Info />

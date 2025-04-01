@@ -1,0 +1,118 @@
+
+.Logo{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+}
+
+.contenedorBtnSiguienteLogin{
+    width: 368px;
+    height: 80px;
+    border-radius: 21px;
+    position: absolute;
+    top: 530px;
+    left: 30px;
+    z-index: 1;
+}
+
+#LogoImg{
+    position: absolute;
+    top: 80px;
+}
+
+#lblBienvenido{
+    font-size: 55px;
+    font-family: Baloo;
+    color: rgb(255, 62, 178);
+}
+
+.contBienvenida{
+    height: 80px;
+    position: absolute;
+    top: 180px;
+    left: 55px;
+    z-index: 1;
+}
+.NombreLogin {
+    width: 368px;
+    height: 80px;
+    border-radius: 21px;
+    background-color: #FF7BCC;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    position: absolute;
+    top: 290px;
+    left: 30px;
+    z-index: 1;
+}
+
+.UsernameLogin {
+    width: 368px;
+    height: 80px;
+    border-radius: 21px;
+    background-color: #FF7BCC;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    position: absolute;
+    top: 410px;
+    left: 30px;
+    z-index: 1;
+}
+
+#NomTexto{
+    position: absolute;
+    left:20px;
+}
+
+#InputNom{
+    width: 175px;
+    height: 40px;
+    background-color:rgba(255, 238, 122, 0.80);
+    color: #684f06;
+    left: 183px;
+    top: 20px;
+    z-index: 2;
+}
+
+h1{
+    color: #F09;
+    text-align: center;
+    font-family: Baloo;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+#btnSiguiente{
+    --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 250px;
+    font-family: Baloo;
+    font-size: 24px;
+    --color: rgb(231, 177, 0);
+    --background: #FFEE7A;
+    --background-hover: #FFEE7A;
+    --background-activated: #fff7c5;
+    --background-focused: #fff7c5;
+}
+
+.contenedorBtnCrear{
+    width: 368px;
+    height: 80px;
+    border-radius: 21px;
+    position: absolute;
+    top: 625px;
+    left: 30px;
+    z-index: 1;
+}
+
+#btnCrearUsuario{
+    --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 250px;
+    font-family: Baloo;
+    font-size: 24px;
+    --color: #1c8da7;
+    --background: #52D9F6;
+    --background-hover: #52D9F6;
+    --background-activated: #8be8fd;
+    --background-focused: #8be8fd;
+}

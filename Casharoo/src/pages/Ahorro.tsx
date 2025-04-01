@@ -1,7 +1,14 @@
 import { IonContent, IonHeader, IonPage, IonButton, IonFooter, IonToolbar } from '@ionic/react';
 import './Ahorro.css';
+import { useHistory } from 'react-router-dom';
+import Crear_Meta from './Crear_Meta';
 
 const Ahorro: React.FC = () => {
+
+  const history = useHistory();
+  const irACrearMeta = () => {
+    history.push('/crear-meta');
+  }
   return (
     <IonPage>
       <IonContent className='contenido'>

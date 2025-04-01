@@ -9,9 +9,8 @@ const Registro: React.FC = () => {
 
   return (
     <IonPage>
-      <IonContent className="ion-padding" scrollY={false}>
-        <IonHeader collapse="condense">
-          </IonHeader>
+      <IonContent className="ion-padding" >
+
 
             <div className="rectangle-container" /*SECCION DONDE ESTARÁN LOS CUADROS*/> 
               
@@ -47,9 +46,26 @@ const Registro: React.FC = () => {
                   ></IonInput>
             </div>
 
+            <div className='Username' /*SECCION DONDE SE INGRESA EL NOMBRE DE USUARIO*/> 
+              
+              <h1 style={{ color: 'white'}} id='NomTexto' /*TÍTULO*/  >Tu usuario:</h1> 
+                
+                <IonInput  /*DONDE SE INGRESA EL NOMBRE DE USUARIO*/
+                  placeholder="   Mi usuario es..."
+                  clearInput={true}
+                  fill='solid'
+                  id='InputNom'
+                  color={'warning'}
+                  ></IonInput>
+            </div>
+
+            <div className='contenedorBtnSiguiente'>
+              <IonButton id='btnSiguiente'>Siguiente</IonButton>
+            </div>
+
 
             <div className='Logo' /*SECCION DONDE SE INGRESA EL LOGO*/> 
-              <img src="..\..\assets\logo.png" width={304} height={79} id='LogoImg' /*IMAGEN LOGO*/></img> 
+              <img src="..\..\assets\logo.png" width={304} height={79} id='LogoImgRegistro' /*IMAGEN LOGO*/></img> 
             </div>
 
         <ExploreContainer />

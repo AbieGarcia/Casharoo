@@ -18,19 +18,22 @@ function MenuInicial() {
         <img src="../../assets/piggy.PNG" height={460} width={500}/>
       </div>  
 
-        <IonFooter>
-          <IonToolbar>
-            <IonButton>
-              <img src="../../assets/home.png" />
-            </IonButton>
-            <IonButton>
-              <img src="../../assets/info.png" />
-            </IonButton>
-            <IonButton>
-              <img src="../../assets/perfil.png" />
-            </IonButton>
-          </IonToolbar>
-        </IonFooter>
+      <IonFooter>
+        <IonToolbar>
+          <IonButton className='btnMenu'>
+            <img src="../../assets/home.png"/>
+          </IonButton>
+          <IonButton  className='btnMenu'>
+          <img src="../../assets/info.png"/>
+          </IonButton>
+          <IonButton className='btnMenu'>
+          <img src="../../assets/perfil.png"/>
+          </IonButton>
+        </IonToolbar>
+      </IonFooter>
+       
+  
+   
     </IonPage>
   );
 }

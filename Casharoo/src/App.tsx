@@ -1,7 +1,6 @@
 import { Redirect, Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -28,7 +27,6 @@ import '@ionic/react/css/display.css';
 
 /* import '@ionic/react/css/palettes/dark.always.css'; */
 /* import '@ionic/react/css/palettes/dark.class.css'; */
-import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
@@ -39,6 +37,12 @@ import MenuInicial from './pages/MenuInicial';
 import Registro from './pages/Registro';
 import Cap1 from './pages/Cap1';
 import Juego1 from './pages/Juego1';
+import Login from './pages/Login';
+import Info_Extra_Ahorro from './pages/Info_Extra_Ahorro';
+import Info_Intro_Ahorro from './pages/Info_Intro_Ahorro';
+import Info from './pages/Info';
+import Perfil from './pages/Perfil';
+import Mapa from './pages/Mapa';
 
 setupIonicReact();
 
@@ -46,17 +50,26 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/oli">
-          <Home />
-        </Route>
         <Route exact path="/menu">
           <MenuInicial />
         </Route>
         <Route exact path="/registro">
           <Registro />
         </Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/info">
+          <Info />
+        </Route>
+        <Route exact path="/perfil">
+          <Perfil />
+        </Route>
+        <Route exact path="/mapa">
+          <Mapa />
+        </Route>
         <Route exact path="/">
-          <Redirect to="/oli" />
+          <Redirect to="/menu" />
         </Route>
         <Route exact path="/inicio2">
           <Inicio2 />
@@ -72,6 +85,12 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/Juego1">
           <Juego1 />
+        </Route>
+        <Route exact path="/info-extra-ahorro">
+          <Info_Extra_Ahorro />
+        </Route>
+        <Route exact path="/info-intro-ahorro">
+          <Info_Intro_Ahorro />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

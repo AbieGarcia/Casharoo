@@ -1,7 +1,14 @@
 import { IonContent, IonHeader, IonPage, IonButton, IonFooter, IonToolbar } from '@ionic/react';
 import './Ahorro.css';
+import { useHistory } from 'react-router-dom';
+import Crear_Meta from './Crear_Meta';
 
 const Ahorro: React.FC = () => {
+
+  const history = useHistory();
+  const irACrearMeta = () => {
+    history.push('/crear-meta');
+  }
   return (
     <IonPage>
       <IonContent className='contenido'>
@@ -11,7 +18,7 @@ const Ahorro: React.FC = () => {
         <div className='rectangulo-ahorro'>
           <p className='p1-ahorro'>Ahorros</p>
         </div>
-        <IonButton className='boton-mas'>
+        <IonButton className='boton-mas' onClick={irACrearMeta}>
           <p className='p2-ahorro'>+</p>
         </IonButton>
           <div className='rectangulo'>

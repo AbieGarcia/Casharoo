@@ -1,0 +1,169 @@
+import React, { useState, useEffect } from 'react';
+import { IonApp, IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonButton, IonAlert } from '@ionic/react';
+import ExploreContainer from '../components/ExploreContainer';
+import './Juego1.css';
+
+interface WordPair {
+  left: string;
+  right: string;
+  matched: boolean;
+}
+
+const Juego1: React.FC = () => {
+  const [wordPairs, setWordPairs] = useState<WordPair[]>([
+    { left: 'Ahorro', right: 'Guardar una parte del ingreso durante un tiempo con un objetivo', matched: false },
+    { left: 'Meta', right: 'El precio del objeto que quiero comprar o el dinero que quiero juntar', matched: false },
+    { left: 'Lapso', right: 'Tiempo que toma llegar a la meta', matched: false },
+    { left: 'Ingreso', right: 'El dinero que recibes o ganas', matched: false },
+    { left: 'Egreso', right: 'El dinero que no se guarda para gastos', matched: false },
+  ]);
+  
+  const [selectedLeft, setSelectedLeft] = useState<number | null>(null);
+  const [selectedRight, setSelectedRight] = useState<number | null>(null);
+  const [shuffledRight, setShuffledRight] = useState<string[]>([]);
+  const [gameCompleted, setGameCompleted] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  // Barajar las palabras de la derecha al iniciar
+  useEffect(() => {
+    const rightWords = wordPairs.map(pair => pair.right);
+    setShuffledRight(shuffleArray([...rightWords]));
+  }, []);
+
+  // Verificar si el juego está completo
+  useEffect(() => {
+    if (wordPairs.every(pair => pair.matched)) {
+      setGameCompleted(true);
+      setShowSuccess(true);
+    }
+  }, [wordPairs]);
+
+  const shuffleArray = (array: any[]) => {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  };
+
+  const handleLeftClick = (index: number) => {
+    if (wordPairs[index].matched) return;
+    setSelectedLeft(index);
+    checkMatch();
+  };
+
+  const handleRightClick = (index: number) => {
+    if (selectedLeft === null) return;
+    
+    const rightWord = shuffledRight[index];
+    const leftWord = wordPairs[selectedLeft].left;
+    const originalPair = wordPairs.find(pair => pair.left === leftWord);
+    
+    if (originalPair && originalPair.right === rightWord) {
+      // Match correcto
+      const updatedPairs = wordPairs.map(pair => 
+        pair.left === leftWord ? { ...pair, matched: true } : pair
+      );
+      setWordPairs(updatedPairs);
+      setSelectedLeft(null);
+    } else {
+      // Match incorrecto
+      setSelectedRight(index);
+      setTimeout(() => {
+        setSelectedRight(null);
+        setSelectedLeft(null);
+      }, 1000);
+    }
+  };
+
+  const checkMatch = () => {
+    if (selectedLeft !== null && selectedRight !== null) {
+      const rightWord = shuffledRight[selectedRight];
+      const leftWord = wordPairs[selectedLeft].left;
+      const originalPair = wordPairs.find(pair => pair.left === leftWord);
+      
+      if (originalPair && originalPair.right === rightWord) {
+        // Match correcto
+        const updatedPairs = wordPairs.map(pair => 
+          pair.left === leftWord ? { ...pair, matched: true } : pair
+        );
+        setWordPairs(updatedPairs);
+      }
+      
+      setSelectedLeft(null);
+      setSelectedRight(null);
+    }
+  };
+
+  const resetGame = () => {
+    const resetPairs = wordPairs.map(pair => ({ ...pair, matched: false }));
+    setWordPairs(resetPairs);
+    setShuffledRight(shuffleArray(wordPairs.map(pair => pair.right)));
+    setSelectedLeft(null);
+    setSelectedRight(null);
+    setGameCompleted(false);
+  };
+
+  return (
+    <IonApp>
+      <IonHeader>
+        <IonToolbar color='secondary'>
+          <IonTitle>Juego de Relacionar</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent className="ion-padding">
+        <div className="game-container">
+          <IonGrid>
+            <IonRow>
+              <IonCol>
+                <h3 className="column-title">Concepto</h3>
+                {wordPairs.map((pair, index) => (
+                  <div 
+                    key={`left-${index}`}
+                    className={`word-card ${selectedLeft === index ? 'selected' : ''} ${pair.matched ? 'matched' : ''}`}
+                    onClick={() => handleLeftClick(index)}
+                  >
+                    {pair.left}
+                  </div>
+                ))}
+              </IonCol>
+              
+              <IonCol>
+                <h3 className="column-title">Definición</h3>
+                {shuffledRight.map((word, index) => (
+                  <div 
+                    key={`right-${index}`}
+                    className={`word-card ${selectedRight === index ? 'selected' : ''} 
+                      ${wordPairs.some(pair => pair.right === word && pair.matched) ? 'matched' : ''}`}
+                    onClick={() => handleRightClick(index)}
+                  >
+                    {word}
+                  </div>
+                ))}
+              </IonCol>
+            </IonRow>
+          </IonGrid>
+          
+          {gameCompleted && (
+            <div className="completion-message">
+              <IonButton expand="block" onClick={resetGame}>
+                Jugar de nuevo
+              </IonButton>
+            </div>
+          )}
+        </div>
+        
+        <IonAlert
+          isOpen={showSuccess}
+          onDidDismiss={() => setShowSuccess(false)}
+          header={'¡Felicidades!'}
+          message={'Has completado el juego correctamente.'}
+          buttons={['OK']}
+        />
+      </IonContent>
+    </IonApp>
+  );
+};
+
+export default Juego1;

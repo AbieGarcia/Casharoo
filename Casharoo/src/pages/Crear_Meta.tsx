@@ -1,7 +1,30 @@
+import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage,IonSelect, IonSelectOption, IonButton, IonFooter, IonToolbar, IonInput } from '@ionic/react';
 import './Crear_Meta.css';
 
 const Crear_Meta: React.FC = () => {
+
+  type BotonesSeleccion = {
+    btnAz: boolean;
+    btnAm: boolean;
+    btnRos: boolean;
+    btnVer: boolean;
+  };  
+
+    const [seleccionBtn, setseleccionBtn] = useState({
+      btnAz: true,
+      btnAm: false,
+      btnRos:false,
+      btnVer:false,
+    })
+
+    const seleccionar = (btn : keyof BotonesSeleccion) => {
+      setseleccionBtn((estadoAnterior) => ({
+        ...estadoAnterior,
+        [btn]: !estadoAnterior[btn],
+      }));
+    };
+  
   return (
     <IonPage>
       <IonContent className='contenido'>
@@ -13,22 +36,58 @@ const Crear_Meta: React.FC = () => {
         </div>
         <div className='nombre-crear-meta'>
           <p className='p2-crear-meta' id='p-nombre'>Nombre:</p>
-          <IonInput id='input-nombre' placeholder='Nombre de la meta'
+          <IonInput id='input-nombre' placeholder=' Nombre de la meta'
             clearInput={true} ></IonInput>
         </div>
         <div className='Dinero-a-ahorrar'>
           <p className='p2-crear-meta' id='p-dinero-a-ahorrar'>$ a ahorrar:</p>
-          <IonInput id='input-dinero-a-ahorrar' placeholder='$ pesos...'
+          <IonInput id='input-dinero-a-ahorrar' type="number" placeholder='pesos' label='$'
             clearInput={true} ></IonInput>
         </div>
         <div className='Color'>
           <p className='p2-crear-meta' id='p-color'>Color:</p>
+          <IonButton id='btnAz' onClick={() => seleccionar('btnAz')}>
+          {
+              seleccionBtn.btnAz === true ?
+              <img src="..\..\assets\palomita.png"></img>
+              :
+              <>
+              </>
+            }
+          </IonButton>
+          <IonButton id='btnRos' onClick={() => seleccionar('btnRos')}>
+          {
+              seleccionBtn.btnRos === true ?
+              <img src="..\..\assets\palomita.png"></img>
+              :
+              <>
+              </>
+            }
+          </IonButton>
+          <IonButton id='btnAma' onClick={() => seleccionar('btnAm')}>
+          {
+              seleccionBtn.btnAm === true ?
+              <img src="..\..\assets\palomita.png"></img>
+              :
+              <>
+              </>
+            }
+          </IonButton>
+          <IonButton id='btnVer' onClick={() => seleccionar('btnVer')}>
+          {
+              seleccionBtn.btnVer === true ?
+              <img src="..\..\assets\palomita.png"></img>
+              :
+              <>
+              </>
+            }
+          </IonButton>
         </div>
         <div className='Icono'>
           <p className='p2-crear-meta' id='p-icono'>Icono:</p>
         </div>
         <div className='Agregar-plazo'>
-        <IonSelect label="Agregar plazo" interface="popover" class='select-plazo' placeholder='Plazo'>
+        <IonSelect interface="popover" label='Plazo:' class='select-plazo' placeholder='Plazo' justify="start">
           <IonSelectOption value="semanal" id='seleccion-plazo'>Semanal</IonSelectOption>
           <IonSelectOption value="mensual" id='seleccion-plazo'>Mensual</IonSelectOption>
           <IonSelectOption value="anual"id='seleccion-plazo'>Anual</IonSelectOption>

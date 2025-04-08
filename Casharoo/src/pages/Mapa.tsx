@@ -44,7 +44,9 @@ const Mapa: React.FC = () => {
         <IonButton className='btn' id='M1'>
             {
               monedaCap[0].disabled === false ?
+              <a href="/info-intro-ahorro">
               <img src="../../assets/moneda.png" width={130} height={60}/>
+              </a>
               :
               <>
                 <img src="../../assets/moneda.png" width={130} height={60} className='monedaDesactivada'/>
@@ -55,7 +57,9 @@ const Mapa: React.FC = () => {
         <IonButton id='M2' className='btn'>
                         {
               monedaCap[1].disabled === false ?
+              <a href="/Cap2">
               <img src="../../assets/moneda.png" width={130} height={60}/>
+              </a>
               :
               <>
                 <img src="../../assets/moneda.png" width={130} height={60} className='monedaDesactivada'/>
@@ -65,7 +69,9 @@ const Mapa: React.FC = () => {
         <IonButton id='M3' className='btn'>
                         {
               monedaCap[2].disabled === false ?
+              <a href="/Cap3">
               <img src="../../assets/moneda.png" width={130} height={60}/>
+              </a>
               :
               <>
                 <img src="../../assets/moneda.png" width={130} height={60} className='monedaDesactivada'/>
@@ -75,7 +81,9 @@ const Mapa: React.FC = () => {
         <IonButton id='M4' className='btn'>
                         {
               monedaCap[3].disabled === false ?
+              <a href="/Cap4">
               <img src="../../assets/moneda.png" width={130} height={60}/>
+              </a>
               :
               <>
                 <img src="../../assets/moneda.png" width={130} height={60} className='monedaDesactivada'/>
@@ -85,7 +93,9 @@ const Mapa: React.FC = () => {
         <IonButton id='M5'className='btn'>
                         {
               monedaCap[4].disabled === false ?
+              <a href="/Cap5">
               <img src="../../assets/moneda.png" width={130} height={60}/>
+              </a>
               :
               <>
                 <img src="../../assets/moneda.png" width={130} height={60} className='monedaDesactivada'/>
@@ -95,7 +105,9 @@ const Mapa: React.FC = () => {
         <IonButton id='M6' className='btn'>
                         {
               monedaCap[5].disabled === false ?
+              <a href="/Cap6">
               <img src="../../assets/moneda.png" width={130} height={60}/>
+              </a>
               :
               <>
                 <img src="../../assets/moneda.png" width={130} height={60} className='monedaDesactivada'/>
@@ -105,7 +117,9 @@ const Mapa: React.FC = () => {
         <IonButton id='M7' className='btn'>
                         {
               monedaCap[6].disabled === false ?
+              <a href="/Cap7">
               <img src="../../assets/moneda.png" width={130} height={60}/>
+              </a>
               :
               <>
                 <img src="../../assets/moneda.png" width={130} height={60} className='monedaDesactivada'/>

@@ -12,8 +12,8 @@
   
   /* Estilos para las tarjetas de palabras */
   .word-card {
-    padding: 15px;
-    margin: 10px 0;
+    padding: 12px;
+    margin: 8px 0;
     border: 2px solid var(--ion-color-medium);
     border-radius: 8px;
     text-align: center;

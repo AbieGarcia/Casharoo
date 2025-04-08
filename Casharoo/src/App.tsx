@@ -43,6 +43,8 @@ import Info_Intro_Ahorro from './pages/Info_Intro_Ahorro';
 import Info from './pages/Info';
 import Perfil from './pages/Perfil';
 import Mapa from './pages/Mapa';
+import Juego2 from './pages/Juego2';
+import Cap2 from './pages/Cap2';
 
 setupIonicReact();
 
@@ -91,6 +93,12 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/info-intro-ahorro">
           <Info_Intro_Ahorro />
+        </Route>
+        <Route exact path="/Juego2">
+          <Juego2 />
+        </Route>
+        <Route exact path="/Cap2">
+          <Cap2 />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

@@ -1,0 +1,170 @@
+.carrusel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .carrusel-slides {
+    width: 85%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EBBF3A;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  
+  
+  .slide11, .slide22 , .slide33, .slide44, .slide55, .slide66, .slide77, .slide88,
+  .slide99, .slide1010, .slide1111, .slide1212, .slide1313, .slide1414, .slide1515, .slide1616,
+  .slide1717 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 27px;
+    font-family: 'Itim', sans-serif;
+    background-color: #EBBF3A;
+  }
+  
+  .parte1 {
+    font-size: 28px;
+    font-family: 'Itim', sans-serif;
+    width: 100%; 
+    height: 10%;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-top: 10px;
+    stroke: black;
+    h1{
+      font-size: 30px;
+      font-family: 'Itim', sans-serif;
+      font-weight: bolder;
+      color: #FFFCE8;
+    }
+  }
+  
+  
+  .parte2 {
+    width: 100%; 
+    height: 57%; 
+    object-fit: contain;
+    display: block;
+  }
+  
+  .parte3 {
+    width: 100%;
+    height: 33%; 
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    padding: 0 20px;
+    div{
+      white-space: normal;
+      text-align: justify;
+      background-color: #FFEFD1;
+      height: 90%;
+      border-radius: 25px;
+      padding: 10px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+  }
+  
+    .carrusel-buttons {
+      display: flex;
+      gap: 10px;
+      .button{
+        width: 130px;
+        font-size: 20px;
+        font-family: 'Itim', sans-serif;
+        font-weight: bolder;
+        color: #483089;
+        --background: #FFEFD1;
+      }
+    }
+  
+    .botones-container{
+      align-items: center;
+    }
+  
+    .decidirCap2{
+      --background: #c8bce4;
+      --background-hover: #DEC2E2;
+      --background-activated: #DEC2E2;
+      --background-focused: #DEC2E2;
+      --color: #483089;
+      --border-radius: 0;
+      --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+      --ripple-color: deeppink;
+        font-family: 'Itim', sans-serif;
+        font-size:18px;
+        font-weight: bold;
+        padding: 1px 5px;
+        height: 120px;
+        text-align: center;
+        max-width: 139px;
+        width:auto;
+        margin-left: 0px;
+        margin-right: 3px;
+        --border-radius: 15px;
+    }
+  
+    .decidir1{
+      --background: #e4bcd6;
+      --background-hover: #DEC2E2;
+      --background-activated: #DEC2E2;
+      --background-focused: #DEC2E2;
+      --color: #611a3f;
+      --border-radius: 0;
+      --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+      --ripple-color: deeppink;
+        font-family: 'Itim', sans-serif;
+        font-size:14px;
+        font-weight: bold;
+        padding: 10px 5px;
+        height: 150px;
+        text-align: center;
+        max-width: 93px;
+        width:auto;
+        margin-left: 0px;
+        margin-right: 1.5px;
+        --border-radius: 15px;
+    }
+
+    .decidir3{
+      --background: #e4bcd6;
+      --background-hover: #DEC2E2;
+      --background-activated: #DEC2E2;
+      --background-focused: #DEC2E2;
+      --color: #611a3f;
+      --border-radius: 0;
+      --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+      --ripple-color: deeppink;
+        font-family: 'Itim', sans-serif;
+        font-size:19px;
+        font-weight: bold;
+        padding: 1px 5px;
+        height: 190px;
+        text-align: center;
+        max-width: 150px;
+        width:auto;
+        margin-left: 0px;
+        margin-right: 2.5px;
+        --border-radius: 15px;
+    }
+  

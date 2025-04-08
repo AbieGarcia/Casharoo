@@ -1,39 +1,36 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonTabs, IonTabBar, IonImg, IonTabButton, IonIcon, IonLabel, IonRouterOutlet, IonFooter, IonButton } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
 import { Route, Redirect } from 'react-router';
 import ExploreContainer from '../components/ExploreContainer';
 import './MenuInicial.css';
+import { registrarUsuario } from "../services/userRegister.js";
 
-
-function MenuInicial() {
+const MenuInicial: React.FC = () => {
   return (
     <IonPage>
       <div className='logo'>
-        <img src="../../assets/logo.png" height={100} width={360}/>
-      </div>  
+        <img src="../../assets/logo.png" height={100} width={360} />
+      </div> 
       <div className='piggy'>
         <img src="../../assets/piggy.PNG" height={460} width={500}/>
       </div>  
-
       <IonFooter>
         <IonToolbar>
+          <IonButton onClick={registrarUsuario} className="btnMenu">Registrar Usuario</IonButton>
           <IonButton className='btnMenu'>
-            <img src="../../assets/home.png"/>
-          </IonButton>
-          <IonButton  className='btnMenu'>
-          <img src="../../assets/info.png"/>
+            <img src="../../assets/home.png" />
           </IonButton>
           <IonButton className='btnMenu'>
-          <img src="../../assets/perfil.png"/>
+            <img src="../../assets/info.png" />
+          </IonButton>
+          <IonButton className='btnMenu'>
+            <img src="../../assets/perfil.png" />
           </IonButton>
         </IonToolbar>
       </IonFooter>
-       
-  
-   
     </IonPage>
   );
 }

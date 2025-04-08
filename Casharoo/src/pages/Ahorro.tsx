@@ -18,7 +18,7 @@ const Ahorro: React.FC = () => {
         <div className='rectangulo-ahorro'>
           <p className='p1-ahorro'>Ahorros</p>
         </div>
-        <IonButton className='boton-mas'>
+        <IonButton className='boton-mas' onClick={irACrearMeta}>
           <p className='p2-ahorro'>+</p>
         </IonButton>
           <div className='rectangulo'>

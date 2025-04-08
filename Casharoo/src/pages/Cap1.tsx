@@ -275,6 +275,8 @@ const Cap1: React.FC = () => {
       <div className='3interno'>
       <IonButton className='decidir3' onClick={() => setCurrentIndex(0)}>Repetir la historia</IonButton> 
       <IonButton className='decidir3' href="/Juego1">Continuar con el juego</IonButton> 
+      <IonButton className='decidir3' onClick={() => setCurrentIndex(0)}>Repetir la historia</IonButton> {/*Agregar código para que se repita la historia*/}
+      <IonButton className='decidir3' onClick={() => history.push('/juego1')}>Continuar con el juego</IonButton> {/*Agregar código para que vaya al juego */}
       </div>
       </div>
     </div>

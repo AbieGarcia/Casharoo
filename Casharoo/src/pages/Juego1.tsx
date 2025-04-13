@@ -108,7 +108,7 @@ const Juego1: React.FC = () => {
   return (
     <IonApp>
       <IonHeader>
-        <IonToolbar color='secondary'>
+        <IonToolbar className='nombre' color='secondary'>
           <IonTitle>Juego de Relacionar</IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -150,6 +150,9 @@ const Juego1: React.FC = () => {
               <IonButton expand="block" onClick={resetGame}>
                 Jugar de nuevo
               </IonButton>
+              <IonButton className='Regresar' expand="block" href="/Mapa">
+                Ir a menu
+              </IonButton>
             </div>
           )}
         </div>
@@ -157,8 +160,8 @@ const Juego1: React.FC = () => {
         <IonAlert
           isOpen={showSuccess}
           onDidDismiss={() => setShowSuccess(false)}
-          header={'¡Felicidades!'}
-          message={'Has completado el juego correctamente.'}
+          header={'¡Felicidades, has ganado!'}
+          message={'Has desbloqueado la sección de ahorros'}
           buttons={['OK']}
         />
       </IonContent>

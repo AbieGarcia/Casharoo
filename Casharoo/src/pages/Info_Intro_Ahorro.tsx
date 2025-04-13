@@ -50,7 +50,9 @@ const Info_Intro_Ahorro: React.FC = () => {
         </div>
         <div className='div-boton-ir-intro-ahorro'>
           <IonButton id='boton-ir-historia-intro-ahorro'>
+          <a href="/Cap1">
             <p className='texto-boton-ir-intro-ahorro'>Ir a la historia</p>
+          </a>
           </IonButton>
         </div>
       </IonContent>

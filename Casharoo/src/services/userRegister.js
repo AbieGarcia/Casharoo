@@ -2,9 +2,11 @@ import { db } from "../firebaseConfig";
 import { collection, addDoc, updateDoc, doc, query, where, getDocs } from "firebase/firestore";
 
 export const registrarUsuario = async (usuario) => {
+    console.log(usuario)
     try {
         const docRef = await addDoc(collection(db, "usuarios"), usuario);
         console.log("Usuario registrado con ID", docRef.id);
+        // local storage guardar id
     } catch (error) {
         console.error("Error al registrtar usuario: ", error);
     }
@@ -20,7 +22,7 @@ export const editarUusario = async (usuarioId, nuevosDatos) => {
     }
 };
 
-export const obtenerUusario = async (nombre) => {
+export const obtenerUusario = async (usuarioId) => {
     try {
         const usuarioRef = doc(db, "usuarios", usuarioId);
         const usuarioSnap = await getDoc(usuarioRef);

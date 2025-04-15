@@ -1,8 +1,22 @@
-.contenido{
+.contenido {
     --background: #FFFFFF;
 }
 
-.imagen-casharoo{
+.btnMenu1 {
+    --background: #ffee7a;
+    --background-hover: #fdeb76;
+    --background-activated: #ffee7a;
+    --background-focused: #ffee7a;
+    --border-radius: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    width: 95px;
+    height: 73px;
+    flex-shrink: 0;
+}
+
+.imagen-casharoo {
     width: 357px;
     height: 107px;
     top: 109px;
@@ -14,7 +28,7 @@
     position: absolute;
 }
 
-.imagen-piggy{
+.imagen-piggy {
     width: 560px;
     height: 600px;
     top: 200px;

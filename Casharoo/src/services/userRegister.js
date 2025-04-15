@@ -7,16 +7,17 @@ export const registrarUsuario = async (usuario) => {
         const docRef = await addDoc(collection(db, "usuarios"), usuario);
         console.log("Usuario registrado con ID", docRef.id);
         // local storage guardar id
+        return docRef.id; // Regresa el ID del nuevo usuario
     } catch (error) {
         console.error("Error al registrtar usuario: ", error);
     }
 };
 
-export const editarUusario = async (usuarioId, nuevosDatos) => {
+export const editarUsuario = async (usuarioId, nuevosDatos) => {
     try {
         const usuarioRef = doc(db, "usuarios", usuarioID);
         await updateDoc(usuarioRef, nuevosDatos);
-        console.log("Uusuario actualizado correctamente");
+        console.log("Usuario actualizado correctamente");
     } catch (error) {
         console.error("Error al actualizar usuario: ", error);
     }

@@ -1,7 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonButton, IonFooter, IonToolbar } from '@ionic/react';
 import './Ahorro.css';
 import { useHistory } from 'react-router-dom';
-import Crear_Meta from './Crear_Meta';
 
 const Ahorro: React.FC = () => {
 
@@ -9,6 +8,7 @@ const Ahorro: React.FC = () => {
   const irACrearMeta = () => {
     history.push('/crear-meta');
   }
+
   return (
     <IonPage>
       <IonContent className='contenido'>
@@ -21,21 +21,23 @@ const Ahorro: React.FC = () => {
         <IonButton className='boton-mas' onClick={irACrearMeta}>
           <p className='p2-ahorro'>+</p>
         </IonButton>
-          <div className='rectangulo'>
-            <IonButton id='boton'>
-              <img src="..\..\assets\home.png"></img>
-            </IonButton>
-            <IonButton  id='boton'>
-              <img src="..\..\assets\info.png"></img>
-            </IonButton>
-            <IonButton  id='boton'>
-              <img src="..\..\assets\perfil.png"></img>
-            </IonButton>
-            <IonButton  id='boton'>
-              <img src="..\..\assets\ahorro.png"></img>
-            </IonButton>
-          </div>
       </IonContent>
+      <IonFooter>
+        <IonToolbar>
+          <IonButton className='btnMenu1'>
+            <img src="../../assets/home.png" />
+          </IonButton>
+          <IonButton className='btnMenu1'>
+            <img src="../../assets/info.png" />
+          </IonButton>
+          <IonButton className='btnMenu1'>
+            <img src="../../assets/ahorro.png" />
+          </IonButton>
+          <IonButton className='btnMenu1'>
+            <img src="../../assets/perfil.png" />
+          </IonButton>
+        </IonToolbar>
+      </IonFooter>
     </IonPage>
   );
 };

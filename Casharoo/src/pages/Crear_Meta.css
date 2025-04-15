@@ -9,8 +9,6 @@
     position: absolute;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 4px 4px 0px #00000040;
-
 }
 
 .nombre-crear-meta {
@@ -41,6 +39,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .Color {
     width: 360px;
     height: 160px;
@@ -67,7 +66,7 @@
     bottom: 0px;
 }
 
-.Agregar-plazo{
+.Agregar-plazo {
     width: 360px;
     height: 70px;
     top: 700px;
@@ -137,7 +136,7 @@
     background-color: #fff6bf;
 }
 
-.select-plazo{
+.select-plazo {
     position: relative;
     font-family: 'Baloo 2';
     font-weight: bold;
@@ -147,18 +146,18 @@
     cursor: pointer;
 }
 
-#seleccion-plazo{
-    color:#f1519c;
-    background-color:#f1519c;
+#seleccion-plazo {
+    color: #f1519c;
+    background-color: #f1519c;
     font-family: 'Baloo 2';
     font-weight: bold;
     font-size: 15px;
 
 }
 
-#btnAz{
+#btnAz {
     --background: rgb(7, 218, 255);
-    --background-hover: rgb(0, 217, 255);    
+    --background-hover: rgb(0, 217, 255);
     --background-activated: rgba(128, 236, 255, 0.897);
     --background-focused: rgba(128, 236, 255, 0.897);
     height: 70px;
@@ -168,9 +167,10 @@
     left: 20px;
     --border-radius: 50px;
 }
-#btnAma{
+
+#btnAma {
     --background: rgb(255, 252, 68);
-    --background-hover: rgb(255, 252, 68);    
+    --background-hover: rgb(255, 252, 68);
     --background-activated: rgb(247, 245, 173);
     --background-focused: rgb(247, 245, 173);
     height: 70px;
@@ -180,7 +180,8 @@
     left: 180px;
     --border-radius: 50px;
 }
-#btnRos{
+
+#btnRos {
     --background: #ff6f9f;
     --background-hover: #ff6f9f;
     --background-activated: #f8c9d9;
@@ -192,9 +193,10 @@
     left: 100px;
     --border-radius: 50px;
 }
-#btnVer{
+
+#btnVer {
     --background: rgb(48, 221, 57);
-    --background-hover: rgb(48, 221, 57);   
+    --background-hover: rgb(48, 221, 57);
     --background-activated: rgb(131, 248, 136);
     --background-focused: rgb(131, 248, 136);
     height: 70px;
@@ -205,4 +207,67 @@
     --border-radius: 50px;
 }
 
+#btnCan {
+    --background: #ffffff;
+    --background-hover: #ffffff;
+    --background-activated: #ffffff;
+    --background-focused: #ffffff;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    --border-radius: 50px;
+}
 
+#btnFlo {
+    --background: #ffffff;
+    --background-hover: #ffffff;
+    --background-activated: #ffffff;
+    --background-focused: #ffffff;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    --border-radius: 50px;
+}
+
+#btnTen {
+    --background: #ffffff;
+    --background-hover: #ffffff;
+    --background-activated: #ffffff;
+    --background-focused: #ffffff;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 50px;
+    left: 180px;
+    --border-radius: 50px;
+}
+
+#btnDog {
+    --background: #ffffff;
+    --background-hover: #ffffff;
+    --background-activated: #ffffff;
+    --background-focused: #ffffff;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 50px;
+    left: 260px;
+    --border-radius: 50px;
+}
+
+#btnSiguiente1 {
+    --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 170px;
+    font-family: Baloo;
+    font-size: 24px;
+    --color: rgb(231, 177, 0);
+    --background: #FFEE7A;
+    --background-hover: #FFEE7A;
+    --background-activated: #fff7c5;
+    --background-focused: #fff7c5;
+    top: 300px;
+}

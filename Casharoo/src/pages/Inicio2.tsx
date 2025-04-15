@@ -12,21 +12,23 @@ const Inicio2: React.FC = () => {
         <div className='imagen-piggy'>
           <img src="..\..\assets\piggy.PNG"></img>
         </div>
-        <div className='rectangulo'>
-          <IonButton id='boton'>
-            <img src="..\..\assets\home.png"></img>
-          </IonButton>
-          <IonButton id='boton'>
-            <img src="..\..\assets\info.png"></img>
-          </IonButton>
-          <IonButton id='boton'>
-            <img src="..\..\assets\perfil.png"></img>
-          </IonButton>
-          <IonButton id='boton'>
-            <img src="..\..\assets\ahorro.png"></img>
-          </IonButton>
-        </div>
       </IonContent>
+      <IonFooter>
+        <IonToolbar>
+          <IonButton className='btnMenu1'>
+            <img src="../../assets/home.png" />
+          </IonButton>
+          <IonButton className='btnMenu1'>
+            <img src="../../assets/info.png" />
+          </IonButton>
+          <IonButton className='btnMenu1'>
+            <img src="../../assets/ahorro.png" />
+          </IonButton>
+          <IonButton className='btnMenu1'>
+            <img src="../../assets/perfil.png" />
+          </IonButton>
+        </IonToolbar>
+      </IonFooter>
     </IonPage>
   );
 };

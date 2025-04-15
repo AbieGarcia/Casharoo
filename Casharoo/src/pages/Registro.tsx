@@ -19,14 +19,17 @@ const Registro: React.FC = () => {
       { capitulo: 5, disabled: true },
       { capitulo: 6, disabled: true },
       { capitulo: 7, disabled: true },
-
-    ]
+    ],
+    metas: [],
   })
-  const [error, setError] = useState(false)
+
+
+  const [error, setError] = useState(false);
   const history = useHistory();
+
   const irAMapa = () => {
     history.push('/mapa');
-  }
+  };
 
   const registroUsuario = () => {
     const nombre = (document.getElementById('InputNombre') as HTMLInputElement)?.value;
@@ -51,37 +54,29 @@ const Registro: React.FC = () => {
     }
   };
 
-
   return (
     <IonPage>
-      <IonContent className="ion-padding" >
-
-        <div className="rectangle-container" /*SECCION DONDE ESTARÁN LOS CUADROS*/>
-
-          <div className='rectangulotitulo' /*CUADRO AMARILLO DEL TÍTULO*/>
+      <IonContent className="ion-padding">
+        <div className="rectangle-container">
+          <div className='rectangulotitulo'>
             <h1>Escoge tu personaje</h1>
           </div>
-
-          <div className='rectangulochico' id='rect1' /*CUADRO PEQUEÑO ROSA*/>
+          <div className='rectangulochico' id='rect1'>
             <IonButton id='BtnRosa' onClick={() => setRegistro({ ...registro, sexo: 1 })}>
               <img src="../../assets/girl.png" height={185} width={310} />
             </IonButton>
-          </div >
-          <div className='rectangulochico' id='rect2'  /*CUADRO PEQUEÑO AZUL*/>
+          </div>
+          <div className='rectangulochico' id='rect2'>
             <IonButton id='BtnAzul'>
               <img src="../../assets/boy.png" onClick={() => setRegistro({ ...registro, sexo: 2 })} height={180} width={300} />
             </IonButton>
           </div>
-
-          <div className="rectangle" /*CUADRO ROSA CLARITO PRINCIPAL*/></div>
+          <div className="rectangle"></div>
         </div>
 
-
-        <div className='Nombre' /*SECCION DONDE SE INGRESA EL NOMBRE*/>
-
-          <h1 style={{ color: 'white' }} id='NomTexto' /*TÍTULO*/  >Tu nombre:</h1>
-
-          <IonInput  /*DONDE SE INGRESA EL NOMBRE*/
+        <div className='Nombre'>
+          <h1 style={{ color: 'white' }} id='NomTexto'>Tu nombre:</h1>
+          <IonInput
             placeholder="   Me llamo..."
             clearInput={true}
             fill='solid'
@@ -92,11 +87,9 @@ const Registro: React.FC = () => {
           ></IonInput>
         </div>
 
-        <div className='Username' /*SECCION DONDE SE INGRESA EL NOMBRE DE USUARIO*/>
-
-          <h1 style={{ color: 'white' }} id='NomTexto' /*TÍTULO*/  >Tu usuario:</h1>
-
-          <IonInput  /*DONDE SE INGRESA EL NOMBRE DE USUARIO*/
+        <div className='Username'>
+          <h1 style={{ color: 'white' }} id='NomTexto'>Tu usuario:</h1>
+          <IonInput
             placeholder="   Mi usuario es..."
             clearInput={true}
             fill='solid'
@@ -104,15 +97,12 @@ const Registro: React.FC = () => {
             class='InputUs'
             color={'warning'}
             onIonChange={(e: any) => setRegistro({ ...registro, usuario: e.target.value })}
-
           ></IonInput>
         </div>
 
-        <div className='Contrasena' /*SECCION DONDE SE INGRESA EL NOMBRE DE USUARIO*/>
-
-          <h1 style={{ color: 'white' }} id='NomTexto' /*TÍTULO*/  >Tu contraseña:</h1>
-
-          <IonInput  /*DONDE SE INGRESA EL NOMBRE DE USUARIO*/
+        <div className='Contrasena'>
+          <h1 style={{ color: 'white' }} id='NomTexto'>Tu contraseña:</h1>
+          <IonInput
             placeholder="   Contraseña"
             clearInput={true}
             fill='solid'
@@ -120,7 +110,6 @@ const Registro: React.FC = () => {
             class='InputCon'
             color={'warning'}
             onIonChange={(e: any) => setRegistro({ ...registro, contrasena: e.target.value })}
-
           ></IonInput>
         </div>
 
@@ -131,9 +120,8 @@ const Registro: React.FC = () => {
           }
         </div>
 
-
-        <div className='Logo' /*SECCION DONDE SE INGRESA EL LOGO*/>
-          <img src="..\..\assets\logo.png" width={304} height={79} id='LogoImgRegistro' /*IMAGEN LOGO*/></img>
+        <div className='Logo'>
+          <img src="..\..\assets\logo.png" width={304} height={79} id='LogoImgRegistro'></img>
         </div>
 
         <ExploreContainer />
@@ -141,5 +129,6 @@ const Registro: React.FC = () => {
     </IonPage>
   );
 };
+
 
 export default Registro;

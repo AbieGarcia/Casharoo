@@ -34,7 +34,7 @@
     left: 55px;
     z-index: 1;
 }
-.NombreLogin {
+.UsernameLogin {
     width: 368px;
     height: 80px;
     border-radius: 21px;
@@ -46,7 +46,7 @@
     z-index: 1;
 }
 
-.UsernameLogin {
+.ContrasenaLogin {
     width: 368px;
     height: 80px;
     border-radius: 21px;

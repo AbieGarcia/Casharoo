@@ -27,8 +27,8 @@ const Registro: React.FC = () => {
   const [error, setError] = useState(false);
   const history = useHistory();
 
-  const irAMapa = () => {
-    history.push('/mapa');
+  const irALogIn = () => {
+    history.push('/login');
   };
 
   const registroUsuario = () => {
@@ -48,7 +48,7 @@ const Registro: React.FC = () => {
     if (nombre !== "" && registro.sexo !== 0 && usuario !== "") {
       setError(false);
       registrarUsuario(nuevoRegistro);
-      irAMapa();
+      irALogIn();
     } else {
       setError(true);
     }

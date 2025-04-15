@@ -115,8 +115,7 @@ const Crear_Meta: React.FC = () => {
           <p className='p2-crear-meta' id='p-dinero-a-ahorrar'>$ a ahorrar:</p>
           <IonInput id='input-dinero-a-ahorrar' type="number" placeholder='pesos' label='$'
             clearInput={true}
-            value={meta.dinero}
-            onIonChange={(e: any) => setMeta({ ...meta, dinero: parseFloat(e.target.value) })}></IonInput>
+            onIonInput={(e: any) => setMeta({ ...meta, dinero: parseFloat(e.target.value) })}></IonInput>
         </div>
         <div className='Color'>
           <p className='p2-crear-meta' id='p-color'>Color:</p>

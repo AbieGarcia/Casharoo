@@ -50,5 +50,13 @@ text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25), 0px 0px 0px rgba(0, 0, 0, 0.25);
     line-height: normal;
     position: absolute;
     top: -20px;
-    left: 94px;
+    left: 55px;
+}
+
+.monito-perfil{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 135px;
+    left: 70px;
 }

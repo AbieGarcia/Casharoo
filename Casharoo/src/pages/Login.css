@@ -63,7 +63,7 @@
     left:20px;
 }
 
-#InputNom1{
+#InputNom{
     width: 175px;
     height: 40px;
     background-color:rgba(255, 238, 122, 0.80);
@@ -71,6 +71,22 @@
     left: 183px;
     top: 20px;
     z-index: 2;
+}
+
+#InputCon{
+    width: 120px;
+    height: 40px;
+    border-radius: 14px;
+    background-color:rgba(255, 238, 122, 0.80);
+    color: #684f06;
+    left: 230px;
+    top: 20px;
+    z-index: 2;
+}
+
+.InputConLogIn{
+    width: 95px;
+    position: relative;
 }
 
 h1{

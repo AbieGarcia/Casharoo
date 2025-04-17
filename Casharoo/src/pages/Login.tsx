@@ -73,10 +73,10 @@ const Login: React.FC = () => {
           <h1 style={{ color: 'white' }} id='NomTexto' /*TÍTULO*/  >Tu contraseña:</h1>
 
           <IonInput  /*DONDE SE INGRESA EL NOMBRE DE USUARIO*/
-            placeholder="   Mi contraseña es..."
+            placeholder="   Contraseña..."
             clearInput={true}
             fill='solid'
-            id='InputNom'
+            id='InputCon'
             color={'warning'}
             value={contrasena}
             onIonInput={(e: any) => setContrasena(e.target.value)}
@@ -85,7 +85,7 @@ const Login: React.FC = () => {
 
         <div className='contenedorBtnSiguienteLogin'>
           <IonButton id='btnSiguiente' onClick={handleLogin}>Iniciar sesión</IonButton>
-          {error && <h1 style={{ color: "red", position: "relative", top: "100px" }}>Usuario o contraseña incorrectos</h1>}
+          {error && <h1 style={{ color: "#F09", position: "relative", top: "100px" }}>Usuario o contraseña incorrectos</h1>}
         </div>
 
         <div className='contenedorBtnCrear'>

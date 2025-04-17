@@ -28,7 +28,6 @@ export const registrarUsuario = async (usuario) => {
         const docRef = await addDoc(collection(db, "usuarios"), usuario);
         console.log("Usuario registrado con ID", docRef.id);
         // local storage guardar id
-        return docRef.id; // Regresa el ID del nuevo usuario
     } catch (error) {
         console.error("Error al registrtar usuario: ", error);
     }
@@ -36,9 +35,30 @@ export const registrarUsuario = async (usuario) => {
 
 export const editarUsuario = async (usuarioId, nuevosDatos) => {
     try {
-        const usuarioRef = doc(db, "usuarios", usuarioID);
+        const usuarioRef = doc(db, "usuarios", usuarioId);
         await updateDoc(usuarioRef, nuevosDatos);
         console.log("Usuario actualizado correctamente");
+    } catch (error) {
+        console.error("Error al actualizar usuario: ", error);
+    }
+};
+
+export const registrarMeta = async (usuarioId, nuevaMeta) => {
+    try {
+        const usuarioRef = doc(db, "usuarios", usuarioId);
+        const usuarioSnap = await getDoc(usuarioRef);
+
+        if (usuarioSnap.exists()) {
+            const usuarioData = usuarioSnap.data();
+            // Asegúrate de que metas sea un array
+            const metasActualizadas = usuarioData.metas
+                ? [...usuarioData.metas, { ...nuevaMeta }] // Convierte nuevaMeta en un objeto plano
+                : [{ ...nuevaMeta }]; // Si no existe metas, inicializa con la nueva meta
+                await updateDoc(usuarioRef, { metas: metasActualizadas });
+            console.log("Usuario actualizado correctamente con nuevas metas:", metasActualizadas);
+        } else {
+            console.error("No se encontró el usuario con el ID proporcionado");
+        }
     } catch (error) {
         console.error("Error al actualizar usuario: ", error);
     }

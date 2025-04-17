@@ -269,5 +269,5 @@
     --background-hover: #FFEE7A;
     --background-activated: #fff7c5;
     --background-focused: #fff7c5;
-    top: 300px;
+    position: absolute;
 }

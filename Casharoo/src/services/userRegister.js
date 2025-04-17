@@ -9,9 +9,9 @@ export const verificarCredenciales = async (usuario, contrasena) => {
 
         if (!querySnapshot.empty) {
             const usuarioDoc = querySnapshot.docs[0]; // Obtén el primer resultado
-            const usuarioData = { id: usuarioDoc.id, ...usuarioDoc.data() }; // Incluye el ID en los datos
+            const usuarioData = { id: usuarioDoc.id, ...usuarioDoc.data() };
             console.log("Usuario autenticado:", usuarioData);
-            return usuarioData; // Devuelve los datos del usuario autenticado
+            return usuarioData;
         } else {
             console.log("Credenciales incorrectas");
             return null;

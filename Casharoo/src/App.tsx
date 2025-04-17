@@ -45,13 +45,11 @@ import Perfil from './pages/Perfil';
 import Mapa from './pages/Mapa';
 import Juego2 from './pages/Juego2';
 import Cap2 from './pages/Cap2';
-import { UsuarioProvider } from "./context/UsuarioContext";
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <UsuarioProvider>
       <IonReactRouter>
         <IonRouterOutlet>
           <Route exact path="/">
@@ -104,7 +102,6 @@ const App: React.FC = () => (
           </Route>
         </IonRouterOutlet>
       </IonReactRouter>
-    </UsuarioProvider>
   </IonApp>
 );
 

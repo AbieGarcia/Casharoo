@@ -13,6 +13,72 @@
     box-shadow: 0px 4px 4px 0px #00000040;
 }
 
+.lista-metas {
+    top: 130px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px;
+}
+
+.rectangulo-meta {
+    display: flex;
+    flex-direction: row;
+    --padding: 20px;
+    width: 360px;
+    height: 180px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.meta-texto {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.meta-nombre {
+    top: -25px;
+    left: 20px;
+    position: relative;
+    font-family: 'Baloo 2';
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.meta-dinero,
+.meta-plazo {
+    left: 20px;
+    top: -60px;
+    position: relative;
+    font-family: 'Baloo 2';
+    font-weight: thin;
+    line-height: 1px;
+    font-size: 20px;
+}
+
+.rectangulo-icono {
+    background-color: white;
+    position: relative;
+    left: 50px;
+    top: 5px;
+    height: 140px;
+    width: 140px
+}
+
+.icono-meta {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 20px;
+}
+
 .p1-ahorro {
     color: #FF0099;
     font-family: 'Baloo 2';
@@ -34,7 +100,7 @@
 .boton-mas {
     --background: #40C5E1;
     display: flex;
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     justify-content: center;
     align-items: center;

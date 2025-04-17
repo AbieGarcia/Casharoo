@@ -27,7 +27,6 @@ const Login: React.FC = () => {
       // Llama a la función para verificar las credenciales
       const usuarioAutenticado = await verificarCredenciales(usuario, contrasena);
       if (usuarioAutenticado) {
-        console.log("Login exitoso:", usuarioAutenticado);
         setError(false);
 
         // Guarda el usuario autenticado en localStorage o en el contexto

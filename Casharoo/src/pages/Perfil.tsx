@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { IonContent, IonText, IonHeader, IonIcon, IonPage, IonButton, IonTitle, IonInput, IonToolbar, IonFooter } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
 import { obtenerUsuario } from '../services/userRegister';
 import './Perfil.css';
 
@@ -9,25 +8,24 @@ const Perfil: React.FC = () => {
   const [usuario, setUsuario] = useState<any>(null);
   const [progreso, setProgreso] = useState<number>(0);
 
+
   useEffect(() => {
     const cargarUsuario = async () => {
-      const usuarioId = localStorage.getItem("usuarioId"); // Obtén el ID del usuario desde localStorage
+      const usuarioId = localStorage.getItem("usuarioId");
       if (usuarioId) {
         const datosUsuario = await obtenerUsuario(usuarioId);
-        setUsuario(datosUsuario); // Guarda los datos del usuario en el estado
+        setUsuario(datosUsuario);
 
-        // Verifica los datos de los capítulos
         console.log("Capítulos del usuario:", datosUsuario.capitulo);
 
-        // Calcula el progreso
-        if (datosUsuario && Array.isArray(datosUsuario.capitulo)) {
+        if (datosUsuario?.capitulo) {
           let progresoCalculado = 0;
           for (const capitulo of datosUsuario.capitulo) {
-            if (capitulo.disabled === false) {
-              progresoCalculado += 1; // Suma 1 por cada capítulo habilitado
+            if (!capitulo.disabled) {
+              progresoCalculado += 1;
             }
           }
-          setProgreso(progresoCalculado); // Guarda el progreso en el estado
+          setProgreso(progresoCalculado);
         }
       }
     };
@@ -39,7 +37,7 @@ const Perfil: React.FC = () => {
     return (
       <IonPage>
         <IonContent className="ion-padding">
-          <IonText>Cargando datos del usuario...</IonText>
+          <h1>Cargando datos del usuario...</h1>
         </IonContent>
       </IonPage>
     );

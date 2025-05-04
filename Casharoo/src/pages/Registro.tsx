@@ -11,14 +11,14 @@ const Registro: React.FC = () => {
     sexo: 0,
     usuario: "",
     contrasena: "",
-    capitulo: [
-      { capitulo: 1, disabled: false },
-      { capitulo: 2, disabled: true },
-      { capitulo: 3, disabled: true },
-      { capitulo: 4, disabled: true },
-      { capitulo: 5, disabled: true },
-      { capitulo: 6, disabled: true },
-      { capitulo: 7, disabled: true },
+    capitulos: [
+      { capitulo: 1, disabled: false, completed: false }, 
+      { capitulo: 2, disabled: true, completed: false }, 
+      { capitulo: 3, disabled: true, completed: false },
+      { capitulo: 4, disabled: true, completed: false },
+      { capitulo: 5, disabled: true, completed: false },
+      { capitulo: 6, disabled: true, completed: false },
+      { capitulo: 7, disabled: true, completed: false },
     ],
     metas: [],
   })

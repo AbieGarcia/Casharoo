@@ -1,6 +1,5 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonButton, IonTitle, IonInput, IonToolbar, IonText, IonNavLink } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
 import './Login.css';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
@@ -33,7 +32,7 @@ const Login: React.FC = () => {
         localStorage.setItem("usuarioId", usuarioAutenticado.id);
 
         // Redirige al usuario a la página principal o al dashboard
-        history.push('/mapa');
+        history.replace('/inicio');
       } else {
         setError(true);
         console.log("Credenciales incorrectas");
@@ -54,7 +53,7 @@ const Login: React.FC = () => {
 
         <div className='UsernameLogin' /*SECCION DONDE SE INGRESA EL NOMBRE*/>
 
-          <h1 style={{ color: 'white' }} id='NomTexto' /*TÍTULO*/  >Tu usuario:</h1>
+          <h1 style={{ color: 'white' }} id='NomTexto1' /*TÍTULO*/  >Tu usuario:</h1>
 
           <IonInput  /*DONDE SE INGRESA EL NOMBRE*/
             placeholder="   Mi usuario es..."
@@ -69,7 +68,7 @@ const Login: React.FC = () => {
 
         <div className='ContrasenaLogin' /*SECCION DONDE SE INGRESA EL NOMBRE DE USUARIO*/>
 
-          <h1 style={{ color: 'white' }} id='NomTexto' /*TÍTULO*/  >Tu contraseña:</h1>
+          <h1 style={{ color: 'white' }} id='NomTexto1' /*TÍTULO*/  >Tu contraseña:</h1>
 
           <IonInput  /*DONDE SE INGRESA EL NOMBRE DE USUARIO*/
             placeholder="   Contraseña..."
@@ -94,8 +93,6 @@ const Login: React.FC = () => {
         <div className='Logo' /*SECCION DONDE SE INGRESA EL LOGO*/>
           <img src="..\..\assets\logo.png" width={304} height={79} id='LogoImg' /*IMAGEN LOGO*/></img>
         </div>
-
-        <ExploreContainer />
       </IonContent>
     </IonPage>
   );

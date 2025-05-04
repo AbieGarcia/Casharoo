@@ -30,21 +30,20 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import Inicio2 from './pages/Inicio2';
 import Crear_Meta from './pages/Crear_Meta';
 import Ahorro from './pages/Ahorro';
-import MenuInicial from './pages/MenuInicial';
+import Inicio from './pages/Inicio';
 import Registro from './pages/Registro';
 import Cap1 from './pages/Cap1';
 import Juego1 from './pages/Juego1';
 import Login from './pages/Login';
 import Info_Extra_Ahorro from './pages/Info_Extra_Ahorro';
 import Info_Intro_Ahorro from './pages/Info_Intro_Ahorro';
-import Info from './pages/Info';
 import Perfil from './pages/Perfil';
 import Mapa from './pages/Mapa';
 import Juego2 from './pages/Juego2';
 import Cap2 from './pages/Cap2';
+import Info_Extra from './pages/Info_Extra';
 
 setupIonicReact();
 
@@ -55,8 +54,8 @@ const App: React.FC = () => (
           <Route exact path="/">
             <Redirect to="/login" />
           </Route>
-          <Route exact path="/menu">
-            <MenuInicial />
+          <Route exact path="/inicio">
+            <Inicio />
           </Route>
           <Route exact path="/registro">
             <Registro />
@@ -64,17 +63,11 @@ const App: React.FC = () => (
           <Route exact path="/login">
             <Login />
           </Route>
-          <Route exact path="/info">
-            <Info />
-          </Route>
           <Route exact path="/perfil">
             <Perfil />
           </Route>
           <Route exact path="/mapa">
             <Mapa />
-          </Route>
-          <Route exact path="/inicio2">
-            <Inicio2 />
           </Route>
           <Route exact path="/ahorro">
             <Ahorro />
@@ -88,7 +81,10 @@ const App: React.FC = () => (
           <Route exact path="/juego1">
             <Juego1 />
           </Route>
-          <Route exact path="/info-extra-ahorro">
+          <Route exact path="/info-extra">
+            <Info_Extra />
+          </Route>
+          <Route exact path="/info-extra/ahorro">
             <Info_Extra_Ahorro />
           </Route>
           <Route exact path="/info-intro-ahorro">

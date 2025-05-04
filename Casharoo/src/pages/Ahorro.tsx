@@ -68,18 +68,18 @@ const Ahorro: React.FC = () => {
                   <p className='meta-plazo'>
                     Plazo: {meta.plazo === 1 ? 'Semanal' : meta.plazo === 2 ? 'Mensual' : meta.plazo === 3 ? 'Anual' : 'Sin plazo'}
                   </p></div>
-                  <div className='rectangulo-icono'>
-                <img
-                  className='icono-meta'
-                  src={
-                    meta.icono === 1
-                      ? '../../assets/Candy.png'
-                      : meta.icono === 2
-                        ? '../../assets/Flower.png'
-                        : meta.icono === 3
-                          ? '../../assets/Shoes.png'
-                          : '../../assets/Golden retriever.png'
-                  }></img></div>
+                <div className='rectangulo-icono'>
+                  <img
+                    className='icono-meta'
+                    src={
+                      meta.icono === 1
+                        ? '../../assets/Candy.png'
+                        : meta.icono === 2
+                          ? '../../assets/Flower.png'
+                          : meta.icono === 3
+                            ? '../../assets/Shoes.png'
+                            : '../../assets/Golden retriever.png'
+                    }></img></div>
               </div>
             ))
           ) : (
@@ -92,13 +92,13 @@ const Ahorro: React.FC = () => {
       </IonContent>
       <IonFooter>
         <IonToolbar>
-          <IonButton className='btnMenu1'>
+          <IonButton className='btnMenu1' onClick={() => history.push('/mapa')}>
             <img src="../../assets/home.png" />
           </IonButton>
-          <IonButton className='btnMenu1'>
+          <IonButton className='btnMenu1' onClick={() => history.push('/info-extra')}>
             <img src="../../assets/info.png" />
           </IonButton>
-          <IonButton className='btnMenu1'>
+          <IonButton className='btnMenu1' onClick={() => history.push('/ahorro')}>
             <img src="../../assets/ahorro.png" />
           </IonButton>
           <IonButton className='btnMenu1' onClick={() => history.push('/perfil')}>

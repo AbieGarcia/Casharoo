@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { IonApp, IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonButton, IonAlert } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { completarCap } from "../services/userRegister.js"
 import './Juego1.css';
+
 
 interface WordPair {
   left: string;
   right: string;
   matched: boolean;
 }
+
 
 const Juego1: React.FC = () => {
   const [wordPairs, setWordPairs] = useState<WordPair[]>([
@@ -17,7 +19,7 @@ const Juego1: React.FC = () => {
     { left: 'Ingreso', right: 'El dinero que recibes o ganas', matched: false },
     { left: 'Egreso', right: 'El dinero que no se guarda para gastos', matched: false },
   ]);
-  
+
   const [selectedLeft, setSelectedLeft] = useState<number | null>(null);
   const [selectedRight, setSelectedRight] = useState<number | null>(null);
   const [shuffledRight, setShuffledRight] = useState<string[]>([]);
@@ -55,14 +57,14 @@ const Juego1: React.FC = () => {
 
   const handleRightClick = (index: number) => {
     if (selectedLeft === null) return;
-    
+
     const rightWord = shuffledRight[index];
     const leftWord = wordPairs[selectedLeft].left;
     const originalPair = wordPairs.find(pair => pair.left === leftWord);
-    
+
     if (originalPair && originalPair.right === rightWord) {
       // Match correcto
-      const updatedPairs = wordPairs.map(pair => 
+      const updatedPairs = wordPairs.map(pair =>
         pair.left === leftWord ? { ...pair, matched: true } : pair
       );
       setWordPairs(updatedPairs);
@@ -82,15 +84,15 @@ const Juego1: React.FC = () => {
       const rightWord = shuffledRight[selectedRight];
       const leftWord = wordPairs[selectedLeft].left;
       const originalPair = wordPairs.find(pair => pair.left === leftWord);
-      
+
       if (originalPair && originalPair.right === rightWord) {
         // Match correcto
-        const updatedPairs = wordPairs.map(pair => 
+        const updatedPairs = wordPairs.map(pair =>
           pair.left === leftWord ? { ...pair, matched: true } : pair
         );
         setWordPairs(updatedPairs);
       }
-      
+
       setSelectedLeft(null);
       setSelectedRight(null);
     }
@@ -104,6 +106,8 @@ const Juego1: React.FC = () => {
     setSelectedRight(null);
     setGameCompleted(false);
   };
+
+  const usuarioId = localStorage.getItem("usuarioId");
 
   return (
     <IonApp>
@@ -119,7 +123,7 @@ const Juego1: React.FC = () => {
               <IonCol>
                 <h3 className="column-title">Concepto</h3>
                 {wordPairs.map((pair, index) => (
-                  <div 
+                  <div
                     key={`left-${index}`}
                     className={`word-card ${selectedLeft === index ? 'selected' : ''} ${pair.matched ? 'matched' : ''}`}
                     onClick={() => handleLeftClick(index)}
@@ -128,11 +132,11 @@ const Juego1: React.FC = () => {
                   </div>
                 ))}
               </IonCol>
-              
+
               <IonCol>
                 <h3 className="column-title">Definición</h3>
                 {shuffledRight.map((word, index) => (
-                  <div 
+                  <div
                     key={`right-${index}`}
                     className={`word-card ${selectedRight === index ? 'selected' : ''} 
                       ${wordPairs.some(pair => pair.right === word && pair.matched) ? 'matched' : ''}`}
@@ -144,7 +148,7 @@ const Juego1: React.FC = () => {
               </IonCol>
             </IonRow>
           </IonGrid>
-          
+
           {gameCompleted && (
             <div className="completion-message">
               <IonButton expand="block" onClick={resetGame}>
@@ -156,10 +160,10 @@ const Juego1: React.FC = () => {
             </div>
           )}
         </div>
-        
+
         <IonAlert
           isOpen={showSuccess}
-          onDidDismiss={() => setShowSuccess(false)}
+          onDidDismiss={() => { setShowSuccess(false); completarCap(usuarioId, 1) }}
           header={'¡Felicidades, has ganado!'}
           message={'Has desbloqueado la sección de ahorros'}
           buttons={['OK']}

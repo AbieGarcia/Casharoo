@@ -1,7 +1,12 @@
 import { IonContent, IonHeader, IonPage, IonButton, IonFooter, IonToolbar } from '@ionic/react';
 import './Info_Extra_Ahorro.css';
 
+import { useHistory } from 'react-router-dom';
+
+
 const Info_Extra_Ahorro: React.FC = () => {
+  const history = useHistory();
+
   return (
     <IonPage>
       <IonHeader>
@@ -9,7 +14,7 @@ const Info_Extra_Ahorro: React.FC = () => {
       </IonHeader>
       <IonContent className='fondo-extra-ahorro'>
         <div className='header-info-extra-ahorro'>
-          <IonButton id='boton-regresar-info-extra'>
+          <IonButton id='boton-regresar-info-extra' onClick={() => history.goBack()}>
             <img src="..\..\assets\Arrow 1.png"></img>
           </IonButton>
         </div>

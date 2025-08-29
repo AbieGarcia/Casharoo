@@ -54,7 +54,7 @@ export const registrarMeta = async (usuarioId, nuevaMeta) => {
             const metasActualizadas = usuarioData.metas
                 ? [...usuarioData.metas, { ...nuevaMeta }] // Convierte nuevaMeta en un objeto plano
                 : [{ ...nuevaMeta }]; // Si no existe metas, inicializa con la nueva meta
-                await updateDoc(usuarioRef, { metas: metasActualizadas });
+            await updateDoc(usuarioRef, { metas: metasActualizadas });
             console.log("Usuario actualizado correctamente con nuevas metas:", metasActualizadas);
         } else {
             console.error("No se encontró el usuario con el ID proporcionado");
@@ -63,6 +63,25 @@ export const registrarMeta = async (usuarioId, nuevaMeta) => {
         console.error("Error al actualizar usuario: ", error);
     }
 };
+
+export const completarCap = async (usuarioId, n) => {
+    try {
+        const usuarioRef = doc(db, "usuarios", usuarioId);
+        const usuarioSnap = await getDoc(usuarioRef);
+
+        const usuarioData = usuarioSnap.data();
+        const capsActualizados = usuarioData.capitulos.map((capitulo) => {
+            if (capitulo.capitulo === n) {
+                return { ...capitulo, completed: true };
+            }
+            return capitulo;
+        });
+        await updateDoc(usuarioRef, { capitulos: capsActualizados });
+        console.log("Usuario actualizado correctamente con nuevas caps:", capsActualizados);
+    } catch (error) {
+        console.error("Error al actualizar usuario: ", error);
+    }
+}
 
 export const obtenerUsuario = async (usuarioId) => {
     try {

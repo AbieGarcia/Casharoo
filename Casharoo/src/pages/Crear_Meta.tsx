@@ -212,7 +212,7 @@ const Crear_Meta: React.FC = () => {
         </div>
         <div className='Agregar-plazo'>
           <IonSelect interface="popover" label='Plazo:' class='select-plazo' placeholder='Plazo' justify="start"
-            value={meta.plazo}
+          value={meta.plazo}
             onIonChange={(e: any) => setMeta({ ...meta, plazo: parseInt(e.target.value) })}
             id='select-plazo'>
             <IonSelectOption value={1} id='seleccion-plazo'>Semanal</IonSelectOption>
@@ -230,16 +230,16 @@ const Crear_Meta: React.FC = () => {
       </IonContent>
       <IonFooter>
         <IonToolbar>
-          <IonButton className='btnMenu1' onClick={() => history.push('/mapa')}>
+          <IonButton className='btnMenu1'>
             <img src="../../assets/home.png" />
           </IonButton>
-          <IonButton className='btnMenu1' onClick={() => history.push('/info-extra')}>
+          <IonButton className='btnMenu1'>
             <img src="../../assets/info.png" />
           </IonButton>
-          <IonButton className='btnMenu1' onClick={() => history.push('/ahorro')}>
+          <IonButton className='btnMenu1'>
             <img src="../../assets/ahorro.png" />
           </IonButton>
-          <IonButton className='btnMenu1' onClick={() => history.push('/perfil')}>
+          <IonButton className='btnMenu1'>
             <img src="../../assets/perfil.png" />
           </IonButton>
         </IonToolbar>

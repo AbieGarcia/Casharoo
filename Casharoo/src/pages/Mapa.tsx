@@ -71,7 +71,7 @@ const Mapa: React.FC = () => {
             {
               monedaCap[0].disabled === false ?
                 <a href="/info-intro-ahorro">
-                  <img src="../../assets/moneda.png" width={130} height={60} />
+                  <img src="../../assets/moneda.png" width={130} height={60}/>
                 </a>
                 :
                 <>

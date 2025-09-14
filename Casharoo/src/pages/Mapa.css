@@ -1,62 +1,81 @@
 .pagina {
-
-    height: 100vh; 
-    background-image: url('../../assets/fondo.png'); 
-    background-size: cover; 
-    background-position:center; 
+    height: 100vh;
+    background-image: url('/assets/fondo.png');
+    background-size: cover;
+    background-position: center;
 }
 
 
-.btn{
+.btn {
     --background: #ffffff00;
     --background-hover: #ffffff00;
     --background-activated: #ffffff00;
     --background-focused: #ffffff00;
+    --box-shadow: none;
 }
 
-.monedaDesactivada{
-    opacity: 0.6; 
+.monedaDesactivada {
+    opacity: 0.6;
 }
 
-#M1{
+#M1 {
     position: absolute;
-    top: 60px;
-    left: 110px;
+    top: 9%;
+    left: 22%;
     z-index: 1;
+    width: 45%;
 }
-#M2{
+
+#M2 {
     position: absolute;
-    top: 171px;
-    left: 108px;
+    top: 22%;
+    left: 22%;
     z-index: 1;
+    width: 45%;
+
 }
-#M3{
+
+#M3 {
     position: absolute;
-    top: 263px;
-    left: 150px;
+    top: 34%;
+    left: 30%;
     z-index: 1;
+    width: 45%;
+
 }
-#M4{
+
+#M4 {
     position: absolute;
-    top: 365px;
-    left: 200px;
+    top: 47%;
+    left: 43%;
     z-index: 1;
+    width: 45%;
+
 }
-#M5{
+
+#M5 {
     position: absolute;
-    top: 467px;
-    left: 200px;
+    top: 60%;
+    left: 43%;
     z-index: 1;
+    width: 45%;
+
 }
-#M6{
+
+#M6 {
     position: absolute;
-    top: 559px;
-    left: 140px;
+    top: 73%;
+    left: 28%;
     z-index: 1;
+    width: 45%;
+
 }
-#M7{
+
+#M7 {
     position: absolute;
-    top: 650px;
-    left: 95px;
+    top: 86%;
+    left: 18%;
     z-index: 1;
+    width: 45%;
+
 }

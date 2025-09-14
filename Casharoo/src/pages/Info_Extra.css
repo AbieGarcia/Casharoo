@@ -1,16 +1,10 @@
 
-.contendorLogo{
-    position: absolute;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    height: 100px;
-    width: 430px;
-}
 #logo{
     position: absolute;
-    top: 28px;
-    left: 67px;
+    top: 4%;
+    left: 10%;
+    width: 80%;
+    height: auto;
 }
 
 .contenedorBtns{
@@ -18,86 +12,79 @@
     display:flex;
     justify-content: center;
     align-items:center;
-    width: 430px;
-    height: 100vph;
-    top: 110px;
-
+    flex-direction: column;
+    width: 90%;
+    left: 5%;
+    top: 18%;
 }
+
 #Cap1{
-    position: absolute;
+    position: relative;
     display:flex;
     justify-content: center;
     align-items:center;
-    width: 430px;
-    height: 109px;
-    top: 10px;
+    width: 100%;
+    height: 15%;
+    margin: 2.5%;
 }
 
 #Cap2{
-    position: absolute;
+    position: relative;
     display:flex;
     justify-content: center;
     align-items:center;
-    width: 430px;
-    height: 109px;
-    top: 139px;
+    width: 100%;
+    margin: 2.5%;
 }
 #Cap3{
-    position: absolute;
+    position: relative;
     display:flex;
     justify-content: center;
     align-items:center;
-    width: 430px;
-    height: 109px;
-    top: 268px;
+    width: 100%;
+    margin: 2.5%;
 }
 #Cap4{
-    position: absolute;
+    position: relative;
     display:flex;
     justify-content: center;
     align-items:center;
-    width: 430px;
-    height: 109px;
-    top: 397px;
+    width: 100%;
+    margin: 2.5%;
 }
+
 #Cap5{
-    position: absolute;
+    position: relative;
     display:flex;
     justify-content: center;
     align-items:center;
-    width: 430px;
-    height: 109px;
-    top: 526px;
+    width: 100%;
+    margin: 2.5%;
 }
 #Cap6{
-    position: absolute;
+    position: relative;
     display:flex;
     justify-content: center;
     align-items:center;
-    width: 430px;
-    height: 109px;
-    top: 655px;
+    width: 100%;
+    margin: 2.5%;
 }
 #Cap7{
-    position: absolute;
+    position: relative;
     display:flex;
     justify-content: center;
     align-items:center;
-    width: 430px;
-    height: 109px;
-    top: 784px;
     margin-bottom: 20px;
+    width: 100%;
+    margin: 2.5%;
 }
 
 
 .btnInfo{
     position: relative;
-    width: 350px;
-    height: 109px;
+    width: 100%;
     border-radius: 26px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    margin-top: 20px;
-    right: 15px;
 }
 
 

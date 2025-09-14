@@ -1,36 +1,38 @@
 #contenedorRacha{
-    width: 98px;
-    height: 108px;
+    width: 23%;
+    height: auto;
     position: absolute;
-    top: 44px;
-    left: 42px;
+    top: 5%;
+    left: 7%;
 }
 
 #contenedorUsuario{
-    width: 183px;
-    height: 46px;
+    width: 90%;
+    height: 6%;
     position: absolute;
-    top: 602px;
-    left: 117px;
+    top: 80%;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #nivel{
     align-items: center;
-    align-content: center;
-    width: 350px;
-    height: 61px;
+    justify-content: center;
+    width: 90%;
+    height: 8%;
     display: flex;
     border-radius: 30.5px;
     background: #FFB1CA;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     position: absolute;
-    top: 670px;
-    left: 40px;
+    top: 87%;
+    left: 5%;
 }
 
 #nom{
 color: #F6B901;
-
 text-align: center;
 font-family:Baloo;
 font-size: 30px;
@@ -49,14 +51,12 @@ text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25), 0px 0px 0px rgba(0, 0, 0, 0.25);
     font-weight: 400;
     line-height: normal;
     position: absolute;
-    top: -15px;
-    left: 23px;
+    margin: 0px;
 }
 
 .monito-perfil{
-    width: 300px;
-    height: 300px;
+    width: 75%;
     position: absolute;
-    top: 135px;
-    left: 70px;
+    top: 15%;
+    left: 12.5%;
 }

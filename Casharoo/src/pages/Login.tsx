@@ -46,55 +46,51 @@ const Login: React.FC = () => {
   return (
     <IonPage>
       <IonContent className="ion-padding" scrollY={false}>
-
         <div className='contBienvenida'>
           <IonText id='lblBienvenido'> ¡Bienvenido! </IonText>
         </div>
+      <div className='UsernameLogin'>  
+        <h1 style={{ color: 'white' }} id='NomTexto1' /*TÍTULO*/  >Tu usuario:</h1>
 
-        <div className='UsernameLogin' /*SECCION DONDE SE INGRESA EL NOMBRE*/>
+        <IonInput  /*DONDE SE INGRESA EL NOMBRE DE USUARIO*/
+          placeholder="   Mi usuario..."
+          clearInput={true}
+          fill='solid'
+          id='InputNombre'
+          value={usuario}
+          onIonInput={(e: any) => setUsuario(e.target.value)}
+        ></IonInput>
+      </div>
 
-          <h1 style={{ color: 'white' }} id='NomTexto1' /*TÍTULO*/  >Tu usuario:</h1>
+      <div className='ContrasenaLogin' /*SECCION DONDE SE INGRESA EL NOMBRE DE USUARIO*/>
 
-          <IonInput  /*DONDE SE INGRESA EL NOMBRE*/
-            placeholder="   Mi usuario es..."
-            clearInput={true}
-            fill='solid'
-            id='InputNom'
-            color={'warning'}
-            value={usuario}
-            onIonInput={(e: any) => setUsuario(e.target.value)}
-          ></IonInput>
-        </div>
+        <h1 style={{ color: 'white' }} id='NomTexto1' /*TÍTULO*/  >Tu contraseña:</h1>
 
-        <div className='ContrasenaLogin' /*SECCION DONDE SE INGRESA EL NOMBRE DE USUARIO*/>
+        <IonInput  /*DONDE SE INGRESA EL NOMBRE DE USUARIO*/
+          placeholder="   Contraseña..."
+          clearInput={true}
+          fill='solid'
+          id='InputCon'
+          color={'warning'}
+          value={contrasena}
+          onIonInput={(e: any) => setContrasena(e.target.value)}
+        ></IonInput>
+      </div>
 
-          <h1 style={{ color: 'white' }} id='NomTexto1' /*TÍTULO*/  >Tu contraseña:</h1>
+      <div className='contenedorBtnSiguienteLogin'>
+        <IonButton id='btnSiguiente' onClick={handleLogin}>Iniciar sesión</IonButton>
+        {error && <h1 style={{ color: "#F09", position: "relative", top: "100px" }}>Usuario o contraseña incorrectos</h1>}
+      </div>
 
-          <IonInput  /*DONDE SE INGRESA EL NOMBRE DE USUARIO*/
-            placeholder="   Contraseña..."
-            clearInput={true}
-            fill='solid'
-            id='InputCon'
-            color={'warning'}
-            value={contrasena}
-            onIonInput={(e: any) => setContrasena(e.target.value)}
-          ></IonInput>
-        </div>
+      <div className='contenedorBtnCrear'>
+        <IonButton id='btnCrearUsuario' onClick={irARegistro}>Crear una cuenta</IonButton>
+      </div>
 
-        <div className='contenedorBtnSiguienteLogin'>
-          <IonButton id='btnSiguiente' onClick={handleLogin}>Iniciar sesión</IonButton>
-          {error && <h1 style={{ color: "#F09", position: "relative", top: "100px" }}>Usuario o contraseña incorrectos</h1>}
-        </div>
-
-        <div className='contenedorBtnCrear'>
-          <IonButton id='btnCrearUsuario' onClick={irARegistro}>Crear una cuenta</IonButton>
-        </div>
-
-        <div className='Logo' /*SECCION DONDE SE INGRESA EL LOGO*/>
-          <img src="..\..\assets\logo.png" width={304} height={79} id='LogoImg' /*IMAGEN LOGO*/></img>
-        </div>
-      </IonContent>
-    </IonPage>
+      <div className='Logo'>
+        <img src="..\..\assets\logo.png" id='LogoImg'></img>
+      </div>
+    </IonContent>
+    </IonPage >
   );
 };
 

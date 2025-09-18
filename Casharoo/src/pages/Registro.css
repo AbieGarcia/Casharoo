@@ -7,13 +7,9 @@
     --border-radius: 53px;
 
     --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 158px;
-    height: 224px;
-    position: absolute;
-    top: 3px;
-    left: -7.5px;
-    left: 4px;
-
+    position: relative;
+    height: 93%;
+    width: 95%;
 }
 
 #BtnAzul {
@@ -25,34 +21,35 @@
     --border-radius: 53px;
 
     --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 158px;
-    height: 224px;
-    position: absolute;
-    top: 3px;
-    left: 3px;
-
+    position: relative;
+    height: 93%;
+    width: 95%;
 }
 
 .Logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .contenedorBtnSiguiente {
-    width: 368px;
+    width: 85%;
     height: 80px;
     border-radius: 21px;
     position: absolute;
-    top: 900px;
-    left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 97%;
+    left: 7.5%;
     z-index: 1;
 }
 
 #LogoImgRegistro {
     position: absolute;
-    top: 40px;
+    top: 2%;
+    width: auto;
+    height: 10%;
 }
 
 .rectangle-container {
@@ -63,26 +60,27 @@
 }
 
 .rectangulochico {
-
-    width: 171px;
-    height: 237px;
+    width: 48%;
+    height: 90%;
     border-radius: 46px;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 270px;
     z-index: 2;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
 #rect1 {
-    left: 40px;
     background-color: #FF0099;
 }
 
 #rect2 {
-    right: 39px;
     background-color: #52d9f6;
+}
+
+.imgbtn {
+    height: 100%;
 }
 
 .rectangulotitulo {
@@ -90,134 +88,137 @@
     height: 80px;
     flex-shrink: 0;
     border-radius: 33px;
-    position: absolute;
-    top: 170px;
-    left: 50px;
+    position: relative;
     z-index: 2;
     background-color: #FFEE7A;
     box-shadow: 0px 6px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
 .rectangle {
-    width: 368px;
-    height: 422px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 45%;
     background-color: #FF7BCC;
     border-radius: 46px;
     box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25), 2px 6px 4px 0px rgba(0, 0, 0, 0.25) inset;
     position: absolute;
     flex-shrink: 0;
-    top: 150px;
-    left: 30px;
+    top: 15%;
+    left: 5%;
+    padding: 4%;
+    gap: 4%;
+    z-index: 1;
+}
+
+.contPersonajes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    flex-shrink: 0;
+    position: relative;
     z-index: 1;
 }
 
 .Nombre {
-    width: 368px;
-    height: 80px;
+    width: 85%;
+    height: 9%;
     border-radius: 21px;
     background-color: #FF7BCC;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     position: absolute;
-    top: 600px;
-    left: 30px;
+    top: 63%;
+    left: 7.5%;
     z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    padding-right: 4%;
+    padding-left: 4%;
 }
 
 .Username {
-    width: 368px;
-    height: 80px;
+    width: 85%;
+    height: 9%;
     border-radius: 21px;
     background-color: #FF7BCC;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     position: absolute;
-    top: 700px;
-    left: 30px;
+    top: 74%;
+    left: 7.5%;
     z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    padding-right: 4%;
+    padding-left: 4%;
 }
 
 .Contrasena {
-    width: 368px;
-    height: 80px;
+    width: 85%;
+    height: 9%;
     border-radius: 21px;
     background-color: #FF7BCC;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     position: absolute;
-    top: 800px;
-    left: 30px;
+    top: 85%;
+    left: 7.5%;
     z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-right: 4%;
+    padding-left: 4%;
+    gap: 2%;
 }
 
 #NomTexto {
-    position: absolute;
-    left: 20px;
+    width: 50%;
+    position: relative;
+    margin: 0px;
+    font-size: 27px;
 }
 
-#InputNom {
-    border-radius: 15px;
-    width: 175px;
-    height: 40px;
-    background-color: rgba(255, 238, 122, 0.80);
-    color: #684f06;
-    left: 183px;
-    top: 20px;
-    z-index: 2;
+#NomTexto2 {
+    width: 80%;
+    position: relative;
+    margin: 0px;
+    font-size: 27px;
 }
 
-#InputUsuario {
-    border-radius: 15px;
-    width: 175px;
-    height: 40px;
-    background-color: rgba(255, 238, 122, 0.80);
-    color: #684f06;
-    left: 183px;
-    top: 20px;
-    z-index: 2;
-}
-
-#InputContrasena {
-    border-radius: 15px;
-    width: 120px;
-    height: 40px;
-    background-color: rgba(255, 238, 122, 0.80);
-    color: #684f06;
-    left: 235px;
-    top: 20px;
-    z-index: 2;
-    text-align: center;
-    padding: 0;
-    line-height: 40px;
+#NomTexto3 {
+    width: 130%;
+    position: relative;
+    margin: 0px;
+    font-size: 27px;
 }
 
 .InputNom {
-    border-radius: 15px;
-    width: 175px;
-    height: 40px;
+    border-radius: 14px;
     background-color: rgba(255, 238, 122, 0.80);
     color: #684f06;
-    left: 183px;
-    top: 20px;
     z-index: 2;
 }
 
 .InputUs {
     border-radius: 15px;
-    width: 175px;
-    height: 40px;
     background-color: rgba(255, 238, 122, 0.80);
     color: #684f06;
-    left: 183px;
-    top: 20px;
     z-index: 2;
 }
 
 .InputCon {
     border-radius: 15px;
-    width: 175px;
-    height: 40px;
     background-color: rgba(255, 238, 122, 0.80);
     color: #684f06;
-    left: 235px;
-    top: 20px;
     z-index: 2;
 }
 
@@ -233,7 +234,6 @@ h1 {
 
 #btnSiguiente {
     --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 170px;
     font-family: Baloo;
     font-size: 24px;
     --color: rgb(231, 177, 0);

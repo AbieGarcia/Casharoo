@@ -18,8 +18,8 @@
 #LogoImg {
     position: absolute;
     top: 7%;
-    width: 75%;
-    height: auto;
+    width: auto;
+    height: 10%;
 }
 
 #lblBienvenido {
@@ -39,8 +39,7 @@
 
 .UsernameLogin {
     width: 90%;
-    width: 90%;
-    height: 80px;
+    height: 9%;
     border-radius: 21px;
     background-color: #FF7BCC;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
@@ -59,7 +58,7 @@
 
 .ContrasenaLogin {
     width: 90%;
-    height: 80px;
+    height: 9%;
     border-radius: 21px;
     background-color: #FF7BCC;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;

@@ -184,21 +184,21 @@
     width: 50%;
     position: relative;
     margin: 0px;
-    font-size: 27px;
+    font-size: 5.5vw;
 }
 
 #NomTexto2 {
     width: 80%;
     position: relative;
     margin: 0px;
-    font-size: 27px;
+    font-size: 5.5vw;
 }
 
 #NomTexto3 {
     width: 130%;
     position: relative;
     margin: 0px;
-    font-size: 27px;
+    font-size: 5.5vw;
 }
 
 .InputNom {
@@ -220,6 +220,14 @@
     background-color: rgba(255, 238, 122, 0.80);
     color: #684f06;
     z-index: 2;
+}
+
+#InputNombre .input-wrapper,
+#InputUsuario .input-wrapper,
+#InputContrasena .input-wrapper{
+    background-color: rgba(255, 238, 122, 0.80) !important;
+    color: #684f06 !important;
+    border-radius: 14px !important;
 }
 
 h1 {

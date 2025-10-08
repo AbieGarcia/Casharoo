@@ -137,82 +137,86 @@ const Crear_Meta: React.FC = () => {
             onIonInput={(e: any) => setMeta({ ...meta, dinero: parseFloat(e.target.value) })}></IonInput>
         </div>
         <div className='Color'>
-          <p className='p2-crear-meta' id='p-color'>Color:</p>
-          <IonButton id='btnAz' onClick={() => { seleccionarColor('btnAz'); setMeta({ ...meta, color: 1 }); }}>
-            {
-              seleccionBtnColor.btnAz === true ?
-                <img src="..\..\assets\palomita.png"></img>
-                :
-                <>
-                </>
-            }
-          </IonButton>
-          <IonButton id='btnRos' onClick={() => { seleccionarColor('btnRos'); setMeta({ ...meta, color: 2 }); }}>
-            {
-              seleccionBtnColor.btnRos === true ?
-                <img src="..\..\assets\palomita.png"></img>
-                :
-                <>
-                </>
-            }
-          </IonButton>
-          <IonButton id='btnAma' onClick={() => { seleccionarColor('btnAm'); setMeta({ ...meta, color: 3 }); }}>
-            {
-              seleccionBtnColor.btnAm === true ?
-                <img src="..\..\assets\palomita.png"></img>
-                :
-                <>
-                </>
-            }
-          </IonButton>
-          <IonButton id='btnVer' onClick={() => { seleccionarColor('btnVer'); setMeta({ ...meta, color: 4 }); }}>
-            {
-              seleccionBtnColor.btnVer === true ?
-                <img src="..\..\assets\palomita.png"></img>
-                :
-                <>
-                </>
-            }
-          </IonButton>
+          <h3 className='p2-crear-meta' id='p-color'>Color:</h3>
+          <div className='btns-color'>
+            <IonButton id='btnAz' onClick={() => { seleccionarColor('btnAz'); setMeta({ ...meta, color: 1 }); }}>
+              {
+                seleccionBtnColor.btnAz === true ?
+                  <img src="..\..\assets\palomita.png"></img>
+                  :
+                  <>
+                  </>
+              }
+            </IonButton>
+            <IonButton id='btnRos' onClick={() => { seleccionarColor('btnRos'); setMeta({ ...meta, color: 2 }); }}>
+              {
+                seleccionBtnColor.btnRos === true ?
+                  <img src="..\..\assets\palomita.png"></img>
+                  :
+                  <>
+                  </>
+              }
+            </IonButton>
+            <IonButton id='btnAma' onClick={() => { seleccionarColor('btnAm'); setMeta({ ...meta, color: 3 }); }}>
+              {
+                seleccionBtnColor.btnAm === true ?
+                  <img src="..\..\assets\palomita.png"></img>
+                  :
+                  <>
+                  </>
+              }
+            </IonButton>
+            <IonButton id='btnVer' onClick={() => { seleccionarColor('btnVer'); setMeta({ ...meta, color: 4 }); }}>
+              {
+                seleccionBtnColor.btnVer === true ?
+                  <img src="..\..\assets\palomita.png"></img>
+                  :
+                  <>
+                  </>
+              }
+            </IonButton>
+          </div>
         </div>
         <div className='Icono'>
-          <p className='p2-crear-meta' id='p-icono'>Icono:</p>
-          <IonButton id='btnCan' onClick={() => { seleccionarIcono('btnCan'); setMeta({ ...meta, icono: 1 }); }}>
-            {
-              seleccionBtnIcono.btnCan === true ? (
-                <img src="..\..\assets\palomita.png"></img>
-              ) : (
-                <img src="../../assets/Candy.png"></img>)
-            }
-          </IonButton>
-          <IonButton id='btnFlo' onClick={() => { seleccionarIcono('btnFlo'); setMeta({ ...meta, icono: 2 }); }}>
-            {
-              seleccionBtnIcono.btnFlo === true ? (
-                <img src="..\..\assets\palomita.png"></img>
-              ) : (
-                <img src="../../assets/Flower.png"></img>)
-            }
-          </IonButton>
-          <IonButton id='btnTen' onClick={() => { seleccionarIcono('btnTen'); setMeta({ ...meta, icono: 3 }); }}>
-            {
-              seleccionBtnIcono.btnTen === true ? (
-                <img src="..\..\assets\palomita.png"></img>
-              ) : (
-                <img src="../../assets/Shoes.png"></img>)
-            }
-          </IonButton>
-          <IonButton id='btnDog' onClick={() => { seleccionarIcono('btnDog'); setMeta({ ...meta, icono: 4 }); }}>
-            {
-              seleccionBtnIcono.btnDog === true ? (
-                <img src="..\..\assets\palomita.png"></img>
-              ) : (
-                <img src="../../assets/Golden retriever.png"></img>)
-            }
-          </IonButton>
+          <h3 className='p2-crear-meta' id='p-icono'>Icono:</h3>
+          <div className='btns-icono'>
+            <IonButton id='btnCan' onClick={() => { seleccionarIcono('btnCan'); setMeta({ ...meta, icono: 1 }); }}>
+              {
+                seleccionBtnIcono.btnCan === true ? (
+                  <img src="..\..\assets\palomita.png"></img>
+                ) : (
+                  <img src="../../assets/Candy.png"></img>)
+              }
+            </IonButton>
+            <IonButton id='btnFlo' onClick={() => { seleccionarIcono('btnFlo'); setMeta({ ...meta, icono: 2 }); }}>
+              {
+                seleccionBtnIcono.btnFlo === true ? (
+                  <img src="..\..\assets\palomita.png"></img>
+                ) : (
+                  <img src="../../assets/Flower.png"></img>)
+              }
+            </IonButton>
+            <IonButton id='btnTen' onClick={() => { seleccionarIcono('btnTen'); setMeta({ ...meta, icono: 3 }); }}>
+              {
+                seleccionBtnIcono.btnTen === true ? (
+                  <img src="..\..\assets\palomita.png"></img>
+                ) : (
+                  <img src="../../assets/Shoes.png"></img>)
+              }
+            </IonButton>
+            <IonButton id='btnDog' onClick={() => { seleccionarIcono('btnDog'); setMeta({ ...meta, icono: 4 }); }}>
+              {
+                seleccionBtnIcono.btnDog === true ? (
+                  <img src="..\..\assets\palomita.png"></img>
+                ) : (
+                  <img src="../../assets/Golden retriever.png"></img>)
+              }
+            </IonButton>
+          </div>
         </div>
         <div className='Agregar-plazo'>
           <IonSelect interface="popover" label='Plazo:' class='select-plazo' placeholder='Plazo' justify="start"
-          value={meta.plazo}
+            value={meta.plazo}
             onIonChange={(e: any) => setMeta({ ...meta, plazo: parseInt(e.target.value) })}
             id='select-plazo'>
             <IonSelectOption value={1} id='seleccion-plazo'>Semanal</IonSelectOption>
@@ -221,12 +225,10 @@ const Crear_Meta: React.FC = () => {
             <IonSelectOption value={4} id='seleccion-plazo'>Sin plazo</IonSelectOption>
           </IonSelect>
         </div>
-        <div className='contenedorBtnSiguiente'>
-          <IonButton id='btnSiguiente1' style={{ top: "-100px", left: "100px" }} onClick={registroMeta}>Crear Meta</IonButton>
+          <IonButton id='btnSiguiente1' onClick={registroMeta}>Crear Meta</IonButton>
           {error === true &&
             <h1> Todos los datos son obligatorios</h1>
           }
-        </div>
       </IonContent>
       <IonFooter>
         <IonToolbar>

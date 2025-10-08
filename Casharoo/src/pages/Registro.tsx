@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonButton, IonTitle, IonInput, IonToolbar } from '@ionic/react';
 import { useHistory } from "react-router-dom";
-import ExploreContainer from '../components/ExploreContainer';
 import './Registro.css';
 import { registrarUsuario } from "../services/userRegister.js"
 
@@ -12,8 +11,8 @@ const Registro: React.FC = () => {
     usuario: "",
     contrasena: "",
     capitulos: [
-      { capitulo: 1, disabled: false, completed: false }, 
-      { capitulo: 2, disabled: true, completed: false }, 
+      { capitulo: 1, disabled: false, completed: false },
+      { capitulo: 2, disabled: true, completed: false },
       { capitulo: 3, disabled: true, completed: false },
       { capitulo: 4, disabled: true, completed: false },
       { capitulo: 5, disabled: true, completed: false },
@@ -57,21 +56,22 @@ const Registro: React.FC = () => {
   return (
     <IonPage>
       <IonContent className="ion-padding">
-        <div className="rectangle-container">
+        <div className="rectangle">
           <div className='rectangulotitulo'>
             <h1>Escoge tu personaje</h1>
           </div>
-          <div className='rectangulochico' id='rect1'>
-            <IonButton id='BtnRosa' onClick={() => setRegistro({ ...registro, sexo: 1 })}>
-              <img src="../../assets/girl.png" height={185} width={310} />
-            </IonButton>
+          <div className='contPersonajes'>
+            <div className='rectangulochico' id='rect1'>
+              <IonButton id='BtnRosa' onClick={() => setRegistro({ ...registro, sexo: 1 })}>
+                <img  className="imgbtn" src="../../assets/girl.png"/>
+              </IonButton>
+            </div>
+            <div className='rectangulochico' id='rect2'>
+              <IonButton id='BtnAzul'>
+                <img className="imgbtn" src="../../assets/boy.png" onClick={() => setRegistro({ ...registro, sexo: 2 })}/>
+              </IonButton>
+            </div>
           </div>
-          <div className='rectangulochico' id='rect2'>
-            <IonButton id='BtnAzul'>
-              <img src="../../assets/boy.png" onClick={() => setRegistro({ ...registro, sexo: 2 })} height={180} width={300} />
-            </IonButton>
-          </div>
-          <div className="rectangle"></div>
         </div>
 
         <div className='Nombre'>
@@ -88,7 +88,7 @@ const Registro: React.FC = () => {
         </div>
 
         <div className='Username'>
-          <h1 style={{ color: 'white' }} id='NomTexto'>Tu usuario:</h1>
+          <h1 style={{ color: 'white' }} id='NomTexto2'>Tu usuario:</h1>
           <IonInput
             placeholder="   Mi usuario es..."
             clearInput={true}
@@ -101,7 +101,7 @@ const Registro: React.FC = () => {
         </div>
 
         <div className='Contrasena'>
-          <h1 style={{ color: 'white' }} id='NomTexto'>Tu contraseña:</h1>
+          <h1 style={{ color: 'white' }} id='NomTexto3'>Tu contraseña:</h1>
           <IonInput
             placeholder="   Contraseña"
             clearInput={true}
@@ -121,10 +121,8 @@ const Registro: React.FC = () => {
         </div>
 
         <div className='Logo'>
-          <img src="..\..\assets\logo.png" width={304} height={79} id='LogoImgRegistro'></img>
+          <img src="..\..\assets\logo.png" id='LogoImgRegistro'></img>
         </div>
-
-        <ExploreContainer />
       </IonContent>
     </IonPage>
   );

@@ -1,55 +1,99 @@
-/* Estilos generales */
+.nom1 {
+  font-family: baloo;
+  font-size: 2em;
+  background-color: #bd0a78;
+}
+
 .game-container {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.column-title {
+  text-align: center;
+  color: #bd0a78;
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-family: baloo;
+}
+
+.word-card {
+  padding: 12px;
+  margin: 8px 0;
+  border: 2px solid #bd0a78;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.word-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.word-card.selected {
+  border-color: #bd0a78;
+  background-color: #bd0a78;
+  color: white;
+}
+
+.word-card.matched {
+  border-color: var(--ion-color-success);
+  background-color: var(--ion-color-success);
+  color: rgb(255, 255, 255);
+  cursor: default;
+}
+
+.completion-message {
+  margin-top: 30px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jugarOtraVez {
+  --background: #bd0a78;
+  --background-hover: #da62ac;
+  --background-activated: #da62ac;
+  --background-focused: #da62ac;
+  --border-radius: 20px;
+  --box-shadow: 0 6px 6px 0 rgba(255, 255, 255, 0);
+  width: 45%;
+  height: 70px;
+  font-size: 1.5em;
+  font-family: baloo;
+  margin: 3%;
+}
+
+.Regresar {
+  --background: #bd0a78;
+  --background-hover: #da62ac;
+  --background-activated: #da62ac;
+  --background-focused: #da62ac;
+  --border-radius: 20px;
+  --box-shadow: 0 6px 6px 0 rgba(255, 255, 255, 0);
+  width: 45%;
+  height: 70px;
+  font-size: 1.5em;
+  font-family: baloo;
+  margin: 3%;
+
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .column-title {
-    text-align: center;
-    color: #450e34;
-    margin-bottom: 20px;
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Estilos para las tarjetas de palabras */
-  .word-card {
-    padding: 12px;
-    margin: 8px 0;
-    border: 2px solid var(--ion-color-medium);
-    border-radius: 8px;
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background-color: white;
-  }
-  
-  .word-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .word-card.selected {
-    border-color: var(--ion-color-primary);
-    background-color: var(--ion-color-primary);
-    color: white;
-  }
-  
-  .word-card.matched {
-    border-color: var(--ion-color-success);
-    background-color: var(--ion-color-success);
-    color: white;
-    cursor: default;
-  }
-  
-  /* Mensaje de finalización */
-  .completion-message {
-    margin-top: 30px;
-    text-align: center;
-    animation: fadeIn 0.5s ease;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+}

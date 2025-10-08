@@ -1,184 +1,89 @@
-.header-info-intro-ahorro {
-    width: 430px;
-    height: 65px;
-    background: #A3D8E3;
-    align-items: center;
-    position: absolute;
+.HeaderIntro {
+    font-family: baloo;
+    background-color: rgb(70, 144, 142);
+}
+
+.bodyIntro {
+    font-family: baloo;
+    background-color: rgb(168, 216, 215);
+    overflow: scroll;
+}
+
+
+.regresar-info-ahorro {
     display: flex;
-}
-
-#boton-regresar-info-extra {
-    --background: transparent;
-    --box-shadow: none;
-    --position: relative;
-    width: fit-content;
-}
-
-.fondo-intro-ahorro {
-    --background: #C7EEF6;
-}
-
-.cap1-ahorro-intro {
-    display: flex;
-    width: 430px;
-    height: 82px;
-    top: 65px;
-    flex-shrink: 0;
-    background: #40C5E1;
-    box-shadow: 0px 4px 4px 0px #00000040;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
+    justify-self: left;
+    padding-left: 2%;
+    padding-top: 1%;
+    --background: none;
+    --background-hover: none;
+    --background-activated: #89afd1;
+    --background-focused: #89afd1;
+    --color: #ffffff;
+    --border-radius: 0;
+    --box-shadow: 0 0px 0px 0 rgba(255, 255, 255, 0);
+    --ripple-color: deeppink;
 }
 
 .text-cap1-intro {
-    color: #FFFFFF;
-    font-family: 'Baloo 2';
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 56.07px;
-    text-align: center;
-    position: relative;
+    margin-top: 0%;
+    font-size: 1.5em;
+    color: rgb(255, 255, 255);
+}
+
+.p1 {
+    height: 20%;
+}
+
+
+.informacion {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    font-size: 1.3em;
+    padding-left: 2%;
+    padding-right: 2%;
+    height: 70%;
+}
+
+.lista {
+    line-height: 1.4em;
+    text-align: left;
+    margin-top: 4%;
 }
 
 .imagen1-info-intro-ahorro {
-    width: 363px;
-    height: 200px;
-    top: 179px;
-    left: 31px;
-    border-radius: 57px;
-    border-width: 6px;
-    border: 6px solid #FFE063;
-    background: #FFFFFF;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
+    background-color: aliceblue;
+    padding: 3%;
     display: flex;
-    position: absolute;
-}
-
-.rectangulo1-info-intro-invisible {
-    width: 351px;
-    height: 64px;
-    top: 412px;
-    left: 39.5px;
-    border-radius: 27px;
-    background: transparent;
-    flex-shrink: 0;
-    display: flex;
-    position: absolute;
     justify-content: center;
-    align-items: center;
+    align-self: center;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 10px rgb(15, 98, 95);
 }
 
 .texto1-info-intro-ahorro {
-    font-family: 'Baloo 2';
-    color: #000000;
-    font-weight: bold;
-    text-align: left;
-    font-size: 20px;
-    line-height: 100%;
-    letter-spacing: 0%;
-}
-
-.rectangulo-info-intro-invisible {
-    width: 347px;
-    height: 96px;
-    top: 412px;
-    left: 41.5px;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-}
-
-.rectangulo2-info-intro-invisible {
-    width: 347px;
-    height: 96px;
-    top: 491px;
-    left: 50px;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-}
-
-.rectangulo3-info-intro-invisible {
-    width: 347px;
-    height: 96px;
-    top: 563px;
-    left: 50px;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-}
-
-.rectangulo4-info-intro-invisible {
-    width: 347px;
-    height: 96px;
-    top: 650px;
-    left: 50px;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-}
-
-.rectangulo5-info-intro-invisible {
-    width: 347px;
-    height: 96px;
-    top: 717px;
-    left: 50px;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-}
-
-#boton-ir-historia-intro-ahorro {
-    width: 161px;
-    height: 52px;
-    padding-top: 840px;
-    left: 116px;
-    border-radius: 18px;
-    box-shadow: none;
-    --background: #40C5E1;
-
-}
-
-.div-boton-ir-intro-ahorro {
-    top: 784px;
-}
-
-.texto-boton-ir-intro-ahorro {
-    font-family: Baloo 2;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 100%;
-    letter-spacing: 0%;
     text-align: center;
-    vertical-align: middle;
-    color: #FFFFFF;
+    padding: 0%;
+    margin-bottom: 0%;
+    margin-top: 6%;
 }
 
-.punto {
-    position: absolute;
-    left: 25px;
+.button-historia {
+    display: flex;
+    --background: rgb(70, 144, 142);
+    --background-hover: #89afd1;
+    --background-activated: #89afd1;
+    --background-focused: #89afd1;
+    --border-radius: 10px;
+    --box-shadow: 0 6px 6px 0 rgba(255, 255, 255, 0);
+    --ripple-color: deeppink;
 }
 
-#punto1 {
-    top: 525px;
-}
-
-#punto2 {
-    top: 595px;
-}
-
-#punto3 {
-    top: 680px;
-}
-
-#punto4 {
-    top: 750px;
+a {
+    text-decoration: none;
+    color: aliceblue;
+    font-family: baloo;
+    font-size: 1.7em;
 }

@@ -112,8 +112,8 @@ const Juego1: React.FC = () => {
   return (
     <IonApp>
       <IonHeader>
-        <IonToolbar className='nombre' color='secondary'>
-          <IonTitle>Juego de Relacionar</IonTitle>
+        <IonToolbar className='nombre'>
+          <IonTitle className='nom1'>Juego de Relacionar</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
@@ -151,7 +151,7 @@ const Juego1: React.FC = () => {
 
           {gameCompleted && (
             <div className="completion-message">
-              <IonButton expand="block" onClick={resetGame}>
+              <IonButton className='jugarOtraVez' expand="block" onClick={resetGame} >
                 Jugar de nuevo
               </IonButton>
               <IonButton className='Regresar' expand="block" href="/Mapa">

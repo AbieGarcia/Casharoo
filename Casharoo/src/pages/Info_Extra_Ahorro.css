@@ -1,149 +1,55 @@
-.header-info-extra-ahorro {
-    width: 430px;
-    height: 65px;
+.bodyExtra {
+    background: #f3d9e1;
+    overflow: scroll;
+}
+
+.headerExtra {
     background: #FFB1CA;
-    align-items: center;
-    position: absolute;
-    display: flex;
+    font-family: baloo;
+    color: #ffffff;
+    font-size: 2em;
 }
 
-#boton-regresar-info-extra {
-    --background: transparent;
-    --box-shadow: none;
-    --position: relative;
-    width: fit-content;
+.text-cap1-extra {
+    margin-top: 0%;
 }
 
-.fondo-extra-ahorro {
-    --background: #FADAE4;
-}
-
-.cap1-ahorro-extra {
-    display: flex;
-    width: 430px;
-    height: 82px;
-    top: 65px;
-    flex-shrink: 0;
-    background: #FF7BCC;
-    box-shadow: 0px 4px 4px 0px #00000040;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-}
-
-.text-cap1 {
-    width: 289;
-    height: 51;
-    color: #FFFFFF;
-    font-family: 'Baloo 2';
-    font-weight: bold;
-    font-size: 35px;
-    line-height: 56.07px;
-    text-align: center;
-    position: relative;
-}
-
-.imagen1-info-extra-ahorro {
-    width: 161px;
-    height: 138px;
-    top: 207px;
-    left: 35px;
-    border-width: 6px;
-    border-radius: 50px;
-    border: 6px solid #FFE063;
-    background: #FFFFFF;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    position: absolute;
-}
-
-.rectangulo1-info-extra-ahorro {
-    width: 274px;
-    height: 136px;
-    top: 207px;
-    left: 120px;
-    padding-left: 75px;
-    border-radius: 27px;
-    background: #EB9900;
-    flex-shrink: 0;
-    box-shadow: 0px 4px 4px 0px #00000040 inset;
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-}
-
-.texto1-info-extra-ahorro {
-    font-family: 'Baloo 2';
-    color: #FFFFFF;
-    font-weight: normal;
-    font-size: 17px;
-    line-height: 30.44px;
-    letter-spacing: 0%;
-}
-
-.rectangulo-info-extra-invisible {
-    width: 347px;
-    height: 96px;
-    top: 355px;
-    left: 41.5px;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-}
-
-.texto2-info-extra-ahorro {
-    font-family: 'Baloo 2';
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 32.04px;
-    letter-spacing: 0%;
-    text-align: center;
+.informacionExtra {
+    padding-left: 3%;
+    padding-right: 3%;
+    font-family: baloo;
     color: #7F004C;
+
+    img {
+        background-color: azure;
+        padding: 3%;
+        padding-left: 10%;
+        padding-right: 10%;
+        width: 45%;
+        border-radius: 10px;
+        box-shadow: 4px 4px 18px 6px #7F004C;
+    }
+
+    p {
+        font-size: 1.3em;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
 }
 
-.imagen2-info-extra-ahorro {
-    width: 155px;
-    height: 204px;
-    top: 504px;
-    left: 239px;
-    border-width: 6px;
-    border-radius: 50px;
-    flex-shrink: 0;
-    background: #FFFFFF;
+.imgTextExtra {
     display: flex;
-    border: 6px solid #40C5E1;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
 }
 
-.rectangulo2-info-extra-ahorro {
-    width: 274px;
-    height: 204px;
-    top: 504px;
-    left: 33px;
-    border-radius: 27px;
-    background: #0071C2;
-    flex-shrink: 0;
-    padding-right: 65px;
-    box-shadow: 0px 4px 4px 0px #00000040 inset;
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
+.TextExtra1 {
+    width: 60%
 }
 
-.rectangulo2-info-extra-invisible {
-    width: 374px;
-    height: 96px;
-    top: 735px;
-    left: 28px;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
+.imgExtra {
+    width: 40%;
+
+    img {
+        margin-top: 30%;
+        width: 70%;
+    }
 }

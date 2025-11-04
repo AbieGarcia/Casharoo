@@ -163,7 +163,7 @@
     --background-activated: rgba(128, 236, 255, 0.897);
     --background-focused: rgba(128, 236, 255, 0.897);
     aspect-ratio: 1/1;
-    height: 120%;
+    height: 90%;
     position: relative;
     --border-radius: 50px;
 }
@@ -175,7 +175,7 @@
     --background-focused: rgb(247, 245, 173);
     aspect-ratio: 1/1;
     position: relative;
-    height: 120%;
+    height: 90%;
     --border-radius: 50px;
 }
 
@@ -186,7 +186,7 @@
     --background-focused: #f8c9d9;
     aspect-ratio: 1/1;
     position: relative;
-    height: 120%;
+    height: 90%;
     --border-radius: 50px;
 }
 
@@ -197,7 +197,7 @@
     --background-focused: rgb(131, 248, 136);
     aspect-ratio: 1/1;
     position: relative;
-    height: 120%;
+    height: 90%;
     --border-radius: 50px;
 }
 
@@ -279,4 +279,9 @@
     justify-content: space-between;
     width: 100%;
     padding-bottom: 5%;
+}
+
+.check{
+    width: 45px;
+    height: 45px;
 }

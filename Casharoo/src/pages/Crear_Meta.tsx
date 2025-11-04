@@ -1,58 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import { IonContent, IonHeader, IonPage, IonSelect, IonSelectOption, IonButton, IonFooter, IonToolbar, IonInput, useIonViewWillEnter } from '@ionic/react';
 import './Crear_Meta.css';
+import { obtenerUsuario } from '../services/userRegister';
 import { useHistory } from "react-router-dom";
 import { registrarMeta } from "../services/userRegister.js"
 
+type BotonesSeleccionColor = {
+  btnAz: boolean;
+  btnAm: boolean;
+  btnRos: boolean;
+  btnVer: boolean;
+};
+
+type BotonesSeleccionIcono = {
+  btnCan: boolean;
+  btnFlo: boolean;
+  btnTen: boolean;
+  btnDog: boolean;
+};
 
 const Crear_Meta: React.FC = () => {
-
-
-  type BotonesSeleccionColor = {
-    btnAz: boolean;
-    btnAm: boolean;
-    btnRos: boolean;
-    btnVer: boolean;
-  };
-
-  const [seleccionBtnColor, setseleccionBtnColor] = useState({
+  const history = useHistory();
+  const [usuario, setUsuario] = useState<any>(null);
+  const [error, setError] = useState(false);
+  const [seleccionBtnColor, setseleccionBtnColor] = useState<BotonesSeleccionColor>({
     btnAz: false,
     btnAm: false,
     btnRos: false,
     btnVer: false,
-  })
+  });
 
-  const seleccionarColor = (btn: keyof BotonesSeleccionColor) => {
-    setseleccionBtnColor((estadoAnterior) => ({
-      btnAz: btn === 'btnAz', // Solo este botón será true si es el seleccionado
-      btnAm: btn === 'btnAm',
-      btnRos: btn === 'btnRos',
-      btnVer: btn === 'btnVer',
-    }));
-  };
-
-  type BotonesSeleccionIcono = {
-    btnCan: boolean;
-    btnFlo: boolean;
-    btnTen: boolean;
-    btnDog: boolean;
-  };
-
-  const [seleccionBtnIcono, setseleccionBtnIcono] = useState({
+  const [seleccionBtnIcono, setseleccionBtnIcono] = useState<BotonesSeleccionIcono>({
     btnCan: false,
     btnFlo: false,
     btnTen: false,
     btnDog: false,
-  })
-
-  const seleccionarIcono = (btn: keyof BotonesSeleccionIcono) => {
-    setseleccionBtnIcono((estadoAnterior) => ({
-      btnCan: btn === 'btnCan', // Solo este botón será true si es el seleccionado
-      btnFlo: btn === 'btnFlo',
-      btnTen: btn === 'btnTen',
-      btnDog: btn === 'btnDog',
-    }));
-  };
+  });
 
   const [meta, setMeta] = useState({
     nombre: "",
@@ -88,9 +71,34 @@ const Crear_Meta: React.FC = () => {
     setError(false);
   });
 
-  const [error, setError] = useState(false);
+  useEffect(() => {
+    const cargarUsuario = async () => {
+      const usuarioId = localStorage.getItem("usuarioId");
+      const datosUsuario = await obtenerUsuario(usuarioId);
+      setUsuario(datosUsuario);
+    };
 
-  const history = useHistory();
+    cargarUsuario();
+  }, []);
+
+  const seleccionarColor = (btn: keyof BotonesSeleccionColor) => {
+    setseleccionBtnColor((estadoAnterior) => ({
+      btnAz: btn === 'btnAz', // Solo este botón será true si es el seleccionado
+      btnAm: btn === 'btnAm',
+      btnRos: btn === 'btnRos',
+      btnVer: btn === 'btnVer',
+    }));
+  };
+
+
+  const seleccionarIcono = (btn: keyof BotonesSeleccionIcono) => {
+    setseleccionBtnIcono((estadoAnterior) => ({
+      btnCan: btn === 'btnCan', // Solo este botón será true si es el seleccionado
+      btnFlo: btn === 'btnFlo',
+      btnTen: btn === 'btnTen',
+      btnDog: btn === 'btnDog',
+    }));
+  };
 
   const irAAhorro = () => {
     history.push('/ahorro');
@@ -111,6 +119,15 @@ const Crear_Meta: React.FC = () => {
     }
   };
 
+  if (!usuario) {
+    return (
+      <IonPage>
+        <IonContent className="ion-padding">
+          <h1>Cargando...</h1>
+        </IonContent>
+      </IonPage>
+    );
+  }
 
   return (
     <IonPage>
@@ -142,7 +159,7 @@ const Crear_Meta: React.FC = () => {
             <IonButton id='btnAz' onClick={() => { seleccionarColor('btnAz'); setMeta({ ...meta, color: 1 }); }}>
               {
                 seleccionBtnColor.btnAz === true ?
-                  <img src="..\..\assets\palomita.png"></img>
+                  <img src="..\..\assets\palomita.png" className='check'></img>
                   :
                   <>
                   </>
@@ -151,7 +168,7 @@ const Crear_Meta: React.FC = () => {
             <IonButton id='btnRos' onClick={() => { seleccionarColor('btnRos'); setMeta({ ...meta, color: 2 }); }}>
               {
                 seleccionBtnColor.btnRos === true ?
-                  <img src="..\..\assets\palomita.png"></img>
+                  <img src="..\..\assets\palomita.png" className='check'></img>
                   :
                   <>
                   </>
@@ -160,7 +177,7 @@ const Crear_Meta: React.FC = () => {
             <IonButton id='btnAma' onClick={() => { seleccionarColor('btnAm'); setMeta({ ...meta, color: 3 }); }}>
               {
                 seleccionBtnColor.btnAm === true ?
-                  <img src="..\..\assets\palomita.png"></img>
+                  <img src="..\..\assets\palomita.png" className='check'></img>
                   :
                   <>
                   </>
@@ -169,7 +186,7 @@ const Crear_Meta: React.FC = () => {
             <IonButton id='btnVer' onClick={() => { seleccionarColor('btnVer'); setMeta({ ...meta, color: 4 }); }}>
               {
                 seleccionBtnColor.btnVer === true ?
-                  <img src="..\..\assets\palomita.png"></img>
+                  <img src="..\..\assets\palomita.png" className='check'></img>
                   :
                   <>
                   </>
@@ -183,7 +200,7 @@ const Crear_Meta: React.FC = () => {
             <IonButton id='btnCan' onClick={() => { seleccionarIcono('btnCan'); setMeta({ ...meta, icono: 1 }); }}>
               {
                 seleccionBtnIcono.btnCan === true ? (
-                  <img src="..\..\assets\palomita.png"></img>
+                  <img src="..\..\assets\palomita.png" className='check'></img>
                 ) : (
                   <img src="../../assets/Candy.png"></img>)
               }
@@ -191,7 +208,7 @@ const Crear_Meta: React.FC = () => {
             <IonButton id='btnFlo' onClick={() => { seleccionarIcono('btnFlo'); setMeta({ ...meta, icono: 2 }); }}>
               {
                 seleccionBtnIcono.btnFlo === true ? (
-                  <img src="..\..\assets\palomita.png"></img>
+                  <img src="..\..\assets\palomita.png" className='check'></img>
                 ) : (
                   <img src="../../assets/Flower.png"></img>)
               }
@@ -199,7 +216,7 @@ const Crear_Meta: React.FC = () => {
             <IonButton id='btnTen' onClick={() => { seleccionarIcono('btnTen'); setMeta({ ...meta, icono: 3 }); }}>
               {
                 seleccionBtnIcono.btnTen === true ? (
-                  <img src="..\..\assets\palomita.png"></img>
+                  <img src="..\..\assets\palomita.png" className='check'></img>
                 ) : (
                   <img src="../../assets/Shoes.png"></img>)
               }
@@ -207,7 +224,7 @@ const Crear_Meta: React.FC = () => {
             <IonButton id='btnDog' onClick={() => { seleccionarIcono('btnDog'); setMeta({ ...meta, icono: 4 }); }}>
               {
                 seleccionBtnIcono.btnDog === true ? (
-                  <img src="..\..\assets\palomita.png"></img>
+                  <img src="..\..\assets\palomita.png" className='check'></img>
                 ) : (
                   <img src="../../assets/Golden retriever.png"></img>)
               }
@@ -225,26 +242,40 @@ const Crear_Meta: React.FC = () => {
             <IonSelectOption value={4} id='seleccion-plazo'>Sin plazo</IonSelectOption>
           </IonSelect>
         </div>
-          <IonButton id='btnSiguiente1' onClick={registroMeta}>Crear Meta</IonButton>
-          {error === true &&
-            <h1> Todos los datos son obligatorios</h1>
-          }
+        <IonButton id='btnSiguiente1' onClick={registroMeta}>Crear Meta</IonButton>
+        {error === true &&
+          <h1> Todos los datos son obligatorios</h1>
+        }
       </IonContent>
       <IonFooter>
-        <IonToolbar>
-          <IonButton className='btnMenu1'>
-            <img src="../../assets/home.png" />
-          </IonButton>
-          <IonButton className='btnMenu1'>
-            <img src="../../assets/info.png" />
-          </IonButton>
-          <IonButton className='btnMenu1'>
-            <img src="../../assets/ahorro.png" />
-          </IonButton>
-          <IonButton className='btnMenu1'>
-            <img src="../../assets/perfil.png" />
-          </IonButton>
-        </IonToolbar>
+        {usuario && usuario.capitulos && usuario.capitulos[0]?.completed ? (
+          <IonToolbar>
+            <IonButton className='btnMenu1' onClick={() => history.push('/mapa')}>
+              <img src="../../assets/home.png" />
+            </IonButton>
+            <IonButton className='btnMenu1' onClick={() => history.push('/info-extra')}>
+              <img src="../../assets/info.png" />
+            </IonButton>
+            <IonButton className='btnMenu1' onClick={() => history.push('/ahorro')}>
+              <img src="../../assets/ahorro.png" />
+            </IonButton>
+            <IonButton className='btnMenu1' onClick={() => history.push('/perfil')}>
+              <img src="../../assets/perfil.png" />
+            </IonButton>
+          </IonToolbar>
+        ) : (
+          <IonToolbar>
+            <IonButton className='btnMenu'>
+              <img src="../../assets/home.png" onClick={() => history.push('/mapa')} />
+            </IonButton>
+            <IonButton className='btnMenu'>
+              <img src="../../assets/info.png" onClick={() => history.push('/info-extra')} />
+            </IonButton>
+            <IonButton className='btnMenu'>
+              <img src="../../assets/perfil.png" onClick={() => history.push('/perfil')} />
+            </IonButton>
+          </IonToolbar>
+        )}
       </IonFooter>
     </IonPage >
   );

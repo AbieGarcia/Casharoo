@@ -13,13 +13,46 @@ const Mapa: React.FC = () => {
       const usuarioId = localStorage.getItem("usuarioId");
       const datosUsuario = await obtenerUsuario(usuarioId);
       setUsuario(datosUsuario);
+
+      if (datosUsuario?.capitulos) {
+        getCompletados(datosUsuario);
+      }
     };
 
     cargarUsuario();
   }, []);
 
+  const [completados, setCompletados] = useState(1);
+
+  useEffect(() => {
+    actualizarMoneda();
+  }, [completados]);
+
+
 
   const history = useHistory();
+
+
+  const getCompletados = (usuario: any) => {
+    if (usuario.capitulos[0]?.completed) {
+      setCompletados(2);
+    }
+    if (usuario.capitulos[1]?.completed) {
+      setCompletados(3);
+    }
+    if (usuario.capitulos[2]?.completed) {
+      setCompletados(4);
+    }
+    if (usuario.capitulos[3]?.completed) {
+      setCompletados(5);
+    }
+    if (usuario.capitulos[4]?.completed) {
+      setCompletados(6);
+    }
+    if (usuario.capitulos[5]?.completed) {
+      setCompletados(7);
+    }
+  }
 
   const [monedaCap, setMonedaCap] = useState([
     {
@@ -53,6 +86,15 @@ const Mapa: React.FC = () => {
 
   ])
 
+  const actualizarMoneda = () => {
+    const nuevasMonedas = monedaCap.map((moneda) => ({
+      ...moneda,
+      disabled: moneda.capitulo > completados,
+    }));
+    setMonedaCap(nuevasMonedas);
+  };
+
+
   if (!usuario) {
     return (
       <IonPage>
@@ -64,6 +106,7 @@ const Mapa: React.FC = () => {
   }
 
   return (
+
     <IonPage>
       <IonContent scrollY={false}>
         <div className='pagina'>
@@ -71,7 +114,7 @@ const Mapa: React.FC = () => {
             {
               monedaCap[0].disabled === false ?
                 <a href="/info-intro-ahorro">
-                  <img src="../../assets/moneda.png" width={130} height={60}/>
+                  <img src="../../assets/moneda.png" width={130} height={60} />
                 </a>
                 :
                 <>

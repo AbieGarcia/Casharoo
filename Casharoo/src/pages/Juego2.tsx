@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { IonApp, IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonButton, IonAlert, IonCard, IonCardContent } from '@ionic/react';
 import './Juego2.css';
+import { completarCap } from "../services/userRegister.js"
+
 
 interface Card {
   id: number;
@@ -51,7 +53,7 @@ const Juego2: React.FC = () => {
     // Combinar y barajar las cartas
     const allCards = [...termCards, ...definitionCards];
     const shuffledCards = shuffleArray(allCards);
-    
+
     setCards(shuffledCards);
     setFlippedCards([]);
     setGameCompleted(false);
@@ -93,7 +95,7 @@ const Juego2: React.FC = () => {
     const secondCard = cards[secondIndex];
 
     // Encontrar el par correspondiente en wordPairs
-    const pair = wordPairs.find(pair => 
+    const pair = wordPairs.find(pair =>
       (pair.term === firstCard.content && pair.definition === secondCard.content) ||
       (pair.term === secondCard.content && pair.definition === firstCard.content)
     );
@@ -129,6 +131,8 @@ const Juego2: React.FC = () => {
     initializeGame();
   };
 
+  const usuarioId = localStorage.getItem("usuarioId");
+
   return (
     <IonApp>
       <IonHeader>
@@ -142,7 +146,7 @@ const Juego2: React.FC = () => {
             <IonRow>
               {cards.map((card, index) => (
                 <IonCol className='cartas' size="6" sizeSm="4" sizeMd="4" key={card.id}>
-                  <IonCard 
+                  <IonCard
                     className={`memory-card ${card.isFlipped ? 'flipped' : ''} ${card.isMatched ? 'matched' : ''}`}
                     onClick={() => handleCardClick(index)}
                   >
@@ -157,7 +161,7 @@ const Juego2: React.FC = () => {
               ))}
             </IonRow>
           </IonGrid>
-          
+
           {gameCompleted && (
             <div className="completion-message">
               <IonButton expand="block" onClick={resetGame}>Jugar de nuevo</IonButton>
@@ -165,10 +169,10 @@ const Juego2: React.FC = () => {
             </div>
           )}
         </div>
-        
+
         <IonAlert
           isOpen={showSuccess}
-          onDidDismiss={() => setShowSuccess(false)}
+          onDidDismiss={() => { setShowSuccess(false); completarCap(usuarioId, 2) }}
           header={'¡Felicidades!'}
           message={`Has completado el memorama. Has desbloqueado el siguiente capítulo.`}
           buttons={['OK']}

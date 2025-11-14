@@ -34,10 +34,10 @@ const Info_Intro_Ahorro: React.FC = () => {
                 Egresos: es el dinero que gastas por diferentes metodos.
               </li>
               <li>
-                Lapso: es el dinero que gastas por diferentes metodos.
+                Meta: es el motivo por el cual ahorras tu dinero, lo que quieres conseguir.
               </li>
               <li>
-                Meta: es el motivo por el cual ahorras tu dinero.
+                Lapso: es el tiempo que planeas guardar dinero para llegar a una meta.
               </li>
             </ul>
             <IonButton className='button-historia'>

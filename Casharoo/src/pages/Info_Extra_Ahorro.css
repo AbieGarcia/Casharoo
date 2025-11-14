@@ -1,17 +1,140 @@
 .bodyExtra {
     background: #f3d9e1;
     overflow: scroll;
+    font-family: baloo;
+    font-size: 1.3em;
 }
 
 .headerExtra {
+    display: flex;
     background: #FFB1CA;
-    font-family: baloo;
     color: #ffffff;
     font-size: 2em;
+    height: 10%;
 }
 
 .text-cap1-extra {
-    margin-top: 0%;
+    align-self: center;
+    padding-left: 10%;
+}
+
+.rect1 {
+    display: flex;
+    flex-direction: row;
+    background-color: #7F004C;
+    margin-top: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: #ffffff;
+}
+
+.rect2 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: justify;
+    gap: 6%;
+}
+
+.rect3 {
+    margin-top: -6%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rect4 {
+    display: flex;
+    flex-direction: row;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: -10%;
+    align-items: center;
+    background-color: #7F004C;
+    color: #ffffff;
+    text-align: center;
+    gap: 9%;
+
+}
+
+.liItem {
+    margin-top: -2%;
+    margin-left: -20%;
+    justify-content: center;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: row;
+    gap: 6%;
+    align-items: center;
+}
+
+.title {
+    margin-top: -7%;
+    font-size: 1.8em;
+    justify-content: center;
+    background-color: #ffe65a;
+    color: #d88200;
+}
+
+.piggyTips {
+    margin-top: -2%;
+    font-size: 1.8em;
+    justify-content: center;
+    background-color: #d359a4;
+    color: #ffc8f6;
+}
+
+.imgCap {
+    background-color: azure;
+    padding: 3%;
+    margin: 2%;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 4px 4px 18px 6px #3a2833;
+}
+
+.check {
+    width: 10%;
+    height: 10%;
+}
+
+li {
+    margin-bottom: 5%;
+    text-align: justify;
+    margin-right: 5%;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    border: 4px solid #d359a4;
+    color: #333;
+
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #ce0983;
+}
+
+#txt {
+    text-align: justify;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: -5%;
+}
+
+#txtEjemplo {
+    margin-top: -5%;
+    margin-bottom: -0.1%;
+    font-size: 1.4em;
+    color: #7F004C;
 }
 
 .informacionExtra {
@@ -20,15 +143,6 @@
     font-family: baloo;
     color: #7F004C;
 
-    img {
-        background-color: azure;
-        padding: 3%;
-        padding-left: 10%;
-        padding-right: 10%;
-        width: 45%;
-        border-radius: 10px;
-        box-shadow: 4px 4px 18px 6px #7F004C;
-    }
 
     p {
         font-size: 1.3em;

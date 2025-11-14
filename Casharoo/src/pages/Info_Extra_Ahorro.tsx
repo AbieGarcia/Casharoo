@@ -14,40 +14,116 @@ const Info_Extra_Ahorro: React.FC = () => {
       </IonHeader>
       <IonContent>
         <body className='bodyExtra'>
-          <div>
-            <header className='headerExtra'>
-              <IonButton className='regresar-info-ahorro' onClick={() => history.goBack()}>
-                <img src="..\..\assets\Arrow 1.png"></img>
-              </IonButton>
-              <p className='text-cap1-extra'>Cap 1. Ahorro</p>
-            </header>
+
+          <header className='headerExtra'>
+            <IonButton className='regresar-info-ahorro' onClick={() => history.goBack()}>
+              <img src="..\..\assets\Arrow 1.png"></img>
+            </IonButton>
+            <p className='text-cap1-extra'>Cap 1. Ahorro</p>
+          </header>
+
+
+
+          <div className='rect1'>
+            <p>El ahorro es un hábito esencial que te acompañará toda tu vida.</p>
+            <img className='imgCap' src="..\..\assets\Piggy bank.png"></img>
           </div>
-          <div className='informacionExtra'>
-            <div className='imgTextExtra'>
-              <div className='TextExtra1'>
-                <p>El ahorro es un habito esencial que te acompañara toda la vida.</p>
-              </div>
-              <div className='imgExtra'>
-                <img src="..\..\assets\Piggy bank.png"></img>
-              </div>
-            </div>
-            <p >Es recomendable empezar este habito desde joven para que en un futuro
-              ya lo tengas integrado a tu dia a dia.</p>
-            <div className='imgTextExtra'>
-              <div className='imgExtra'>
-                <img src="..\..\assets\Jar.png"></img>
-              </div>
-              <div className='TextExtra1'>
-                <p>Los conceptos que debes comprender para ahorrar adecuadamente son meta,
-                  ingresos, egresos y lapsos.</p>
-              </div>
-            </div>
-            <p>Estos conceptos ya los mencionamos brevemente en el la historia de
-              este capitulo</p>
+
+
+
+          <div className='rect2'>
+            <img className='imgCap' src="..\..\assets\Jar.png"></img>
+            <p>Es recomendable empezar este hábito desde joven para que en un futuro ya lo tengas integrado a tu día a día.</p>
           </div>
+
+
+
+          <div className='title'>
+            <p>Conceptos importantes</p>
+          </div>
+          <div className='rect3'>
+            <div className='liItem'>
+              <img className='check' src='..\..\assets\checkmark.png'></img>
+              <p>Meta</p>
+            </div>
+            <div className='liItem'>
+              <img className='check' src='..\..\assets\checkmark.png'></img>
+              <p>Ingresos</p>
+            </div>
+            <div className='liItem'>
+              <img className='check' src='..\..\assets\checkmark.png'></img>
+              <p>Egresos</p>
+            </div>
+            <div className='liItem'>
+              <img className='check' src='..\..\assets\checkmark.png'></img>
+              <p>Lapsos</p>
+            </div>
+          </div>
+
+
+
+          <div className='title'>
+            <p>Tipos de metas</p>
+          </div>
+          <div className='rect4'>
+            <p>Pueden ser de corto (menos de un año), mediano(entre 1 a 5 años) o largo plazo (más de 5 años)</p>
+            <img className='imgCap' src='..\..\assets\meta.png'></img>
+          </div>
+          <ul>
+            <li>Lo más probable es que empieces solo con metas de corto plazo, para poder comprar cosas que necesitas o quieres para divertirte o tener dinero para salir con tus amigos.
+            </li>
+            <li>Usualmente las metas de mediano y largo plazo se usan para poder conseguir cosas más ambiciosas como un carro, una casa o planear nuestro retiro. </li>
+          </ul>
+
+
+
+          <div className='title'>
+            <p>¿Cómo organizar mis metas?</p>
+          </div>
+          <p id='txt'>Es muy útil registrar tus ingresos, egresos y dinero a guardar para poder cumplir una meta de ahorro cada cierto tiempo dependiendo tu plazo (diario, semanal, mensual). Te recomendamos usar esta tabla:</p>
+          <p id='txtEjemplo' >Ejemplo:</p>
+          <tr><th>Ingreso de esta semana: $100</th></tr>
+          <table>
+            <tr>
+              <th>Gastos</th>
+              <th>¿Cuánto dinero tengo para gastar en esto?</th>
+            </tr>
+            <tr>
+              <td>Lunch</td>
+              <td>$25</td>
+            </tr>
+            <tr>
+              <td>Material escolar</td>
+              <td>$25</td>
+            </tr>
+            <tr>
+              <td>Alcancía</td>
+              <td>$20</td>
+            </tr>
+            <tr>
+              <td>Meta de ahorro: monopatín</td>
+              <td>$30</td>
+            </tr>
+          </table>
+
+
+          <div className='piggyTips'>
+            <p>PiggyTips</p>
+          </div>
+          <p>¿Sabías que...?</p>
+          <div className='rect5'>
+            <p>Cuando ahorramos los expertos recomiendan usar la regla 50/30/20:</p>
+            <ul>
+              <li>Usar el 50% de nuestros ingresos en nuestras necesidades básicas (ej. comida, renta, luz, agua)</li>
+              <li>Ahorrar el 20% de nuestros ingresos</li>
+              <li>Guardar el último 30% para gastos imprevistos o nuestros gustitos</li>
+            </ul>
+          </div>
+
+
         </body>
       </IonContent>
-    </IonPage>
+    </IonPage >
   );
 };
 

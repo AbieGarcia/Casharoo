@@ -30,74 +30,86 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import Crear_Meta from './pages/Crear_Meta';
-import Ahorro from './pages/Ahorro';
+import Crear_Meta from './pages/ahorro/Crear_Meta';
+import Ahorro from './pages/ahorro/Ahorro';
 import Inicio from './pages/Inicio';
-import Registro from './pages/Registro';
-import Cap1 from './pages/Cap1';
-import Juego1 from './pages/Juego1';
-import Login from './pages/Login';
-import Info_Extra_Ahorro from './pages/Info_Extra_Ahorro';
-import Info_Intro_Ahorro from './pages/Info_Intro_Ahorro';
-import Perfil from './pages/Perfil';
+import Registro from './pages/user/Registro';
+import Cap1 from './pages/capitulos/Ahorro_cap1/Cap1';
+import Juego1 from './pages/capitulos/Ahorro_cap1/Juego1';
+import Login from './pages/user/Login';
+import Info_Extra_Ahorro from './pages/capitulos/Ahorro_cap1/Info_Extra_Ahorro';
+import Info_Extra_Bancos from './pages/capitulos/Bancos_cap2/Info_Extra_Bancos';
+import Info_Extra_Inversiones from './pages/capitulos/Inversiones_cap3/Info_Extra_Inversiones';
+import Info_Extra_FVerdes from './pages/capitulos/FVerdes_cap4/Info_Extra_FVerdes';
+import Info_Intro_Ahorro from './pages/capitulos/Ahorro_cap1/Info_Intro_Ahorro';
+import Perfil from './pages/user/Perfil';
 import Mapa from './pages/Mapa';
-import Juego2 from './pages/Juego2';
-import Cap2 from './pages/Cap2';
-import Info_Extra from './pages/Info_Extra';
+import Juego2 from './pages/capitulos/Bancos_cap2/Juego2';
+import Cap2 from './pages/capitulos/Bancos_cap2/Cap2';
+import Info_Extra from './pages/infoExtra/Info_Extra';
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-      <IonReactRouter>
-        <IonRouterOutlet>
-          <Route exact path="/">
-            <Redirect to="/login" />
-          </Route>
-          <Route exact path="/inicio">
-            <Inicio />
-          </Route>
-          <Route exact path="/registro">
-            <Registro />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/perfil">
-            <Perfil />
-          </Route>
-          <Route exact path="/mapa">
-            <Mapa />
-          </Route>
-          <Route exact path="/ahorro">
-            <Ahorro />
-          </Route>
-          <Route exact path="/crear-meta">
-            <Crear_Meta />
-          </Route>
-          <Route exact path="/cap1">
-            <Cap1 />
-          </Route>
-          <Route exact path="/juego1">
-            <Juego1 />
-          </Route>
-          <Route exact path="/info-extra">
-            <Info_Extra />
-          </Route>
-          <Route exact path="/info-extra/ahorro">
-            <Info_Extra_Ahorro />
-          </Route>
-          <Route exact path="/info-intro-ahorro">
-            <Info_Intro_Ahorro />
-          </Route>
-          <Route exact path="/Juego2">
-            <Juego2 />
-          </Route>
-          <Route exact path="/Cap2">
-            <Cap2 />
-          </Route>
-        </IonRouterOutlet>
-      </IonReactRouter>
+    <IonReactRouter>
+      <IonRouterOutlet>
+        <Route exact path="/">
+          <Redirect to="/login" />
+        </Route>
+        <Route exact path="/inicio">
+          <Inicio />
+        </Route>
+        <Route exact path="/registro">
+          <Registro />
+        </Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/perfil">
+          <Perfil />
+        </Route>
+        <Route exact path="/mapa">
+          <Mapa />
+        </Route>
+        <Route exact path="/ahorro">
+          <Ahorro />
+        </Route>
+        <Route exact path="/crear-meta">
+          <Crear_Meta />
+        </Route>
+        <Route exact path="/cap1">
+          <Cap1 />
+        </Route>
+        <Route exact path="/juego1">
+          <Juego1 />
+        </Route>
+        <Route exact path="/info-extra">
+          <Info_Extra />
+        </Route>
+        <Route exact path="/info-extra/ahorro">
+          <Info_Extra_Ahorro />
+        </Route>
+        <Route exact path="/info-extra/bancos">
+          <Info_Extra_Bancos />
+        </Route>
+        <Route exact path="/info-extra/inversiones">
+          <Info_Extra_Inversiones />
+        </Route>
+        <Route exact path="/info-extra/fverdes">
+          <Info_Extra_FVerdes />
+        </Route>
+        <Route exact path="/info-intro-ahorro">
+          <Info_Intro_Ahorro />
+        </Route>
+        <Route exact path="/Juego2">
+          <Juego2 />
+        </Route>
+        <Route exact path="/Cap2">
+          <Cap2 />
+        </Route>
+      </IonRouterOutlet>
+    </IonReactRouter>
   </IonApp>
 );
 

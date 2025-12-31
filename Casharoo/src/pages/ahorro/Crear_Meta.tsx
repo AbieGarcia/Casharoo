@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { IonContent, IonHeader, IonPage, IonSelect, IonSelectOption, IonButton, IonFooter, IonToolbar, IonInput, useIonViewWillEnter } from '@ionic/react';
 import './Crear_Meta.css';
 import { useHistory } from "react-router-dom";
-import { registrarMeta } from "../services/userRegister.js"
+import { registrarMeta } from "../../services/userRegister.js"
 
 
 const Crear_Meta: React.FC = () => {
@@ -225,10 +225,10 @@ const Crear_Meta: React.FC = () => {
             <IonSelectOption value={4} id='seleccion-plazo'>Sin plazo</IonSelectOption>
           </IonSelect>
         </div>
-          <IonButton id='btnSiguiente1' onClick={registroMeta}>Crear Meta</IonButton>
-          {error === true &&
-            <h1> Todos los datos son obligatorios</h1>
-          }
+        <IonButton id='btnSiguiente1' onClick={registroMeta}>Crear Meta</IonButton>
+        {error === true &&
+          <h1> Todos los datos son obligatorios</h1>
+        }
       </IonContent>
       <IonFooter>
         <IonToolbar>

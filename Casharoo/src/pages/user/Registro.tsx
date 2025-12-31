@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonButton, IonTitle, IonInput, IonToolbar } from '@ionic/react';
 import { useHistory } from "react-router-dom";
 import './Registro.css';
-import { registrarUsuario } from "../services/userRegister.js"
+import { registrarUsuario } from "../../services/userRegister.js"
 
 const Registro: React.FC = () => {
   const [registro, setRegistro] = useState({
@@ -63,12 +63,12 @@ const Registro: React.FC = () => {
           <div className='contPersonajes'>
             <div className='rectangulochico' id='rect1'>
               <IonButton id='BtnRosa' onClick={() => setRegistro({ ...registro, sexo: 1 })}>
-                <img  className="imgbtn" src="../../assets/girl.png"/>
+                <img className="imgbtn" src="../../assets/girl.png" />
               </IonButton>
             </div>
             <div className='rectangulochico' id='rect2'>
               <IonButton id='BtnAzul'>
-                <img className="imgbtn" src="../../assets/boy.png" onClick={() => setRegistro({ ...registro, sexo: 2 })}/>
+                <img className="imgbtn" src="../../assets/boy.png" onClick={() => setRegistro({ ...registro, sexo: 2 })} />
               </IonButton>
             </div>
           </div>

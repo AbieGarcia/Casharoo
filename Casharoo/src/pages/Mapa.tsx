@@ -52,6 +52,9 @@ const Mapa: React.FC = () => {
     if (usuario.capitulos[5]?.completed) {
       setCompletados(7);
     }
+    if (usuario.capitulos[6]?.completed) {
+      setCompletados(8);
+    }
   }
 
   const [monedaCap, setMonedaCap] = useState([
@@ -81,6 +84,10 @@ const Mapa: React.FC = () => {
     },
     {
       capitulo: 7,
+      disabled: true,
+    },
+    {
+      capitulo: 8,
       disabled: true,
     },
 
@@ -187,6 +194,18 @@ const Mapa: React.FC = () => {
             {
               monedaCap[6].disabled === false ?
                 <a href="/Cap7">
+                  <img src="../../assets/moneda.png" width={130} height={60} />
+                </a>
+                :
+                <>
+                  <img src="../../assets/moneda.png" width={130} height={60} className='monedaDesactivada' />
+                </>
+            }
+          </IonButton>
+          <IonButton id='M8' className='btn'>
+            {
+              monedaCap[7].disabled === false ?
+                <a href="/Cap8">
                   <img src="../../assets/moneda.png" width={130} height={60} />
                 </a>
                 :

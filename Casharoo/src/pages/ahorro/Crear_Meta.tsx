@@ -3,7 +3,7 @@ import { IonContent, IonHeader, IonPage, IonSelect, IonSelectOption, IonButton, 
 import './Crear_Meta.css';
 import { obtenerUsuario } from '../services/userRegister';
 import { useHistory } from "react-router-dom";
-import { registrarMeta } from "../services/userRegister.js"
+import { registrarMeta } from "../../services/userRegister.js"
 
 type BotonesSeleccionColor = {
   btnAz: boolean;

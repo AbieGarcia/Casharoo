@@ -1,4 +1,11 @@
-.bodyExtra {
+/*     FONTS     */
+@font-face {
+    font-family: 'Quicksand';
+    src: url('./fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+}
+
+/*     STYLES    */
+.bodyExtra_rosa {
     background: #f3d9e1;
     overflow: scroll;
     font-family: baloo;
@@ -18,7 +25,7 @@
     padding-left: 10%;
 }
 
-.rect1 {
+.Erect1 {
     display: flex;
     flex-direction: row;
     background-color: #7F004C;
@@ -28,6 +35,10 @@
     padding-left: 2%;
     padding-right: 2%;
     color: #ffffff;
+}
+
+[class^="rect"] p {
+    font-family: 'Quicksand', sans-serif;
 }
 
 .rect2 {
@@ -48,7 +59,7 @@
     flex-direction: column;
 }
 
-.rect4 {
+.Erect4 {
     display: flex;
     flex-direction: row;
     padding-left: 5%;
@@ -57,6 +68,7 @@
     align-items: center;
     background-color: #7F004C;
     color: #ffffff;
+    font-family: baloo;
     text-align: center;
     gap: 9%;
 
@@ -107,6 +119,8 @@ li {
     margin-bottom: 5%;
     text-align: justify;
     margin-right: 5%;
+    font-family: 'Quicksand', sans-serif;
+
 }
 
 th,
@@ -128,6 +142,8 @@ th {
     margin-left: 5%;
     margin-right: 5%;
     margin-top: -5%;
+    font-family: 'Quicksand', sans-serif;
+
 }
 
 #txtEjemplo {
@@ -165,5 +181,94 @@ th {
     img {
         margin-top: 30%;
         width: 70%;
+    }
+}
+
+.piggy-tip-container {
+    margin: 1.5rem 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.piggy-tip-header {
+    justify-self: center;
+    width: 90%;
+    height: 70px;
+    background: linear-gradient(135deg, #ffc7f1, #da0299);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    transition: transform 0.2s ease;
+}
+
+.piggy-tip-header:active {
+    transform: scale(0.97);
+}
+
+.piggy-icon {
+    font-size: 3rem;
+}
+
+.piggy-title {
+    font-family: baloo;
+    font-weight: 500;
+    font-size: 2.2rem;
+    color: #720256;
+    flex: 1;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+    font-size: 2.3rem;
+    font-family: baloo;
+    color: #ffffff;
+}
+
+.arrow.open {
+    transform: rotate(180deg);
+}
+
+.piggy-tip-card {
+    margin-top: 14px;
+    width: 90%;
+    justify-self: center;
+    background: #f0f7ff;
+    border-radius: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 10px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    animation: fadeIn 0.4s ease;
+}
+
+.piggy-question {
+    font-family: baloo;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ff7eb3;
+    padding-top: 8px;
+    margin-bottom: 8px;
+}
+
+.piggy-tip-card ul {
+    padding-left: 18px;
+}
+
+.piggy-tip-card li {
+    margin-bottom: 6px;
+    color: #af0083;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

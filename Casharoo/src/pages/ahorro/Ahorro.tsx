@@ -2,7 +2,7 @@ import { IonContent, IonHeader, IonPage, IonButton, IonFooter, IonToolbar, useIo
 import './Ahorro.css';
 import { useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { obtenerUsuario } from '../services/userRegister';
+import { obtenerUsuario } from '../../services/userRegister';
 
 const Ahorro: React.FC = () => {
 

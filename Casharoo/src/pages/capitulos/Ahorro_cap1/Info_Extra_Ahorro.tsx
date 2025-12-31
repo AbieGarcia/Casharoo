@@ -1,4 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonButton, IonFooter, IonToolbar } from '@ionic/react';
+import { useState } from 'react';
 import './Info_Extra_Ahorro.css';
 
 import { useHistory } from 'react-router-dom';
@@ -7,13 +8,15 @@ import { useHistory } from 'react-router-dom';
 const Info_Extra_Ahorro: React.FC = () => {
   const history = useHistory();
 
+  const [showTip, setShowTip] = useState(false);
+
   return (
     <IonPage>
       <IonHeader>
         <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet"></link>
       </IonHeader>
       <IonContent>
-        <body className='bodyExtra'>
+        <body className='bodyExtra_rosa'>
 
           <header className='headerExtra'>
             <IonButton className='regresar-info-ahorro' onClick={() => history.goBack()}>
@@ -24,7 +27,7 @@ const Info_Extra_Ahorro: React.FC = () => {
 
 
 
-          <div className='rect1'>
+          <div className='Erect1'>
             <p>El ahorro es un hábito esencial que te acompañará toda tu vida.</p>
             <img className='imgCap' src="..\..\assets\Piggy bank.png"></img>
           </div>
@@ -65,7 +68,7 @@ const Info_Extra_Ahorro: React.FC = () => {
           <div className='title'>
             <p>Tipos de metas</p>
           </div>
-          <div className='rect4'>
+          <div className='Erect4'>
             <p>Pueden ser de corto (menos de un año), mediano(entre 1 a 5 años) o largo plazo (más de 5 años)</p>
             <img className='imgCap' src='..\..\assets\meta.png'></img>
           </div>
@@ -107,17 +110,26 @@ const Info_Extra_Ahorro: React.FC = () => {
           </table>
 
 
-          <div className='piggyTips'>
-            <p>PiggyTips</p>
-          </div>
-          <p>¿Sabías que...?</p>
-          <div className='rect5'>
-            <p>Cuando ahorramos los expertos recomiendan usar la regla 50/30/20:</p>
-            <ul>
-              <li>Usar el 50% de nuestros ingresos en nuestras necesidades básicas (ej. comida, renta, luz, agua)</li>
-              <li>Ahorrar el 20% de nuestros ingresos</li>
-              <li>Guardar el último 30% para gastos imprevistos o nuestros gustitos</li>
-            </ul>
+          <div className="piggy-tip-container">
+            <button className="piggy-tip-header" onClick={() => setShowTip(!showTip)}>
+              <span className="piggy-icon">🐷</span>
+              <span className="piggy-title">Piggy Tip</span>
+              <span className={`arrow ${showTip ? 'open' : ''}`}>⌄</span>
+            </button>
+
+            {showTip && (
+              <div className="piggy-tip-card">
+                <p className="piggy-question">¿Sabías que…?</p>
+                <p>
+                  Muchos expertos recomiendan la <strong>regla 50/30/20</strong> para organizar el dinero:
+                </p>
+                <ul>
+                  <li><strong>50%</strong> para necesidades básicas</li>
+                  <li><strong>30%</strong> para gustos</li>
+                  <li><strong>20%</strong> para ahorro o imprevistos</li>
+                </ul>
+              </div>
+            )}
           </div>
 
 

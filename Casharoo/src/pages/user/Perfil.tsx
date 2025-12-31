@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { IonContent, IonText, IonHeader, IonIcon, IonPage, IonButton, IonTitle, IonInput, IonToolbar, IonFooter } from '@ionic/react';
-import { obtenerUsuario } from '../services/userRegister';
+import { obtenerUsuario } from '../../services/userRegister';
 import { useHistory } from 'react-router-dom';
 
 import './Perfil.css';

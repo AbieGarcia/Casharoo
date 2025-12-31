@@ -1,0 +1,259 @@
+/*     FONTS     */
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../../assets/fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+}
+
+/*     STYLES THEME   */
+
+#infoExtra_txt {
+    font-family: Quicksand;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.infoExtra_title_azul {
+    font-size: 1.8em;
+    justify-content: center;
+    background-color: #f58ada;
+    color: #da1678;
+}
+
+.bodyExtra_azul {
+    background: #e2f7ff;
+    overflow: scroll;
+    font-family: baloo;
+    font-size: 1.3em;
+}
+
+.headerExtra_azul {
+    display: flex;
+    background: #52D9F6;
+    color: #ffffff;
+    font-size: 2em;
+    height: 10%;
+}
+
+.imgCap {
+    background-color: azure;
+    padding: 3%;
+    margin: 2%;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 4px 4px 18px 6px #3a2833;
+}
+
+.apart_azul {
+    display: flex;
+    margin-top: 5%;
+    background-color: #14a8c9;
+    padding: 10px;
+    color: #002236;
+    font-family: baloo;
+}
+
+/*    STYLES CONTENT*/
+
+.text-cap3-extra {
+    margin-top: 17px;
+    font-size: 2.4rem;
+}
+
+.infoExtra_conceptos {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoExtra_tema1_amarillo strong {
+    color: #066d8b;
+}
+
+.infoExtra_card_azul {
+    background-color: #7bdaf7;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.infoExtra_card_azul img {
+    background-color: #ffffff;
+    border-radius: 10px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.infoExtra_card_azul p {
+    margin-top: -3px;
+}
+
+.infoExtra_card_titleazul {
+    color: #0079be;
+    font-size: 2rem;
+}
+
+.check {
+    width: 10%;
+    height: 10%;
+}
+
+li {
+    margin-bottom: 5%;
+    text-align: justify;
+    margin-right: 5%;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    border: 4px solid #d359a4;
+    color: #333;
+
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #ce0983;
+}
+
+#txt {
+    text-align: justify;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: -5%;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+#txtEjemplo {
+    margin-top: -5%;
+    margin-bottom: -0.1%;
+    font-size: 1.4em;
+    color: #7F004C;
+}
+
+.informacionExtra {
+    padding-left: 3%;
+    padding-right: 3%;
+    font-family: baloo;
+    color: #7F004C;
+
+
+    p {
+        font-size: 1.3em;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+
+.imgTextExtra {
+    display: flex;
+}
+
+.TextExtra1 {
+    width: 60%
+}
+
+.imgExtra {
+    width: 40%;
+
+    img {
+        margin-top: 30%;
+        width: 70%;
+    }
+}
+
+
+/*    PIGGY TIPS   */
+.piggy-tip-container {
+    margin: 1.5rem 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.piggy-tip-header-azul {
+    justify-self: center;
+    width: 90%;
+    height: 70px;
+    background: linear-gradient(135deg, #a5e2ff, #0074a1);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    transition: transform 0.2s ease;
+}
+
+.piggy-tip-header-azul:active {
+    transform: scale(0.97);
+}
+
+.piggy-icon {
+    font-size: 3rem;
+}
+
+.piggy-title-azul {
+    font-family: baloo;
+    font-weight: 500;
+    font-size: 2.2rem;
+    color: #c72952;
+    flex: 1;
+}
+
+.arrow-azul {
+    transition: transform 0.3s ease;
+    font-size: 2.3rem;
+    font-family: baloo;
+    color: #e76789;
+}
+
+.arrow-azul.open {
+    transform: rotate(180deg);
+}
+
+.piggy-tip-card {
+    margin-top: 14px;
+    width: 90%;
+    justify-self: center;
+    background: #f0f7ff;
+    border-radius: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 10px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    animation: fadeIn 0.4s ease;
+}
+
+.piggy-tip-card strong {
+    color: #296dc7;
+
+}
+
+.piggy-question-azul {
+    font-family: baloo;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #c72985;
+    padding-top: 8px;
+    margin-bottom: 8px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

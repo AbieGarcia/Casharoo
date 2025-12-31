@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { IonApp, IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonButton, IonAlert, IonCard, IonCardContent } from '@ionic/react';
 import './Juego2.css';
-import { completarCap } from "../services/userRegister.js"
+import { completarCap } from "../../../services/userRegister.js"
 
 
 interface Card {

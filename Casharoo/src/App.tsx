@@ -41,6 +41,8 @@ import Info_Extra_Ahorro from './pages/capitulos/Ahorro_cap1/Info_Extra_Ahorro';
 import Info_Extra_Bancos from './pages/capitulos/Bancos_cap2/Info_Extra_Bancos';
 import Info_Extra_Inversiones from './pages/capitulos/Inversiones_cap3/Info_Extra_Inversiones';
 import Info_Extra_FVerdes from './pages/capitulos/FVerdes_cap4/Info_Extra_FVerdes';
+import Info_Extra_Debito from './pages/capitulos/Debito_cap5/Info_Extra_Debito';
+import Info_Extra_Credito from './pages/capitulos/Credito_cap6/Info_Extra_Credito';
 import Info_Intro_Ahorro from './pages/capitulos/Ahorro_cap1/Info_Intro_Ahorro';
 import Perfil from './pages/user/Perfil';
 import Mapa from './pages/Mapa';
@@ -98,6 +100,12 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/info-extra/fverdes">
           <Info_Extra_FVerdes />
+        </Route>
+        <Route exact path="/info-extra/debito">
+          <Info_Extra_Debito />
+        </Route>
+        <Route exact path="/info-extra/credito">
+          <Info_Extra_Credito />
         </Route>
         <Route exact path="/info-intro-ahorro">
           <Info_Intro_Ahorro />

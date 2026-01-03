@@ -96,7 +96,7 @@ const Info_Extra_FVerdes: React.FC = () => {
                             <div className="piggy-tip-card">
                                 <p className="piggy-question-rosa">Recuerda que…</p>
                                 <p id='infoExtra_txt'>Cuidar el planeta no siempre significa comprar cosas “eco”.
-                                    Muchas veces, reutilizar, reparar, o no comprar es la opción más responsable.</p>
+                                    Muchas veces, <strong>reutilizar, reparar, o no comprar es la opción más responsable.</strong></p>
                             </div>
                         )}
                     </div>

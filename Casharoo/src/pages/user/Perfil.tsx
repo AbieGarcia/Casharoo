@@ -60,7 +60,7 @@ const Perfil: React.FC = () => {
           <h2 id='nom'>{usuario.nombre}</h2>
         </div>
         <div id='nivel'>
-          <h2 id='nivTxt'>Progreso: {progreso} / 7 capítulos</h2>
+          <h2 id='nivTxt'>Progreso: {progreso} / 8 capítulos</h2>
         </div>
         <div className='monito-perfil'>
           {usuario.sexo === 1 ? <img src="../../assets/girl.png"></img> : <img src="../../assets/boy.png"></img>}

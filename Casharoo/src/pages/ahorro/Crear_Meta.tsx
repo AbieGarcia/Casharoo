@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { IonContent, IonHeader, IonPage, IonSelect, IonSelectOption, IonButton, IonFooter, IonToolbar, IonInput, useIonViewWillEnter } from '@ionic/react';
 import './Crear_Meta.css';
-import { obtenerUsuario } from '../services/userRegister';
 import { useHistory } from "react-router-dom";
-import { registrarMeta } from "../../services/userRegister.js"
+import { obtenerUsuario } from '../../services/userRegister';
+import { registrarMeta } from '../../services/userRegister';
 
 type BotonesSeleccionColor = {
   btnAz: boolean;

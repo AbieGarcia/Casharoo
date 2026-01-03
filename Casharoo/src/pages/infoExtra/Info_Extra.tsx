@@ -149,7 +149,7 @@ const Info: React.FC = () => {
           </div>
 
           <div id='Cap3'>
-            <IonButton className='btnInfo' id='Az' disabled={!usuario.capitulos[2].completed}>
+            <IonButton className='btnInfo' id='Az' disabled={!usuario.capitulos[2].completed} onClick={() => history.push('/info-extra/inversiones')}>
               {
                 capitulosInfo[2].disabled === false ?
                   <h2 style={{ color: 'white' }} >Cap 3. Inversiones</h2>
@@ -164,7 +164,7 @@ const Info: React.FC = () => {
 
 
           <div id='Cap4'>
-            <IonButton className='btnInfo' id='R' disabled={!usuario.capitulos[3].completed}>
+            <IonButton className='btnInfo' id='R' disabled={!usuario.capitulos[3].completed} onClick={() => history.push('/info-extra/fverdes')}>
               {
                 capitulosInfo[3].disabled === false ?
                   <h2 style={{ color: 'white' }} >Cap 4. Finanzas verdes</h2>
@@ -178,7 +178,7 @@ const Info: React.FC = () => {
           </div>
 
           <div id='Cap5'>
-            <IonButton className='btnInfo' id='Am' disabled={!usuario.capitulos[4].completed}>
+            <IonButton className='btnInfo' id='Am' disabled={!usuario.capitulos[4].completed} onClick={() => history.push('/info-extra/debito')}>
               {
                 capitulosInfo[4].disabled === false ?
                   <h2 style={{ color: 'white' }} >Cap 5. Débito</h2>
@@ -192,7 +192,7 @@ const Info: React.FC = () => {
           </div>
 
           <div id='Cap6'>
-            <IonButton className='btnInfo' id='Az' disabled={!usuario.capitulos[5].completed}>
+            <IonButton className='btnInfo' id='Az' disabled={!usuario.capitulos[5].completed} onClick={() => history.push('/info-extra/credito')}>
               {
                 capitulosInfo[5].disabled === false ?
                   <h2 style={{ color: 'white' }} >Cap 6. Crédito</h2>

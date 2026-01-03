@@ -1,0 +1,287 @@
+/*     FONTS     */
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../../assets/fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+}
+
+/*     STYLES THEME   */
+
+#infoExtra_txt {
+    font-family: 'Quicksand';
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.infoExtra_title_amarillo {
+    font-size: 1.8em;
+    justify-content: center;
+    background-color: #50c4d3;
+    color: #066d8b;
+}
+
+.bodyExtra {
+    background: #fcf3c4;
+    overflow: scroll;
+    font-family: baloo;
+    font-size: 1.3em;
+}
+
+.headerExtra_amarillo {
+    display: flex;
+    background: #ffdb63;
+    color: #ffffff;
+    font-size: 2em;
+    height: 10%;
+}
+
+.imgCap {
+    background-color: azure;
+    padding: 3%;
+    margin: 2%;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 4px 4px 18px 6px #3a2833;
+}
+
+.imgCapGrande {
+    background-color: azure;
+    padding: 3%;
+    margin: 2%;
+    width: 40%;
+    height: 70%;
+    align-self: center;
+    border-radius: 10px;
+    box-shadow: 4px 4px 18px 6px #3a2833;
+}
+
+.apart_amarillo {
+    display: flex;
+    margin-top: 5%;
+    background-color: #ffd257;
+    padding: 10px;
+    color: #523f00;
+    font-family: baloo;
+}
+
+.apart_amarillo_deb {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    background-color: #ffd257;
+    padding: 10px;
+    color: #523f00;
+    font-family: baloo;
+    text-align: justify;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/*    STYLES CONTENT*/
+
+.infoExtra_conceptos {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoExtra_tema1_amarillo strong {
+    color: #066d8b;
+}
+
+.infoExtra_card_amarillo {
+    display: flex;
+    margin-top: 10px;
+    background-color: #3797A4;
+    border-radius: 20px;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding-left: 10px;
+    color: #f0f7ff;
+    font-size: 1.08rem;
+}
+
+.infoExtra_btn_amarillo {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    justify-self: center;
+    margin-top: 10px;
+    background-color: #3797A4;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #f0f7ff;
+    font-size: 1.08rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.infoExtra_card_titleamarillo {
+    color: #ffc814;
+    font-size: 1.5rem;
+}
+
+.check {
+    width: 10%;
+    height: 10%;
+}
+
+li {
+    margin-bottom: 5%;
+    text-align: justify;
+    margin-right: 5%;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    border: 4px solid #d359a4;
+    color: #333;
+
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #ce0983;
+}
+
+#txt {
+    text-align: justify;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: -5%;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+#txtEjemplo {
+    margin-top: -5%;
+    margin-bottom: -0.1%;
+    font-size: 1.4em;
+    color: #7F004C;
+}
+
+.informacionExtra {
+    padding-left: 3%;
+    padding-right: 3%;
+    font-family: baloo;
+    color: #7F004C;
+
+
+    p {
+        font-size: 1.3em;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+
+.imgTextExtra {
+    display: flex;
+}
+
+.TextExtra1 {
+    width: 60%
+}
+
+.imgExtra {
+    width: 40%;
+
+    img {
+        margin-top: 30%;
+        width: 70%;
+    }
+}
+
+
+/*    PIGGY TIPS   */
+.piggy-tip-container {
+    margin: 1.5rem 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.piggy-tip-header-amarillo {
+    justify-self: center;
+    width: 90%;
+    height: 70px;
+    background: linear-gradient(135deg, #f6ffa5, #ffbb00);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    transition: transform 0.2s ease;
+}
+
+.piggy-tip-header-amarillo:active {
+    transform: scale(0.97);
+}
+
+.piggy-icon {
+    font-size: 3rem;
+}
+
+.piggy-title-amarillo {
+    font-family: baloo;
+    font-weight: 500;
+    font-size: 2.2rem;
+    color: #3797A4;
+    flex: 1;
+}
+
+.arrow-amarillo {
+    transition: transform 0.3s ease;
+    font-size: 2.3rem;
+    font-family: baloo;
+    color: #066d8b;
+}
+
+.arrow-amarillo.open {
+    transform: rotate(180deg);
+}
+
+.piggy-tip-card {
+    margin-top: 14px;
+    width: 90%;
+    justify-self: center;
+    background: #f0f7ff;
+    border-radius: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 10px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    animation: fadeIn 0.4s ease;
+}
+
+.piggy-question-amarillo {
+    font-family: baloo;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #066d8b;
+    padding-top: 8px;
+    margin-bottom: 8px;
+}
+
+.piggy-content-2 {
+    background-color: #ffd86b;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.piggy-content-2 strong {
+    color: #3797A4;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

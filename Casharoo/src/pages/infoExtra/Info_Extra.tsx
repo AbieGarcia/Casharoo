@@ -206,7 +206,7 @@ const Info: React.FC = () => {
           </div>
 
           <div id='Cap7'>
-            <IonButton className='btnInfo' id='R' disabled={!usuario.capitulos[6].completed}>
+            <IonButton className='btnInfo' id='R' disabled={!usuario.capitulos[6].completed} onClick={() => history.push('/info-extra/impuestos')}>
               {
                 capitulosInfo[6].disabled === false ?
                   <h2 style={{ color: 'white' }} >Cap 7. Impuestos</h2>
@@ -220,7 +220,7 @@ const Info: React.FC = () => {
           </div>
 
           <div id='Cap8'>
-            <IonButton className='btnInfo' id='Am' disabled={!usuario.capitulos[4].completed}>
+            <IonButton className='btnInfo' id='Am' disabled={!usuario.capitulos[6].completed} onClick={() => history.push('/info-extra/pension')}>
               {
                 capitulosInfo[4].disabled === false ?
                   <h2 style={{ color: 'white' }} >Cap 8. Retiro</h2>

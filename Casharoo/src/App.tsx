@@ -43,6 +43,8 @@ import Info_Extra_Inversiones from './pages/capitulos/Inversiones_cap3/Info_Extr
 import Info_Extra_FVerdes from './pages/capitulos/FVerdes_cap4/Info_Extra_FVerdes';
 import Info_Extra_Debito from './pages/capitulos/Debito_cap5/Info_Extra_Debito';
 import Info_Extra_Credito from './pages/capitulos/Credito_cap6/Info_Extra_Credito';
+import Info_Extra_Impuestos from './pages/capitulos/Impuestos_cap7/Info_Extra_Impuestos';
+import Info_Extra_Pension from './pages/capitulos/Retiro_cap8/Info_Extra_Pension';
 import Info_Intro_Ahorro from './pages/capitulos/Ahorro_cap1/Info_Intro_Ahorro';
 import Perfil from './pages/user/Perfil';
 import Mapa from './pages/Mapa';
@@ -106,6 +108,12 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/info-extra/credito">
           <Info_Extra_Credito />
+        </Route>
+        <Route exact path="/info-extra/impuestos">
+          <Info_Extra_Impuestos />
+        </Route>
+        <Route exact path="/info-extra/pension">
+          <Info_Extra_Pension />
         </Route>
         <Route exact path="/info-intro-ahorro">
           <Info_Intro_Ahorro />

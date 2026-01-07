@@ -17,21 +17,18 @@ const Info_Extra_Credito: React.FC = () => {
             active: false,
             title: "¿Qué es?",
             content: "Es tu “currículum financiero”, un registro de las deudas que tienes y cómo las has manejado, si has pagado a tiempo, qué créditos o tarjetas tienes, cuánto debes.",
-            img: "..\..\assets\infExtra_6\historial.png"
         },
         {
             id: 1,
             active: false,
             title: "¿Para qué sirve?",
             content: "Cuando quieres pedir prestado dinero o solicitar una tarjeta de crédito los bancos checan tu historial crediticio en el Buró de Crédito para decidir si confiar en ti o no. Puede ser algo decisivo.",
-            img: "..\..\assets\infExtra_6\historial.png"
         },
         {
             id: 2,
             active: false,
             title: "¿Cómo empezar a construir uno?",
             content: "Los bancos pueden empezar a conocerte financieramente con una cuenta de ahorro activa, pero tu historial crediticio comienza cuando usas productos donde te prestan dinero, como una tarjeta de crédito o un crédito pequeño.",
-            img: '..\..\assets\infExtra_6\historial.png'
         },
 
     ])

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { IonApp, IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonButton, IonAlert } from '@ionic/react';
-import { completarCap } from "../../../services/userRegister.js"
+import { completarCap, actualizarDinero } from "../../../services/userRegister.js"
+import { obtenerUsuario } from '../../../services/userRegister';
 import './Juego1.css';
 
 
@@ -10,8 +11,20 @@ interface WordPair {
   matched: boolean;
 }
 
-
 const Juego1: React.FC = () => {
+
+  const [usuario, setUsuario] = useState<any>(null);
+
+  useEffect(() => {
+    const cargarUsuario = async () => {
+      const usuarioId = localStorage.getItem("usuarioId");
+      const datosUsuario = await obtenerUsuario(usuarioId);
+      setUsuario(datosUsuario);
+    };
+
+    cargarUsuario();
+  }, []);
+
   const [wordPairs, setWordPairs] = useState<WordPair[]>([
     { left: 'Ahorro', right: 'Guardar una parte del ingreso durante un tiempo con un objetivo', matched: false },
     { left: 'Meta', right: 'El precio del objeto que quiero comprar o el dinero que quiero juntar', matched: false },
@@ -109,14 +122,33 @@ const Juego1: React.FC = () => {
 
   const usuarioId = localStorage.getItem("usuarioId");
 
+  const handleGameComplete = async () => {
+    setShowSuccess(false);
+
+    if (usuarioId && usuario) {
+      const nuevoDinero = (usuario.dinero || 0) + 10;
+      await actualizarDinero(usuarioId, nuevoDinero);
+
+      setUsuario({ ...usuario, dinero: nuevoDinero });
+    }
+
+    await completarCap(usuarioId, 1);
+  };
+
   return (
     <IonApp>
-      <IonHeader>
-        <IonToolbar className='nombre'>
+      <IonHeader className='nombre'>
           <IonTitle className='nom1'>Juego de Relacionar</IonTitle>
-        </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
+
+        <div className='recompensa-container'>
+          <div className='recompensa2'>
+            <span>Recompensa: $10</span>
+            <span style={{ fontSize: '24px' }}></span>
+          </div>
+        </div>
+
         <div className="game-container">
           <IonGrid>
             <IonRow>
@@ -163,9 +195,9 @@ const Juego1: React.FC = () => {
 
         <IonAlert
           isOpen={showSuccess}
-          onDidDismiss={() => { setShowSuccess(false); completarCap(usuarioId, 1) }}
-          header={'¡Felicidades, has ganado!'}
-          message={'Has desbloqueado la sección de ahorros'}
+          onDidDismiss={handleGameComplete}
+          header={'¡Felicidades, has ganado! 🎉'}
+          message={'Has desbloqueado la sección de ahorros y ganaste 10 Piggy Pesos'}
           buttons={['OK']}
         />
       </IonContent>

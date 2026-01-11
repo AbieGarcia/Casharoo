@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { IonApp, IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonButton, IonAlert, IonCard, IonCardContent } from '@ionic/react';
 import './Juego2.css';
-import { completarCap } from "../../../services/userRegister.js"
+import { completarCap, actualizarDinero } from "../../../services/userRegister.js"
+import { obtenerUsuario } from '../../../services/userRegister';
 
 
 interface Card {
@@ -13,6 +14,19 @@ interface Card {
 }
 
 const Juego2: React.FC = () => {
+
+  const [usuario, setUsuario] = useState<any>(null);
+
+  useEffect(() => {
+    const cargarUsuario = async () => {
+      const usuarioId = localStorage.getItem("usuarioId");
+      const datosUsuario = await obtenerUsuario(usuarioId);
+      setUsuario(datosUsuario);
+    };
+
+    cargarUsuario();
+  }, []);
+
   const [cards, setCards] = useState<Card[]>([]);
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
   const [gameCompleted, setGameCompleted] = useState(false);
@@ -27,7 +41,6 @@ const Juego2: React.FC = () => {
     { term: 'Intereses', definition: 'Dinero extra que das cuando te prestan dinero o que te dan cuando dejas usar tu dinero' }
   ];
 
-  // Inicializar el juego
   useEffect(() => {
     initializeGame();
   }, []);
@@ -133,14 +146,31 @@ const Juego2: React.FC = () => {
 
   const usuarioId = localStorage.getItem("usuarioId");
 
+  const handleGameComplete = async () => {
+    setShowSuccess(false);
+
+    if (usuarioId && usuario) {
+      const nuevoDinero = (usuario.dinero || 0) + 10;
+      await actualizarDinero(usuarioId, nuevoDinero);
+
+      setUsuario({ ...usuario, dinero: nuevoDinero });
+    }
+
+    await completarCap(usuarioId, 1);
+  };
+
   return (
     <IonApp>
-      <IonHeader>
-        <IonToolbar className='nombre' color='secondary'>
-          <IonTitle >Memorama Financiero</IonTitle>
-        </IonToolbar>
+      <IonHeader className='nombre' color='secondary'>
+        <IonTitle className='nom2'>Memorama Financiero</IonTitle>
       </IonHeader>
       <IonContent className="ion-padding">
+        <div className='recompensa-container'>
+          <div className='recompensa2'>
+            <span>Recompensa: $10</span>
+            <span style={{ fontSize: '24px' }}></span>
+          </div>
+        </div>
         <div className="game-container">
           <IonGrid>
             <IonRow>
@@ -164,17 +194,17 @@ const Juego2: React.FC = () => {
 
           {gameCompleted && (
             <div className="completion-message">
-              <IonButton expand="block" onClick={resetGame}>Jugar de nuevo</IonButton>
-              <IonButton className='Regresar' expand="block" href="/Mapa">Ir a menú</IonButton>
+              <IonButton className='jugarOtraVez2' expand="block" onClick={resetGame}>Jugar de nuevo</IonButton>
+              <IonButton className='Regresar2' expand="block" href="/Mapa">Ir a menú</IonButton>
             </div>
           )}
         </div>
 
         <IonAlert
           isOpen={showSuccess}
-          onDidDismiss={() => { setShowSuccess(false); completarCap(usuarioId, 2) }}
+          onDidDismiss={handleGameComplete}
           header={'¡Felicidades!'}
-          message={`Has completado el memorama. Has desbloqueado el siguiente capítulo.`}
+          message={`Has desbloqueado el siguiente capítulo y ganaste 10 Piggy Pesos.`}
           buttons={['OK']}
         />
       </IonContent>

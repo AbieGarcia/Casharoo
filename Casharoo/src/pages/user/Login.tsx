@@ -3,7 +3,7 @@ import { IonContent, IonHeader, IonPage, IonButton, IonTitle, IonInput, IonToolb
 import './Login.css';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
-import { verificarCredenciales } from '../../services/userRegister';
+import { verificarCredenciales, actualizarRacha } from '../../services/userRegister';
 import Registro from './Registro';
 
 
@@ -16,30 +16,40 @@ const Login: React.FC = () => {
 
   const [usuario, setUsuario] = useState("");
   const [contrasena, setContrasena] = useState("");
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
 
   const handleLogin = async () => {
     try {
+      // Validar que los campos no estén vacíos
+      if (!usuario.trim() || !contrasena.trim()) {
+        setError("Por favor completa todos los campos");
+        return;
+      }
+
       console.log("Usuario ingresado:", usuario);
       console.log("Contraseña ingresada:", contrasena);
 
       // Llama a la función para verificar las credenciales
       const usuarioAutenticado = await verificarCredenciales(usuario, contrasena);
       if (usuarioAutenticado) {
-        setError(false);
+        setError("");
 
-        // Guarda el usuario autenticado en localStorage o en el contexto
+        // Guarda el usuario autenticado en localStorage
         localStorage.setItem("usuarioId", usuarioAutenticado.id);
 
-        // Redirige al usuario a la página principal o al dashboard
+        // AQUÍ SE ACTUALIZA LA RACHA AL HACER LOGIN
+        await actualizarRacha(usuarioAutenticado.id, usuarioAutenticado);
+        console.log("Racha actualizada exitosamente");
+
+        // Redirige al usuario a la página principal
         history.replace('/inicio');
       } else {
-        setError(true);
+        setError("Usuario o contraseña incorrectos");
         console.log("Credenciales incorrectas");
       }
     } catch (error) {
       console.error("Error durante el login:", error);
-      setError(true);
+      setError("Error al intentar iniciar sesión");
     }
   };
 
@@ -50,9 +60,9 @@ const Login: React.FC = () => {
           <IonText id='lblBienvenido'> ¡Bienvenido! </IonText>
         </div>
         <div className='UsernameLogin'>
-          <h1 style={{ color: 'white' }} id='NomTexto1' /*TÍTULO*/  >Tu usuario:</h1>
+          <h1 style={{ color: 'white' }} id='NomTexto1'>Tu usuario:</h1>
 
-          <IonInput  /*DONDE SE INGRESA EL NOMBRE DE USUARIO*/
+          <IonInput
             placeholder="   Mi usuario..."
             clearInput={true}
             fill='solid'
@@ -62,16 +72,16 @@ const Login: React.FC = () => {
           ></IonInput>
         </div>
 
-        <div className='ContrasenaLogin' /*SECCION DONDE SE INGRESA EL NOMBRE DE USUARIO*/>
+        <div className='ContrasenaLogin'>
+          <h1 style={{ color: 'white' }} id='NomTexto1'>Tu contraseña:</h1>
 
-          <h1 style={{ color: 'white' }} id='NomTexto1' /*TÍTULO*/  >Tu contraseña:</h1>
-
-          <IonInput  /*DONDE SE INGRESA EL NOMBRE DE USUARIO*/
+          <IonInput
             placeholder="   Contraseña..."
             clearInput={true}
             fill='solid'
             id='InputCon'
             color={'warning'}
+            type="password"
             value={contrasena}
             onIonInput={(e: any) => setContrasena(e.target.value)}
           ></IonInput>
@@ -79,7 +89,7 @@ const Login: React.FC = () => {
 
         <div className='contenedorBtnSiguienteLogin'>
           <IonButton id='btnSiguiente' onClick={handleLogin}>Iniciar sesión</IonButton>
-          {error && <h1 style={{ color: "#F09", position: "relative", top: "100px" }}>Usuario o contraseña incorrectos</h1>}
+          {error && <h1 style={{ color: "#F09", position: "relative", top: "100px" }}>{error}</h1>}
         </div>
 
         <div className='contenedorBtnCrear'>

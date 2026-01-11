@@ -51,6 +51,8 @@ import Mapa from './pages/Mapa';
 import Juego2 from './pages/capitulos/Bancos_cap2/Juego2';
 import Cap2 from './pages/capitulos/Bancos_cap2/Cap2';
 import Info_Extra from './pages/infoExtra/Info_Extra';
+import Inversion from './pages/inversion/Inversion';
+
 
 setupIonicReact();
 
@@ -75,6 +77,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/mapa">
           <Mapa />
+        </Route>
+        <Route exact path="/inversion">
+          <Inversion />
         </Route>
         <Route exact path="/ahorro">
           <Ahorro />

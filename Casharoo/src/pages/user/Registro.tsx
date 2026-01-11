@@ -20,10 +20,10 @@ const Registro: React.FC = () => {
       { capitulo: 7, disabled: true, completed: false },
     ],
     metas: [],
+    dinero: 0,
   })
 
-
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
   const history = useHistory();
 
   const irALogIn = () => {
@@ -31,26 +31,18 @@ const Registro: React.FC = () => {
   };
 
   const registroUsuario = () => {
-    const nombre = (document.getElementById('InputNombre') as HTMLInputElement)?.value;
-    const usuario = (document.getElementById('InputUsuario') as HTMLInputElement)?.value;
-    const contrasena = (document.getElementById('InputContrasena') as HTMLInputElement)?.value;
-
-    const nuevoRegistro = {
-      ...registro,
-      nombre,
-      usuario,
-      contrasena,
-    };
-
-    console.log(nuevoRegistro);
-
-    if (nombre !== "" && registro.sexo !== 0 && usuario !== "") {
-      setError(false);
-      registrarUsuario(nuevoRegistro);
-      irALogIn();
-    } else {
-      setError(true);
+    // Validar que todos los campos estén completos
+    if (!registro.nombre.trim() || registro.sexo === 0 || !registro.usuario.trim() || !registro.contrasena.trim()) {
+      setError("Todos los datos son obligatorios");
+      return;
     }
+
+    console.log("Registro completo:", registro);
+
+    // Si todo está correcto, registrar y redirigir
+    setError("");
+    registrarUsuario(registro);
+    irALogIn();
   };
 
   return (
@@ -67,8 +59,8 @@ const Registro: React.FC = () => {
               </IonButton>
             </div>
             <div className='rectangulochico' id='rect2'>
-              <IonButton id='BtnAzul'>
-                <img className="imgbtn" src="../../assets/boy.png" onClick={() => setRegistro({ ...registro, sexo: 2 })} />
+              <IonButton id='BtnAzul' onClick={() => setRegistro({ ...registro, sexo: 2 })}>
+                <img className="imgbtn" src="../../assets/boy.png" />
               </IonButton>
             </div>
           </div>
@@ -83,7 +75,8 @@ const Registro: React.FC = () => {
             id='InputNombre'
             class='InputNom'
             color={'warning'}
-            onIonChange={(e: any) => setRegistro({ ...registro, nombre: e.target.value })}
+            value={registro.nombre}
+            onIonInput={(e: any) => setRegistro({ ...registro, nombre: e.target.value })}
           ></IonInput>
         </div>
 
@@ -96,7 +89,8 @@ const Registro: React.FC = () => {
             id='InputUsuario'
             class='InputUs'
             color={'warning'}
-            onIonChange={(e: any) => setRegistro({ ...registro, usuario: e.target.value })}
+            value={registro.usuario}
+            onIonInput={(e: any) => setRegistro({ ...registro, usuario: e.target.value })}
           ></IonInput>
         </div>
 
@@ -109,15 +103,15 @@ const Registro: React.FC = () => {
             id='InputContrasena'
             class='InputCon'
             color={'warning'}
-            onIonChange={(e: any) => setRegistro({ ...registro, contrasena: e.target.value })}
+            type="password"
+            value={registro.contrasena}
+            onIonInput={(e: any) => setRegistro({ ...registro, contrasena: e.target.value })}
           ></IonInput>
         </div>
 
         <div className='contenedorBtnSiguiente'>
           <IonButton id='btnSiguiente' onClick={registroUsuario}>Siguiente</IonButton>
-          {error === true &&
-            <h1> Todos los datos son obligatorios</h1>
-          }
+          {error && <h1 style={{ color: "#F09" }}>{error}</h1>}
         </div>
 
         <div className='Logo'>
@@ -127,6 +121,5 @@ const Registro: React.FC = () => {
     </IonPage>
   );
 };
-
 
 export default Registro;

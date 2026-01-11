@@ -1,0 +1,709 @@
+.inversion-content {
+  --background: #FFFFFF;
+}
+
+.inversion-container {
+  min-height: 100vh;
+  background-color: #FFFFFF;
+  font-family: 'Baloo', system-ui, sans-serif;
+  padding-bottom: 100px;
+}
+
+.inversion-header {
+  background: #f8a0d6;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 80%;
+  margin-left: 10%;
+  border-radius: 15px;
+  padding: 3px;
+  margin-top: 5%;
+}
+
+.inversion-header-title {
+  font-size: 9vw;
+}
+
+.inversion-header-subtitle {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.inversion-demo-buttons-container {
+  padding: 15px;
+  background: #FFF3CD;
+  border-bottom: 2px solid #FFC107;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.inversion-demo-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.inversion-demo-button-inactive {
+  border: 1px solid #ddd;
+  background: #F5F5F5;
+}
+
+.inversion-demo-button-active {
+  border: 2px solid #FFC107;
+  background: #FFF;
+}
+
+.inversion-sin-inversion-section {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.inversion-section-title {
+  text-align: center;
+  color: #f5c02f;
+  margin-bottom: 30px;
+  text-shadow: none;
+  font-size: 6vw;
+}
+
+.inversion-planes-grid {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.inversion-plan-card {
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: #FFFFFF;
+}
+
+.inversion-plan-card-inactive {
+  border: 2px solid #E5E7EB;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.inversion-plan-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.inversion-plan-card-header-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inversion-plan-card-icon {
+  font-size: 32px;
+}
+
+.inversion-plan-card-title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.inversion-plan-card-description {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.inversion-plan-card-checkmark {
+  font-size: 24px;
+}
+
+.inversion-plan-card-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 15px;
+  background: #F9FAFB;
+  border-radius: 10px;
+}
+
+.inversion-plan-card-stat-label {
+  font-size: 12px;
+  color: #6B7280;
+  margin-bottom: 5px;
+}
+
+.inversion-plan-card-stat-value {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.inversion-config-form {
+  border: 2px solid #FF7BCC;
+  border-radius: 15px;
+  padding: 25px;
+  background: #FFF;
+  box-shadow: 0 4px 12px rgba(255,123,204,0.2);
+}
+
+.inversion-config-form-title {
+  color: #FF7BCC;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.inversion-config-form-field {
+  margin-bottom: 20px;
+}
+
+.inversion-config-form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #374151;
+}
+
+.inversion-config-form-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 2px solid #E5E7EB;
+  box-sizing: border-box;
+}
+
+.inversion-config-form-hint {
+  font-size: 12px;
+  color: #6B7280;
+  margin: 5px 0 0 0;
+}
+
+.inversion-config-form-duration-field {
+  margin-bottom: 25px;
+}
+
+.inversion-config-form-duration-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.inversion-config-form-duration-button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.inversion-config-form-duration-button-inactive {
+  border: 2px solid #E5E7EB;
+  background: #FFF;
+  color: #6B7280;
+}
+
+.inversion-config-form-submit-button {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #FF7BCC 0%, #FFB1CA 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(255,123,204,0.4);
+  transition: all 0.3s;
+}
+
+.inversion-config-form-submit-button-enabled {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.inversion-config-form-submit-button-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.inversion-activa-section {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.inversion-activa-header {
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.inversion-activa-header-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.inversion-activa-header-icon {
+  font-size: 40px;
+}
+
+.inversion-activa-header-title {
+  margin: 0;
+  font-size: 24px;
+}
+
+.inversion-activa-header-subtitle {
+  margin: 5px 0 0 0;
+  color: #6B7280;
+}
+
+.inversion-capital-actual-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.inversion-capital-actual-label {
+  font-size: 14px;
+  color: #6B7280;
+  margin-bottom: 5px;
+}
+
+.inversion-capital-actual-amount {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.inversion-capital-actual-ganancia {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.inversion-capital-actual-ganancia-positiva {
+  color: #22C55E;
+}
+
+.inversion-capital-actual-ganancia-negativa {
+  color: #EF4444;
+}
+
+.inversion-progreso-container {
+  margin-bottom: 15px;
+}
+
+.inversion-progreso-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.inversion-progreso-label {
+  font-size: 14px;
+  color: #374151;
+  font-weight: bold;
+}
+
+.inversion-progreso-percentage {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.inversion-progreso-bar-container {
+  width: 100%;
+  height: 20px;
+  background: #E5E7EB;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.inversion-progreso-bar-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.inversion-tiempo-restante-card {
+  margin-top: 15px;
+  padding: 12px;
+  background: #FFF;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.inversion-tiempo-restante-label {
+  font-size: 14px;
+  color: #6B7280;
+  margin-bottom: 5px;
+}
+
+.inversion-tiempo-restante-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.inversion-grafica-card {
+  background: #FFFFFF;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid #E5E7EB;
+}
+
+.inversion-grafica-title {
+  margin-top: 0;
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+.inversion-historial-card {
+  background: #FFFFFF;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid #E5E7EB;
+  margin-bottom: 20px;
+}
+
+.inversion-historial-title {
+  margin-top: 0;
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+.inversion-historial-item {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.inversion-historial-item-pendiente {
+  background: #F9FAFB;
+  border: 2px solid #E5E7EB;
+  opacity: 0.5;
+}
+
+.inversion-historial-item-exito {
+  background: #DCFCE7;
+  border: 2px solid #22C55E;
+  opacity: 1;
+}
+
+.inversion-historial-item-fracaso {
+  background: #FEE2E2;
+  border: 2px solid #EF4444;
+  opacity: 1;
+}
+
+.inversion-historial-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inversion-historial-item-year {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.inversion-historial-item-icon {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.inversion-historial-item-capital {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.inversion-historial-item-capital-pendiente {
+  color: #94A3B8;
+}
+
+.inversion-historial-item-detail {
+  font-size: 12px;
+  color: #6B7280;
+  margin-top: 5px;
+}
+
+.inversion-completada-card {
+  background: linear-gradient(135deg, #22C55E 0%, #10B981 100%);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(34,197,94,0.4);
+}
+
+.inversion-completada-emoji {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.inversion-completada-title {
+  margin: 0 0 10px 0;
+}
+
+.inversion-completada-subtitle {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.inversion-completada-result-box {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.inversion-completada-result-label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.inversion-completada-result-amount {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.inversion-completada-new-button {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #FF7BCC 0%, #FFB1CA 100%);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255,123,204,0.4);
+  transition: all 0.3s;
+}
+
+.inversion-completada-new-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255,123,204,0.5);
+}
+
+.inversion-modal-completada {
+  --height: auto;
+  --border-radius: 0;
+}
+
+.inversion-modal-completada ion-content {
+  --background: transparent;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.inversion-modal-completada .modal-wrapper {
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+.inversion-config-form-warning {
+  font-size: 13px;
+  color: #DC2626;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* Spinner de años */
+.inversion-years-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.inversion-spinner-button {
+  width: 50px;
+  height: 50px;
+  border: 2px solid;
+  background: white;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inversion-spinner-button:hover {
+  background: #F3F4F6;
+  transform: scale(1.05);
+}
+
+.inversion-spinner-button:active {
+  transform: scale(0.95);
+}
+
+.inversion-years-display {
+  width: 80px;
+  height: 60px;
+  border: 3px solid;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  background: white;
+}
+
+/* Modal mejorado */
+.inversion-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 20px;
+}
+
+.inversion-modal-content {
+  background: linear-gradient(135deg, #22C55E 0%, #10B981 100%);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-align: center;
+  animation: modalSlideUp 0.3s ease-out;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.inversion-modal-emoji {
+  font-size: 70px;
+  margin-bottom: 15px;
+}
+
+.inversion-modal-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  font-family: 'Baloo', sans-serif;
+}
+
+.inversion-modal-subtitle {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0 0 25px 0;
+}
+
+.inversion-modal-stats {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.inversion-modal-stat-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.inversion-modal-ganancia-box {
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.inversion-modal-ganancia-label {
+  font-size: 13px;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.inversion-modal-ganancia-amount {
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.inversion-modal-ganancia-amount.positiva {
+  color: #FFFFFF;
+}
+
+.inversion-modal-ganancia-amount.negativa {
+  color: #FEE2E2;
+}
+
+.inversion-modal-ganancia-percent {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.inversion-modal-added-box {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+.inversion-modal-button {
+  background: #FFFFFF;
+  color: #10B981;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Baloo', sans-serif;
+  transition: all 0.3s;
+}
+
+.inversion-modal-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.inversion-modal-button:active {
+  transform: translateY(0);
+}

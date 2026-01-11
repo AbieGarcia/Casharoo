@@ -1,66 +1,264 @@
-#contenedorRacha{
-    width: 23%;
+#contenedorRacha {
+    width: clamp(60px, 23%, 150px);
     height: auto;
     position: absolute;
-    top: 5%;
-    left: 7%;
+    top: clamp(10px, 5%, 40px);
+    left: clamp(10px, 7%, 50px);
     z-index: 2;
 }
 
-#contenedorUsuario{
+#contenedorRacha img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+#contenedorUsuario {
     width: 90%;
-    height: 6%;
+    height: auto;
+    min-height: clamp(40px, 6vh, 60px);
     position: absolute;
-    top: 78%;          /* Moved from 73% to 78% */
+    top: 78%;
     left: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: clamp(5px, 1vh, 10px) 0;
 }
 
-#nivel{
+#nivel {
     align-items: center;
     justify-content: center;
     width: 90%;
-    height: 8%;
+    height: auto;
+    min-height: clamp(50px, 8vh, 70px);
     display: flex;
-    border-radius: 30.5px;
+    border-radius: clamp(20px, 4vw, 30.5px);
     background: #FFB1CA;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     position: absolute;
-    top: 88%;          /* Moved from 83% to 88% */
+    top: 88%;
     left: 5%;
+    padding: clamp(8px, 1.5vh, 15px) clamp(10px, 2vw, 20px);
 }
 
-#nom{
-color: #F6B901;
-text-align: center;
-font-family:Baloo;
-font-size: 30px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25), 0px 0px 0px rgba(0, 0, 0, 0.25);
-
-}
-
-#nivTxt{
-    color: #BD0172;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Baloo;
-    font-size: 30px;
+#nom {
+    color: #F6B901;
+    text-align: center;
+    font-family: Baloo, sans-serif;
+    font-size: clamp(20px, 7vw, 30px);
+    font-style: normal;
     font-weight: 400;
     line-height: normal;
-    position: absolute;
-    margin: 0px;
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25), 0px 0px 0px rgba(0, 0, 0, 0.25);
+    margin: 0;
+}
+
+#nivTxt {
+    color: #BD0172;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Baloo, sans-serif;
+    font-size: clamp(16px, 6vw, 30px);
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    text-align: center;
 }
 
 .monito-perfil {
     position: absolute;
-    top: 48%;          /* Increased from 45% to 48% to move it down more */
+    top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: min(65%, 280px);
+    width: clamp(200px, 65%, 350px);
+    height: auto;
+    max-height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monito-perfil img {
+    width: 100%;
     height: auto;
     object-fit: contain;
+    max-height: 45vh;
+}
+
+.usuario-dinero {
+    position: absolute;
+    top: clamp(10px, 3%, 30px);
+    right: clamp(10px, 3%, 30px);
+    background-color: #fff098;
+    padding: clamp(6px, 1.5vw, 12px) clamp(10px, 2.5vw, 20px);
+    border-radius: clamp(15px, 3vw, 25px);
+    font-weight: bold;
+    font-size: clamp(12px, 4vw, 1000px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: clamp(4px, 1vw, 8px);
+    min-width: fit-content;
+    white-space: nowrap;
+    color: #dba708;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.usuario-dinero span:first-child {
+    font-size: clamp(16px, 5vw, 24px);
+}
+
+#contenedorRacha {
+    width: clamp(60px, 23%, 150px);
+    height: auto;
+    position: absolute;
+    top: clamp(10px, 7%, 40px);
+    left: clamp(10px, 7%, 50px);
+    z-index: 2;
+}
+
+#contenedorRacha img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.racha-contador {
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 3;
+}
+
+.racha-numero {
+    font-family: 'Baloo', sans-serif;
+    font-size: clamp(24px, 5vw, 40px);
+    font-weight: bold;
+    color: #FF6B00;
+    text-shadow: 
+        2px 2px 0px #FFFFFF,
+        -2px -2px 0px #FFFFFF,
+        2px -2px 0px #FFFFFF,
+        -2px 2px 0px #FFFFFF,
+        0px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1;
+    margin: 0;
+}
+
+.racha-texto {
+    font-family: 'Baloo', sans-serif;
+    font-size: clamp(10px, 2vw, 14px);
+    font-weight: 600;
+    color: #FF6B00;
+    text-shadow: 
+        1px 1px 0px #FFFFFF,
+        -1px -1px 0px #FFFFFF,
+        1px -1px 0px #FFFFFF,
+        -1px 1px 0px #FFFFFF;
+    margin-top: -2px;
+}
+
+@media (max-width: 380px) {
+    .racha-numero {
+        font-size: clamp(20px, 4.5vw, 30px);
+    }
+    
+    .racha-texto {
+        font-size: clamp(8px, 1.8vw, 12px);
+    }
+}
+@media (max-width: 380px) {
+    #contenedorUsuario {
+        top: 76%;
+    }
+
+    #nivel {
+        top: 86%;
+    }
+
+    .monito-perfil {
+        top: 45%;
+        width: clamp(180px, 70%, 280px);
+    }
+
+    #nivTxt {
+        font-size: clamp(14px, 3vw, 18px);
+    }
+}
+
+@media (min-width: 381px) and (max-width: 767px) {
+    .monito-perfil {
+        top: 47%;
+        width: clamp(220px, 65%, 320px);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #contenedorRacha {
+        width: clamp(80px, 20%, 140px);
+    }
+
+    .monito-perfil {
+        top: 48%;
+        width: clamp(250px, 55%, 380px);
+        max-height: 50vh;
+    }
+
+    #nom {
+        font-size: clamp(24px, 3.5vw, 36px);
+    }
+
+    #nivTxt {
+        font-size: clamp(20px, 3vw, 32px);
+    }
+
+    .usuario-dinero {
+        font-size: clamp(14px, 2.5vw, 20px);
+    }
+}
+
+@media (min-width: 1025px) {
+    #contenedorRacha {
+        width: clamp(100px, 18%, 160px);
+    }
+
+    .monito-perfil {
+        top: 50%;
+        width: clamp(280px, 50%, 400px);
+        max-height: 55vh;
+    }
+
+    #contenedorUsuario {
+        top: 80%;
+    }
+
+    #nivel {
+        top: 90%;
+    }
+
+    #nom {
+        font-size: clamp(28px, 3vw, 38px);
+    }
+
+    #nivTxt {
+        font-size: clamp(22px, 2.5vw, 34px);
+    }
+
+    .usuario-dinero {
+        font-size: clamp(16px, 2vw, 22px);
+        padding: clamp(8px, 1.5vw, 14px) clamp(12px, 2.5vw, 24px);
+    }
+}
+
+@media (min-width: 1440px) {
+    .monito-perfil {
+        width: clamp(300px, 45%, 420px);
+    }
 }

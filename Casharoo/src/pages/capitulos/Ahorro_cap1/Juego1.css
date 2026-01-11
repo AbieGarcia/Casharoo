@@ -1,7 +1,10 @@
 .nom1 {
   font-family: baloo;
-  font-size: 2em;
+  font-size: 1.7em;
+  font-weight: normal;
   background-color: #bd0a78;
+  color: white;
+  padding: 0px 0px;
 }
 
 .game-container {
@@ -84,6 +87,22 @@
   font-family: baloo;
   margin: 3%;
 
+}
+
+.recompensa {
+  position: absolute;
+  bottom: 10%;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: '8px';
+  background-color: #f6f861;
 }
 
 @keyframes fadeIn {

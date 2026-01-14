@@ -13,13 +13,49 @@ const Mapa: React.FC = () => {
       const usuarioId = localStorage.getItem("usuarioId");
       const datosUsuario = await obtenerUsuario(usuarioId);
       setUsuario(datosUsuario);
+
+      if (datosUsuario?.capitulos) {
+        getCompletados(datosUsuario);
+      }
     };
 
     cargarUsuario();
   }, []);
 
+  const [completados, setCompletados] = useState(1);
+
+  useEffect(() => {
+    actualizarMoneda();
+  }, [completados]);
+
+
 
   const history = useHistory();
+
+
+  const getCompletados = (usuario: any) => {
+    if (usuario.capitulos[0]?.completed) {
+      setCompletados(2);
+    }
+    if (usuario.capitulos[1]?.completed) {
+      setCompletados(3);
+    }
+    if (usuario.capitulos[2]?.completed) {
+      setCompletados(4);
+    }
+    if (usuario.capitulos[3]?.completed) {
+      setCompletados(5);
+    }
+    if (usuario.capitulos[4]?.completed) {
+      setCompletados(6);
+    }
+    if (usuario.capitulos[5]?.completed) {
+      setCompletados(7);
+    }
+    if (usuario.capitulos[6]?.completed) {
+      setCompletados(8);
+    }
+  }
 
   const [monedaCap, setMonedaCap] = useState([
     {
@@ -50,8 +86,21 @@ const Mapa: React.FC = () => {
       capitulo: 7,
       disabled: true,
     },
+    {
+      capitulo: 8,
+      disabled: true,
+    },
 
   ])
+
+  const actualizarMoneda = () => {
+    const nuevasMonedas = monedaCap.map((moneda) => ({
+      ...moneda,
+      disabled: moneda.capitulo > completados,
+    }));
+    setMonedaCap(nuevasMonedas);
+  };
+
 
   if (!usuario) {
     return (
@@ -64,6 +113,7 @@ const Mapa: React.FC = () => {
   }
 
   return (
+
     <IonPage>
       <IonContent scrollY={false}>
         <div className='pagina'>
@@ -71,7 +121,7 @@ const Mapa: React.FC = () => {
             {
               monedaCap[0].disabled === false ?
                 <a href="/info-intro-ahorro">
-                  <img src="../../assets/moneda.png" width={130} height={60}/>
+                  <img src="../../assets/moneda.png" width={130} height={60} />
                 </a>
                 :
                 <>
@@ -152,38 +202,85 @@ const Mapa: React.FC = () => {
                 </>
             }
           </IonButton>
+          <IonButton id='M8' className='btn'>
+            {
+              monedaCap[7].disabled === false ?
+                <a href="/Cap8">
+                  <img src="../../assets/moneda.png" width={130} height={60} />
+                </a>
+                :
+                <>
+                  <img src="../../assets/moneda.png" width={130} height={60} className='monedaDesactivada' />
+                </>
+            }
+          </IonButton>
         </div>
       </IonContent>
 
       <IonFooter>
-        {usuario && usuario.capitulos && usuario.capitulos[0]?.completed ? (
-          <IonToolbar>
-            <IonButton className='btnMenu1' onClick={() => history.push('/mapa')}>
-              <img src="../../assets/home.png" />
-            </IonButton>
-            <IonButton className='btnMenu1' onClick={() => history.push('/info-extra')}>
-              <img src="../../assets/info.png" />
-            </IonButton>
-            <IonButton className='btnMenu1' onClick={() => history.push('/ahorro')}>
-              <img src="../../assets/ahorro.png" />
-            </IonButton>
-            <IonButton className='btnMenu1' onClick={() => history.push('/perfil')}>
-              <img src="../../assets/perfil.png" />
-            </IonButton>
-          </IonToolbar>
-        ) : (
-          <IonToolbar>
-            <IonButton className='btnMenu'>
-              <img src="../../assets/home.png" onClick={() => history.push('/mapa')} />
-            </IonButton>
-            <IonButton className='btnMenu'>
-              <img src="../../assets/info.png" onClick={() => history.push('/info-extra')} />
-            </IonButton>
-            <IonButton className='btnMenu'>
-              <img src="../../assets/perfil.png" onClick={() => history.push('/perfil')} />
-            </IonButton>
-          </IonToolbar>
-        )}
+        <IonToolbar>
+          {usuario.capitulos[0]?.completed ? (
+            <>
+              <IonButton
+                className="btnMenu1"
+                onClick={() => history.push('/mapa')}
+              >
+                <img src="../../assets/home.png" alt="Inicio" />
+              </IonButton>
+
+              <IonButton
+                className="btnMenu1"
+                onClick={() => history.push('/info-extra')}
+              >
+                <img src="../../assets/info.png" alt="Información" />
+              </IonButton>
+
+              <IonButton
+                className="btnMenu1"
+                onClick={() => history.push('/ahorro')}
+              >
+                <img src="../../assets/ahorro.png" alt="Ahorro" />
+              </IonButton>
+
+              <IonButton
+                className="btnMenu1"
+                onClick={() => history.push('/inversion')}
+              >
+                <img src="../../assets/invest.png" alt="Inversión" />
+              </IonButton>
+
+              <IonButton
+                className="btnMenu1"
+                onClick={() => history.push('/perfil')}
+              >
+                <img src="../../assets/perfil.png" alt="Perfil" />
+              </IonButton>
+            </>
+          ) : (
+            <>
+              <IonButton
+                className="btnMenu"
+                onClick={() => history.push('/mapa')}
+              >
+                <img src="../../assets/home.png" alt="Inicio" />
+              </IonButton>
+
+              <IonButton
+                className="btnMenu"
+                onClick={() => history.push('/info-extra')}
+              >
+                <img src="../../assets/info.png" alt="Información" />
+              </IonButton>
+
+              <IonButton
+                className="btnMenu"
+                onClick={() => history.push('/perfil')}
+              >
+                <img src="../../assets/perfil.png" alt="Perfil" />
+              </IonButton>
+            </>
+          )}
+        </IonToolbar>
       </IonFooter>
     </IonPage >
   );

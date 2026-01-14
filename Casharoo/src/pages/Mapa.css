@@ -20,7 +20,7 @@
 
 #M1 {
     position: absolute;
-    top: 9%;
+    top: 5%;
     left: 22%;
     z-index: 1;
     width: 45%;
@@ -28,8 +28,8 @@
 
 #M2 {
     position: absolute;
-    top: 22%;
-    left: 22%;
+    top: 17%;
+    left: 20%;
     z-index: 1;
     width: 45%;
 
@@ -37,8 +37,8 @@
 
 #M3 {
     position: absolute;
-    top: 34%;
-    left: 30%;
+    top: 30%;
+    left: 27%;
     z-index: 1;
     width: 45%;
 
@@ -46,8 +46,8 @@
 
 #M4 {
     position: absolute;
-    top: 47%;
-    left: 43%;
+    top: 42.5%;
+    left: 42%;
     z-index: 1;
     width: 45%;
 
@@ -55,7 +55,7 @@
 
 #M5 {
     position: absolute;
-    top: 60%;
+    top: 57%;
     left: 43%;
     z-index: 1;
     width: 45%;
@@ -64,8 +64,8 @@
 
 #M6 {
     position: absolute;
-    top: 73%;
-    left: 28%;
+    top: 68%;
+    left: 33%;
     z-index: 1;
     width: 45%;
 
@@ -73,8 +73,17 @@
 
 #M7 {
     position: absolute;
-    top: 86%;
-    left: 18%;
+    top: 79%;
+    left: 22%;
+    z-index: 1;
+    width: 45%;
+
+}
+
+#M8 {
+    position: absolute;
+    top: 90%;
+    left: 17%;
     z-index: 1;
     width: 45%;
 

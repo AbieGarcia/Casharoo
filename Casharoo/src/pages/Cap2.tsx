@@ -90,7 +90,7 @@ const Cap2: React.FC = () => {
         <img src="..\..\assets\Seis6.PNG" height="100%"></img>
       </div>
       <div className='parte3CP2'>
-        <div className="botones-container">
+        <div className="botonesContainerCP2">
           <IonButton className='decidirCap21' onClick={() => handleDecision(true)}>Guardar tu dinero y prestarle a los que lo necesitan</IonButton>
           <IonButton className='decidirCap21' onClick={() => handleDecision(false)}>Quitarte tu dinero</IonButton>
           <IonButton className='decidirCap21' onClick={() => handleDecision(false)}>Darte consejos de cómo gastar mejor tu dinero</IonButton>
@@ -150,10 +150,8 @@ const Cap2: React.FC = () => {
       </div>
       <div className=' parte3CP2'>
         <div className='3interno'>
-          <div className="botones-container">
-            <IonButton className='decidirCap22' onClick={nextnextSlide}>Entendí las reglas</IonButton>
-            <IonButton className='decidirCap22' onClick={reglas}>Explicame las reglas otra vez</IonButton>
-          </div>
+          <IonButton className='decidirCap22' onClick={nextnextSlide}>Entendí las reglas</IonButton>
+          <IonButton className='decidirCap22' onClick={reglas}>Explicame las reglas otra vez</IonButton>
         </div>
       </div>
     </div>,
@@ -202,12 +200,10 @@ const Cap2: React.FC = () => {
         <img src="..\..\assets\Quince15.PNG" height="100%"></img>
       </div>
       <div className=' parte3CP2'>
-        <div className='3interno'>
-          <div className="botonesContainerCP2">
-            <IonButton className='decidirCap23' onClick={() => handleDecision(false)}>Pedir un préstamo y después no pagarle al banco</IonButton>
-            <IonButton className='decidirCap23' onClick={() => handleDecision(false)}>No comprar sus materiales</IonButton>
-            <IonButton className='decidirCap23' onClick={() => handleDecision(true)}>Pedir un préstamo al banco y devolver todo el dinero más los intereses</IonButton>
-          </div>
+        <div className="botonesContainerCP2">
+          <IonButton className='decidirCap23' onClick={() => handleDecision(false)}>Pedir un préstamo y después no pagarle al banco</IonButton>
+          <IonButton className='decidirCap23' onClick={() => handleDecision(false)}>No comprar sus materiales</IonButton>
+          <IonButton className='decidirCap23' onClick={() => handleDecision(true)}>Pedir un préstamo al banco y devolver todo el dinero más los intereses</IonButton>
         </div>
       </div>
     </div>,

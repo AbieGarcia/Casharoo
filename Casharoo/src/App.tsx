@@ -43,61 +43,85 @@ import Perfil from './pages/Perfil';
 import Mapa from './pages/Mapa';
 import Juego2 from './pages/Juego2';
 import Cap2 from './pages/Cap2';
+import Cap3 from './pages/Cap3';
+import Juego3 from './pages/Juego3';
+import Cap4 from './pages/Cap4';
+import Juego4 from './pages/Juego4';
+import Cap6 from './pages/Cap6';
+import Juego6 from './pages/Juego6';
 import Info_Extra from './pages/Info_Extra';
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-      <IonReactRouter>
-        <IonRouterOutlet>
-          <Route exact path="/">
-            <Redirect to="/login" />
-          </Route>
-          <Route exact path="/inicio">
-            <Inicio />
-          </Route>
-          <Route exact path="/registro">
-            <Registro />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/perfil">
-            <Perfil />
-          </Route>
-          <Route exact path="/mapa">
-            <Mapa />
-          </Route>
-          <Route exact path="/ahorro">
-            <Ahorro />
-          </Route>
-          <Route exact path="/crear-meta">
-            <Crear_Meta />
-          </Route>
-          <Route exact path="/cap1">
-            <Cap1 />
-          </Route>
-          <Route exact path="/juego1">
-            <Juego1 />
-          </Route>
-          <Route exact path="/info-extra">
-            <Info_Extra />
-          </Route>
-          <Route exact path="/info-extra/ahorro">
-            <Info_Extra_Ahorro />
-          </Route>
-          <Route exact path="/info-intro-ahorro">
-            <Info_Intro_Ahorro />
-          </Route>
-          <Route exact path="/Juego2">
-            <Juego2 />
-          </Route>
-          <Route exact path="/Cap2">
-            <Cap2 />
-          </Route>
-        </IonRouterOutlet>
-      </IonReactRouter>
+    <IonReactRouter>
+      <IonRouterOutlet>
+        <Route exact path="/">
+          <Redirect to="/login" />
+        </Route>
+        <Route exact path="/inicio">
+          <Inicio />
+        </Route>
+        <Route exact path="/registro">
+          <Registro />
+        </Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/perfil">
+          <Perfil />
+        </Route>
+        <Route exact path="/mapa">
+          <Mapa />
+        </Route>
+        <Route exact path="/ahorro">
+          <Ahorro />
+        </Route>
+        <Route exact path="/crear-meta">
+          <Crear_Meta />
+        </Route>
+        <Route exact path="/cap1">
+          <Cap1 />
+        </Route>
+        <Route exact path="/juego1">
+          <Juego1 />
+        </Route>
+        <Route exact path="/info-extra">
+          <Info_Extra />
+        </Route>
+        <Route exact path="/info-extra/ahorro">
+          <Info_Extra_Ahorro />
+        </Route>
+        <Route exact path="/info-intro-ahorro">
+          <Info_Intro_Ahorro />
+        </Route>
+        <Route exact path="/Juego2">
+          <Juego2 />
+        </Route>
+        <Route exact path="/Cap2">
+          <Cap2 />
+        </Route>
+        <Route exact path="/Cap3">
+          <Cap3 />
+        </Route>
+        <Route exact path="/Juego3">
+          <Juego3 />
+        </Route>
+        <Route exact path="/Cap4">
+          <Cap4 />
+        </Route>
+        <Route exact path="/Juego4">
+          <Juego4 />
+        </Route>
+        <Route exact path="/Cap6">
+          <Cap6 />
+        </Route>
+        <Route exact path="/Juego6">
+          <Juego6 />
+        </Route>
+      </IonRouterOutlet>
+    </IonReactRouter>
   </IonApp>
 );
 

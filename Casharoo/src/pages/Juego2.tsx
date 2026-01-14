@@ -51,7 +51,7 @@ const Juego2: React.FC = () => {
     // Combinar y barajar las cartas
     const allCards = [...termCards, ...definitionCards];
     const shuffledCards = shuffleArray(allCards);
-    
+
     setCards(shuffledCards);
     setFlippedCards([]);
     setGameCompleted(false);
@@ -93,7 +93,7 @@ const Juego2: React.FC = () => {
     const secondCard = cards[secondIndex];
 
     // Encontrar el par correspondiente en wordPairs
-    const pair = wordPairs.find(pair => 
+    const pair = wordPairs.find(pair =>
       (pair.term === firstCard.content && pair.definition === secondCard.content) ||
       (pair.term === secondCard.content && pair.definition === firstCard.content)
     );
@@ -142,7 +142,7 @@ const Juego2: React.FC = () => {
             <IonRow>
               {cards.map((card, index) => (
                 <IonCol className='cartas' size="6" sizeSm="4" sizeMd="4" key={card.id}>
-                  <IonCard 
+                  <IonCard
                     className={`memory-card ${card.isFlipped ? 'flipped' : ''} ${card.isMatched ? 'matched' : ''}`}
                     onClick={() => handleCardClick(index)}
                   >
@@ -157,15 +157,15 @@ const Juego2: React.FC = () => {
               ))}
             </IonRow>
           </IonGrid>
-          
+
           {gameCompleted && (
             <div className="completion-message">
-              <IonButton expand="block" onClick={resetGame}>Jugar de nuevo</IonButton>
-              <IonButton className='Regresar' expand="block" href="/Mapa">Ir a menú</IonButton>
+              <IonButton className='BotonesJuego2Final' expand="block" onClick={resetGame}>Jugar de nuevo</IonButton>
+              <IonButton className='BotonesJuego2Final' expand="block" href="/Mapa">Ir a menú</IonButton>
             </div>
           )}
         </div>
-        
+
         <IonAlert
           isOpen={showSuccess}
           onDidDismiss={() => setShowSuccess(false)}

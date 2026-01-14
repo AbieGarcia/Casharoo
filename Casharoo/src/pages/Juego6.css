@@ -1,0 +1,257 @@
+/* Basic crossword styles */
+:root {
+    --green: #2e8b57;
+    --muted: #f7f9f7;
+}
+
+
+.nom6 {
+    height: 70%;
+    background-color: #b53c09;
+    padding: 0;
+    margin: 0;
+}
+
+.nombre6 {
+    height: 50%;
+    background-color: #b53c09;
+    padding: 0;
+    margin: 0;
+}
+
+.juego6-content {
+    background: var(--muted);
+    min-height: 100vh;
+}
+
+.layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.grid-wrap {
+    background: #fff;
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    overflow: auto;
+    /* responsive: let grid take remaining width but never force horizontal scroll */
+    max-width: calc(100vw - 360px);
+    min-width: 0;
+    /* avoid forcing overflow on small screens */
+    box-sizing: border-box;
+}
+
+.grid {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.grid-row {
+    display: flex;
+    width: 100%;
+}
+
+
+.cell {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    /* size based on grid container: 16 columns */
+    width: calc(100% / 16);
+    aspect-ratio: 1 / 1;
+    max-width: 64px;
+    /* prevents cells from becoming huge on very wide screens */
+    transition: background-color .18s ease, box-shadow .18s ease, color .12s ease;
+    cursor: text;
+    touch-action: manipulation;
+}
+
+.cell.black {
+    background: #111;
+    border: none;
+    width: calc(100% / 16);
+    aspect-ratio: 1 / 1;
+    max-width: 64px;
+}
+
+.cell.black {
+    background: #111;
+    border: none;
+    width: calc(100% / 16);
+    aspect-ratio: 1 / 1;
+    max-width: 40px;
+}
+
+.cell-number {
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    font-size: 10px;
+    color: #666;
+}
+
+.cell-input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    text-align: center;
+    font-weight: 800;
+    font-size: 22px;
+    background: transparent;
+    outline: none;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2px;
+    /* small visual tweak to center letter */
+    caret-color: #222;
+    cursor: text;
+}
+
+.cell-number {
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    font-size: 12px;
+    color: #666;
+    pointer-events: none;
+    /* don't block taps to the input */
+    user-select: none;
+}
+
+.cell-input:disabled {
+    color: #444;
+}
+
+.cell.wrong {
+    background: #ffecec;
+}
+
+.cell.wrong .cell-input {
+    color: #b00000;
+    font-weight: 900;
+}
+
+.cell.right {
+    background: linear-gradient(90deg, var(--green), #58b368);
+    color: #fff;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.06);
+}
+
+.cell.right .cell-input {
+    color: #fff;
+    font-weight: 900;
+}
+
+.cell.hinted {
+    box-shadow: inset 0 0 0 3px rgba(46, 139, 87, 0.06);
+    background: linear-gradient(90deg, #eaf7ee, #f6fff8);
+}
+
+.cell.gray {
+    background: #e6e6e6;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.controls {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.clues {
+    background-color: #ff8000;
+    border-radius: 30px;
+    max-width: 360px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+
+    div {
+        background-color: #ffe1be;
+        border-radius: 30px;
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+        margin-bottom: 20px;
+
+        h3 {
+            color: #b53c09;
+            font-weight: 800;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.clues h3 {
+    margin-top: 0;
+    color: var(--green);
+}
+
+.final-actions {
+    margin-top: 16px;
+}
+
+.success {
+    color: var(--green);
+    font-weight: 700;
+}
+
+.hint {
+    color: #8a8a8a;
+}
+
+.solution-overlay {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    background: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width:900px) {
+    .layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid-wrap {
+        width: 100%;
+        max-width: 100%;
+        padding: 8px;
+    }
+
+    .clues {
+        max-width: 100%;
+    }
+
+    .cell {
+        max-width: 52px;
+    }
+
+    .cell-input {
+        font-size: 18px;
+    }
+}

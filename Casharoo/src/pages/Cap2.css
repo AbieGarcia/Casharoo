@@ -76,7 +76,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   word-wrap: break-word;
-  padding: 0 20px;
+  padding: 0 10px;
 
   div {
     white-space: normal;
@@ -96,7 +96,7 @@
   padding-top: 5%;
 
   .button {
-    width: 130px;
+    width: 150px;
     font-size: 20px;
     font-family: 'Itim', sans-serif;
     font-weight: bolder;
@@ -107,6 +107,7 @@
 
 .botonesContainerCP2 {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -121,15 +122,13 @@
   --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
   --ripple-color: deeppink;
   font-family: 'Itim', sans-serif;
-  font-size: 5vw;
+  font-size: 4.5vw;
   font-weight: bold;
-  padding: 1px 5px;
-  height: 100%;
-  text-align: center;
-  width: 35%;
+  width: 100%;
+  padding: 1px 0px;
   margin-left: 0px;
   margin-right: 0px;
-  --border-radius: 5vw;
+  --border-radius: 3vw;
 }
 
 .decidirCap22 {
@@ -145,9 +144,9 @@
   font-size: 5vw;
   font-weight: bold;
   padding: 1px 5px;
-  height: 100%;
+  height: 90%;
   text-align: center;
-  width: 55%;
+  width: 50%;
   margin-left: 0px;
   margin-right: 0px;
   --border-radius: 5vw;
@@ -163,19 +162,17 @@
   --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
   --ripple-color: deeppink;
   font-family: 'Itim', sans-serif;
-  font-size: 0.55em;
+  font-size: 4.5vw;
   font-weight: bold;
-  padding: 1px 5px;
-  height: 100%;
-  text-align: center;
-  width: 39%;
+  width: 100%;
+  padding: 1px 0px;
   margin-left: 0px;
   margin-right: 0px;
-  --border-radius: 5vw;
+  --border-radius: 3vw;
 }
 
 .decidirCap24 {
-  --background: #f4c1dc;
+  --background: #fbc4d9;
   --background-hover: #b597a7;
   --background-activated: #b597a7;
   --background-focused: #b597a7;
@@ -186,8 +183,8 @@
   font-family: 'Itim', sans-serif;
   font-size: 5vw;
   font-weight: bold;
-  padding: 1px 5px;
-  height: 100%;
+  padding: 0px 5px;
+  height: 95%;
   text-align: center;
   width: 50%;
   margin-left: 0px;

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { IonApp, IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonToast, IonModal } from '@ionic/react';
+import { useIonRouter } from '@ionic/react';
 import './Juego4.css';
+import { completarCap, actualizarDinero } from "../../../services/userRegister.js";
+import { obtenerUsuario } from '../../../services/userRegister';
 
 
 const TEXT_BLOCK = `- Finanzas verdes: Invertir y apoyar económicamente proyectos buenos para el medio ambiente.
@@ -37,6 +40,34 @@ const maskFromConcept = (concept: string, guessed: Set<string>) => {
 const MAX_ATTEMPTS = 6;
 
 const Juego4: React.FC = () => {
+    const router = useIonRouter();
+    const [usuario, setUsuario] = useState<any>(null);
+
+    useEffect(() => {
+        const cargarUsuario = async () => {
+            const usuarioId = localStorage.getItem("usuarioId");
+            const datosUsuario = await obtenerUsuario(usuarioId);
+            setUsuario(datosUsuario);
+        };
+
+        cargarUsuario();
+    }, []);
+
+    const usuarioId = localStorage.getItem("usuarioId");
+
+
+    const handleGameComplete = async () => {
+        if (usuarioId && usuario) {
+            const nuevoDinero = (usuario.dinero || 0) + 10;
+            await actualizarDinero(usuarioId, nuevoDinero);
+
+            setUsuario({ ...usuario, dinero: nuevoDinero });
+        }
+
+        await completarCap(usuarioId, 4);
+        router.push('/Mapa', 'forward', 'replace');
+    };
+
     const [idx, setIdx] = useState(0);
     const [guessedLetters, setGuessedLetters] = useState<Set<string>>(new Set());
     const [attemptsLeft, setAttemptsLeft] = useState(MAX_ATTEMPTS);
@@ -116,6 +147,8 @@ const Juego4: React.FC = () => {
 
     const finished = idx >= PAIRS.length;
 
+
+
     return (
         <IonApp>
             <IonHeader>
@@ -182,10 +215,10 @@ const Juego4: React.FC = () => {
                         <h4>Tu puntaje: {score} / {PAIRS.length}</h4>
                         {score === PAIRS.length ? (
                             <>
-                                <p className="congrats">¡Perfecto! Puedes ir al mapa o jugar de nuevo.</p>
+                                <p className="congrats">¡Perfecto! Ganaste 10 Piggy Pesos. Puedes ir al mapa o jugar de nuevo.</p>
                                 <div className="final-actions">
                                     <IonButton onClick={restart}>Jugar otra vez</IonButton>
-                                    <IonButton color="secondary" href="/Mapa">Salir</IonButton>
+                                    <IonButton color="secondary" onClick={handleGameComplete}>Salir</IonButton>
                                 </div>
                             </>
                         ) : (

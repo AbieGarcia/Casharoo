@@ -51,11 +51,11 @@ import Mapa from './pages/Mapa';
 import Juego2 from './pages/capitulos/Bancos_cap2/Juego2';
 import Cap2 from './pages/capitulos/Bancos_cap2/Cap2';
 import Cap3 from './pages/capitulos/Inversiones_cap3/Cap3';
-import Juego3 from './pages/Juego3';
-import Cap4 from './pages/Cap4';
-import Juego4 from './pages/Juego4';
-import Cap6 from './pages/Cap6';
-import Juego6 from './pages/Juego6';
+import Juego3 from './pages/capitulos/Inversiones_cap3/Juego3';
+import Cap4 from './pages/capitulos/FVerdes_cap4/Cap4';
+import Juego4 from './pages/capitulos/FVerdes_cap4/Juego4';
+import Cap6 from './pages/capitulos/Credito_cap6/Cap6';
+import Juego6 from './pages/capitulos/Credito_cap6/Juego6';
 import Info_Extra from './pages/infoExtra/Info_Extra';
 import Inversion from './pages/inversion/Inversion';
 

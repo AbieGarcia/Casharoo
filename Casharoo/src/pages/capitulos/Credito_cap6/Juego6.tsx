@@ -1,6 +1,9 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { IonApp, IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonRow, IonCol, IonButton } from '@ionic/react';
 import './Juego6.css';
+import { useIonRouter } from '@ionic/react';
+import { completarCap, actualizarDinero } from "../../../services/userRegister.js";
+import { obtenerUsuario } from '../../../services/userRegister';
 
 type Direction = 'across' | 'down';
 
@@ -118,6 +121,34 @@ const GRID_TEMPLATE = buildGridFromMatrix();
 const normalize = (s: string) => s.normalize('NFD').replace(/\p{Diacritic}/gu, '').toUpperCase();
 
 const Juego6: React.FC = () => {
+    const router = useIonRouter();
+    const [usuario, setUsuario] = useState<any>(null);
+
+    useEffect(() => {
+        const cargarUsuario = async () => {
+            const usuarioId = localStorage.getItem("usuarioId");
+            const datosUsuario = await obtenerUsuario(usuarioId);
+            setUsuario(datosUsuario);
+        };
+
+        cargarUsuario();
+    }, []);
+
+    const usuarioId = localStorage.getItem("usuarioId");
+
+
+    const handleGameComplete = async () => {
+        if (usuarioId && usuario) {
+            const nuevoDinero = (usuario.dinero || 0) + 10;
+            await actualizarDinero(usuarioId, nuevoDinero);
+
+            setUsuario({ ...usuario, dinero: nuevoDinero });
+        }
+
+        await completarCap(usuarioId, 6);
+        router.push('/Mapa', 'forward', 'replace');
+    };
+
     const [cells, setCells] = useState<(string | null)[][]>(() => {
         // create user input grid mirroring GRID_TEMPLATE ('' for input cells, null for black)
         return GRID_TEMPLATE.map(row => row.map(cell => cell ? '' : null));
@@ -248,7 +279,7 @@ const Juego6: React.FC = () => {
                                 <>
                                     <p className="success">¡Has completado el crucigrama correctamente!</p>
                                     <IonButton color="secondary" onClick={reset}>Repetir juego</IonButton>
-                                    <IonButton color="secondary" href="/Mapa">Regresar al mapa</IonButton>
+                                    <IonButton color="secondary" onClick={handleGameComplete}>Regresar al mapa</IonButton>
                                 </>
                             ) : (
                                 <>

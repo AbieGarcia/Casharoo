@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IonApp, IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonAlert } from '@ionic/react';
-import { completarCap } from "../services/userRegister.js";
+import { completarCap, actualizarDinero } from "../../../services/userRegister.js";
+import { obtenerUsuario } from '../../../services/userRegister';
 import './Juego3.css';
 
 interface Question {
@@ -42,13 +43,41 @@ const questions: Question[] = [
 ];
 
 const Juego3: React.FC = () => {
+    const [usuario, setUsuario] = useState<any>(null);
+
+    useEffect(() => {
+        const cargarUsuario = async () => {
+            const usuarioId = localStorage.getItem("usuarioId");
+            const datosUsuario = await obtenerUsuario(usuarioId);
+            setUsuario(datosUsuario);
+        };
+
+        cargarUsuario();
+    }, []);
+
+    const usuarioId = localStorage.getItem("usuarioId");
+
+
+    const handleGameComplete = async () => {
+        setShowSuccess(false);
+
+        if (usuarioId && usuario) {
+            const nuevoDinero = (usuario.dinero || 0) + 10;
+            await actualizarDinero(usuarioId, nuevoDinero);
+
+            setUsuario({ ...usuario, dinero: nuevoDinero });
+        }
+
+        await completarCap(usuarioId, 3);
+    };
+
+
     const [index, setIndex] = useState(0);
     const [selected, setSelected] = useState<number | null>(null);
     const [incorrect, setIncorrect] = useState(false);
     const [completed, setCompleted] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
 
-    const usuarioId = localStorage.getItem("usuarioId");
     const isCorrectSelection = selected !== null && selected === questions[index].correctIndex && !incorrect;
     const progressPercent = ((index + (isCorrectSelection ? 1 : 0)) / questions.length) * 100;
 
@@ -97,6 +126,12 @@ const Juego3: React.FC = () => {
             </IonHeader>
 
             <IonContent className="ion-padding">
+                <div className='recompensa-container'>
+                    <div className='recompensa2'>
+                        <span>Recompensa: $10</span>
+                        <span style={{ fontSize: '24px' }}></span>
+                    </div>
+                </div>
                 {!completed ? (
                     <div className="trivia-container">
                         <div className="question-card">
@@ -132,9 +167,9 @@ const Juego3: React.FC = () => {
 
                 <IonAlert
                     isOpen={showSuccess}
-                    onDidDismiss={() => { setShowSuccess(false); completarCap(usuarioId, 1); }}
-                    header={'¡Felicidades, has completado la trivia!'}
-                    message={'Has respondido correctamente todas las preguntas.'}
+                    onDidDismiss={handleGameComplete}
+                    header={'¡Felicidades!'}
+                    message={'`Has desbloqueado el siguiente capítulo y ganaste 10 Piggy Pesos.`'}
                     buttons={['OK']}
                 />
             </IonContent>

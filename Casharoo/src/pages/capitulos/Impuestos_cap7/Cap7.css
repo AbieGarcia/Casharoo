@@ -1,0 +1,193 @@
+.carruselContainerCP4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.carruselSlidesCP4 {
+    width: 93%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #760490;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+
+.slide1CP4,
+.slide2CP4,
+.slide3CP4,
+.slide4CP4,
+.slide5CP4,
+.slide6CP4,
+.slide7CP4,
+.slide8CP4,
+.slide9CP4,
+.slide10CP4,
+.slide11CP4,
+.slide12CP4,
+.slide13CP4,
+.slide14CP4,
+.slide15CP4,
+.slide16CP4,
+.slide17CP4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 6.5vw;
+    font-family: 'Itim', sans-serif;
+    background-color: #760490;
+}
+
+.parte1CP4 {
+    font-family: 'Itim', sans-serif;
+    width: 100%;
+    height: 5%;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    stroke: black;
+    font-weight: bolder;
+    color: #FFFCE8;
+    font-size: 1em;
+}
+
+
+.parte2CP4 {
+    height: 60%;
+}
+
+.parte3CP4 {
+    margin-top: 5%;
+    width: 100%;
+    height: 40%;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    padding: 0 10px;
+
+    div {
+        white-space: normal;
+        text-align: justify;
+        background-color: #f1e9da;
+        height: 90%;
+        border-radius: 25px;
+        padding: 10px;
+        margin-top: 5px;
+        box-sizing: border-box;
+    }
+}
+
+.carruselButtonsCP4 {
+    display: flex;
+    gap: 10px;
+    padding-top: 5%;
+
+    .button {
+        width: 150px;
+        font-size: 20px;
+        font-family: 'Itim', sans-serif;
+        font-weight: bolder;
+        color: #483089;
+        --background: #FFEFD1;
+    }
+}
+
+.botonesContainerCP4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.decidirCap41 {
+    --background: #eac1f4;
+    --background-hover: #b397b5;
+    --background-activated: #b397b5;
+    --background-focused: #b597b4;
+    --color: #420259;
+    --border-radius: 0;
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    --ripple-color: rgb(255, 20, 243);
+    font-family: 'Itim', sans-serif;
+    font-size: 4.5vw;
+    font-weight: bold;
+    width: 100%;
+    padding: 1px 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    --border-radius: 3vw;
+}
+
+.decidirCap42 {
+    --background: #eac1f4;
+    --background-hover: #b397b5;
+    --background-activated: #b397b5;
+    --background-focused: #b597b4;
+    --color: #420259;
+    --border-radius: 0;
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    --ripple-color: rgb(255, 20, 243);
+    font-family: 'Itim', sans-serif;
+    font-size: 5vw;
+    font-weight: bold;
+    padding: 1px 5px;
+    height: 90%;
+    text-align: center;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    --border-radius: 5vw;
+}
+
+.decidirCap43 {
+    --background: #eac1f4;
+    --background-hover: #b397b5;
+    --background-activated: #b397b5;
+    --background-focused: #b597b4;
+    --color: #420259;
+    --border-radius: 0;
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    --ripple-color: rgb(255, 20, 243);
+    font-family: 'Itim', sans-serif;
+    font-size: 4.5vw;
+    font-weight: bold;
+    width: 100%;
+    padding: 1px 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    --border-radius: 3vw;
+}
+
+.decidirCap44 {
+    --background: #eac1f4;
+    --background-hover: #b397b5;
+    --background-activated: #b397b5;
+    --background-focused: #b597b4;
+    --color: #420259;
+    --border-radius: 0;
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    --ripple-color: rgb(255, 20, 243);
+    font-family: 'Itim', sans-serif;
+    font-size: 5vw;
+    font-weight: bold;
+    padding: 0px 5px;
+    height: 95%;
+    text-align: center;
+    width: 50%;
+    margin-left: 0px;
+    margin-right: 0px;
+    --border-radius: 5vw;
+}

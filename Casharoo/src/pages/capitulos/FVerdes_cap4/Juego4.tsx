@@ -152,12 +152,18 @@ const Juego4: React.FC = () => {
     return (
         <IonApp>
             <IonHeader>
-                <IonToolbar className="nombre4">
-                    <IonTitle className="nom4">Ahorcado financiero</IonTitle>
-                </IonToolbar>
+                <IonHeader className='nombre' >
+                    <IonTitle className='nom4'>Ahorcado Financiero</IonTitle>
+                </IonHeader>
             </IonHeader>
 
             <IonContent className="ion-padding juego4-hangman">
+                <div className='recompensa-container'>
+                    <div className='recompensa2'>
+                        <span>Recompensa: $10</span>
+                        <span style={{ fontSize: '24px' }}></span>
+                    </div>
+                </div>
                 {!finished ? (
                     <div className="hangman-area">
                         <div className="top-row">

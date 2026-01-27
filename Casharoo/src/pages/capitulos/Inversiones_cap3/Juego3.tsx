@@ -119,10 +119,8 @@ const Juego3: React.FC = () => {
 
     return (
         <IonApp>
-            <IonHeader>
-                <IonToolbar className='nombre'>
-                    <IonTitle className='nom3'>Juego Trivia</IonTitle>
-                </IonToolbar>
+            <IonHeader className='nombre'>
+                <IonTitle className='nom3'>Juego Trivia</IonTitle>
             </IonHeader>
 
             <IonContent className="ion-padding">

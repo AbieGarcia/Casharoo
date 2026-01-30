@@ -1,3 +1,20 @@
+.titulo-juego6 {
+    margin-top: 7px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffdfca;
+    font-family: baloo;
+
+}
+
+
+.toolbar-juego6 {
+    --background: #b53c09;
+    height: 50px;
+
+}
+
+
 /* Basic crossword styles */
 :root {
     --green: #2e8b57;

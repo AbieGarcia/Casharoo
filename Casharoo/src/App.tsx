@@ -61,6 +61,8 @@ import Cap8 from './pages/capitulos/Retiro_cap8/Cap8';
 import Juego7 from './pages/capitulos/Impuestos_cap7/Juego7';
 
 import Juego6 from './pages/capitulos/Credito_cap6/Juego6';
+import Juego5 from './pages/capitulos/Debito_cap5/Juego5';
+import Cap5 from './pages/capitulos/Debito_cap5/Cap5';
 import Info_Extra from './pages/infoExtra/Info_Extra';
 import Inversion from './pages/inversion/Inversion';
 
@@ -169,6 +171,15 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/Juego6">
           <Juego6 />
+        </Route>
+        <Route exact path="/Cap5">
+          <Cap5 />
+        </Route>
+        <Route exact path="/Juego6">
+          <Juego6 />
+        </Route>
+        <Route exact path="/Juego5">
+          <Juego5 />
         </Route>
       </IonRouterOutlet >
     </IonReactRouter >

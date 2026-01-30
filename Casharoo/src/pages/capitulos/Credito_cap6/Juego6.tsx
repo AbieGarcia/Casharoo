@@ -220,8 +220,8 @@ const Juego6: React.FC = () => {
     return (
         <IonApp>
             <IonHeader>
-                <IonToolbar className="nombre6">
-                    <IonTitle className="nom6">Juego 6 — Crucigrama de finanzas</IonTitle>
+                <IonToolbar className="toolbar-juego6">
+                    <IonTitle className="titulo-juego6">Crucigrama de finanzas</IonTitle>
                 </IonToolbar>
             </IonHeader>
 

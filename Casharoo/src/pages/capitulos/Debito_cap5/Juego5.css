@@ -1,0 +1,97 @@
+.titulo-juego5 {
+    margin-top: 7px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #4c1d95;
+    font-family: baloo;
+
+}
+
+
+.nom5 {
+    font-family: baloo;
+    font-size: 2em;
+    background-color: #483089;
+    color: #fcf5ff;
+}
+
+.toolbar-juego5 {
+    --background: #ede9fe;
+    height: 50px;
+
+}
+
+.juego5-content {
+    background: linear-gradient(180deg, #f5f3ff, #ffffff);
+}
+
+.parrafo {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 6px 14px rgba(124, 58, 237, 0.15);
+    margin-bottom: 22px;
+    font-size: 1.05rem;
+}
+
+.espacio {
+    display: inline-block;
+    min-width: 90px;
+    margin: 0 4px;
+    padding: 4px 8px;
+    border-bottom: 2px dashed #7c3aed;
+    color: #6b21a8;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+
+.espacio.correcto {
+    background-color: #dcfce7;
+    color: #166534;
+    border-bottom: 2px solid #22c55e;
+}
+
+.espacio.incorrecto {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border-bottom: 2px solid #ef4444;
+}
+
+.banco-palabras {
+    margin-top: 20px;
+}
+
+.palabra {
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 6px;
+    border-radius: 20px;
+    background-color: #ede9fe;
+    color: #5b21b6;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.palabra:hover {
+    transform: scale(1.05);
+}
+
+.palabra.seleccionada {
+    background-color: #7c3aed;
+    color: white;
+}
+
+.palabra.usada {
+    background-color: #d1d5db;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+.boton-verificar {
+    margin-top: 26px;
+    --background: #7c3aed;
+    --border-radius: 18px;
+    font-size: 1.1rem;
+}

@@ -1,3 +1,10 @@
+.nom4 {
+    font-family: baloo;
+    font-size: 1.6em;
+    background-color: #00993b;
+    color: #fcf5ff;
+}
+
 :root {
     --green: #2e8b57;
     --muted: #f4f4f6;

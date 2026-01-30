@@ -1,203 +1,182 @@
 import React, { useEffect, useState } from 'react';
 import {
-    IonApp,
-    IonContent,
-    IonHeader,
-    IonTitle,
-    IonToolbar,
-    IonButton,
-    IonToast,
-    IonIcon
+    IonApp, IonContent, IonHeader, IonTitle, IonToolbar,
+    IonButton, IonToast, IonIcon, IonModal
 } from '@ionic/react';
-import { trophy, cash } from 'ionicons/icons';
+import { trophy, cash, happyOutline, lockClosedOutline } from 'ionicons/icons';
 import { useIonRouter } from '@ionic/react';
 import './Juego7.css';
 
-const WORDS = [
-    'IVA',
-    'SAT',
-    'ISR',
-    'ADEUDO',
-    'DECLARACION',
-    'IMPUESTOS'
-];
+const WORDS = ['IVA', 'SAT', 'ISR', 'ADEUDO', 'DECLARACION', 'IMPUESTOS'];
 
 const GRID: string[][] = [
-    ['V', 'H', 'A', 'G', 'S', 'Q', 'B', 'L', 'K', 'Z', 'U', 'N', 'C', 'G', 'O', 'F', 'B', 'Ü', 'W', 'J'],
-    ['Z', 'F', 'D', 'F', 'T', 'Á', 'P', 'G', 'L', 'F', 'Í', 'E', 'G', 'X', 'V', 'J', 'W', 'I', 'K', 'U'],
-    ['V', 'W', 'N', 'E', 'N', 'Ú', 'K', 'O', 'T', 'A', 'Q', 'R', 'W', 'Q', 'J', 'G', 'R', 'A', 'H', 'Ñ'],
-    ['Ñ', 'Ñ', 'E', 'É', 'G', 'Ó', 'C', 'M', 'Ó', 'X', 'H', 'M', 'Y', 'A', 'M', 'Ü', 'R', 'D', 'A', 'P'],
-    ['K', 'X', 'I', 'A', 'R', 'Ú', 'E', 'R', 'L', 'X', 'V', 'H', 'D', 'I', 'H', 'B', 'S', 'P', 'X', 'É'],
-    ['Z', 'Ñ', 'C', 'I', 'V', 'A', 'Í', 'G', 'U', 'Z', 'J', 'W', 'R', 'E', 'T', 'D', 'O', 'L', 'B', 'I'],
-    ['D', 'Á', 'A', 'R', 'Ú', 'G', 'J', 'L', 'A', 'E', 'I', 'S', 'L', 'A', 'E', 'Ñ', 'T', 'J', 'E', 'Í'],
-    ['X', 'M', 'H', 'T', 'F', 'D', 'Z', 'M', 'U', 'X', 'I', 'V', 'S', 'Á', 'A', 'H', 'S', 'F', 'L', 'U'],
-    ['N', 'A', 'E', 'D', 'S', 'Z', 'H', 'Ú', 'O', 'A', 'Ñ', 'Ñ', 'Í', 'R', 'Á', 'V', 'E', 'T', 'É', 'P'],
-    ['I', 'U', 'D', 'B', 'M', 'F', 'Ú', 'W', 'Z', 'Ü', 'C', 'D', 'A', 'T', 'T', 'Ñ', 'U', 'R', 'Z', 'W'],
-    ['L', 'É', 'A', 'Z', 'Ñ', 'N', 'H', 'O', 'I', 'A', 'U', 'Ñ', 'Ü', 'M', 'L', 'H', 'P', 'R', 'L', 'E'],
-    ['I', 'M', 'Í', 'X', 'A', 'C', 'J', 'O', 'A', 'D', 'É', 'R', 'B', 'B', 'L', 'J', 'M', 'V', 'M', 'É'],
-    ['W', 'N', 'R', 'S', 'F', 'X', 'Z', 'Z', 'E', 'J', 'Ü', 'B', 'V', 'G', 'H', 'S', 'I', 'C', 'G', 'S'],
-    ['R', 'N', 'A', 'Í', 'B', 'I', 'U', 'Ü', 'Z', 'U', 'O', 'L', 'A', 'I', 'D', 'E', 'R', 'P', 'L', 'E'],
-    ['Ú', 'Ó', 'T', 'P', 'B', 'R', 'U', 'Z', 'W', 'G', 'N', 'I', 'A', 'D', 'D', 'X', 'X', 'X', 'P', 'C'],
-    ['L', 'H', 'E', 'B', 'N', 'D', 'Í', 'Ü', 'H', 'A', 'I', 'V', 'K', 'V', 'T', 'Z', 'Í', 'U', 'C', 'C'],
-    ['É', 'K', 'R', 'I', 'R', 'J', 'B', 'Í', 'Á', 'P', 'U', 'Q', 'Ú', 'É', 'P', 'X', 'N', 'E', 'O', 'E'],
-    ['Ú', 'S', 'C', 'W', 'R', 'H', 'Ü', 'C', 'T', 'Q', 'P', 'Q', 'B', 'C', 'O', 'T', 'Ó', 'U', 'N', 'Ó'],
-    ['D', 'É', 'E', 'I', 'É', 'C', 'J', 'W', 'R', 'Ñ', 'U', 'C', 'M', 'É', 'Ó', 'T', 'C', 'W', 'L', 'L'],
-    ['X', 'Q', 'S', 'Í', 'P', 'S', 'V', 'É', 'Ü', 'C', 'T', 'D', 'P', 'Ü', 'O', 'É', 'Á', 'L', 'J', 'P'],
+    ['V', 'H', 'A', 'G', 'S', 'Q', 'B', 'L', 'K', 'Z', 'U', 'N', 'C', 'G', 'O'],
+    ['I', 'F', 'D', 'F', 'T', 'A', 'P', 'G', 'L', 'F', 'I', 'E', 'G', 'X', 'V'],
+    ['M', 'W', 'N', 'E', 'N', 'U', 'K', 'O', 'T', 'A', 'Q', 'R', 'W', 'Q', 'J'],
+    ['P', 'X', 'I', 'S', 'R', 'U', 'E', 'R', 'L', 'X', 'V', 'H', 'D', 'I', 'H'],
+    ['U', 'N', 'C', 'I', 'V', 'A', 'I', 'G', 'U', 'Z', 'J', 'W', 'R', 'E', 'T'],
+    ['E', 'A', 'A', 'R', 'U', 'G', 'J', 'L', 'A', 'E', 'I', 'Z', 'L', 'A', 'E'],
+    ['S', 'M', 'H', 'T', 'F', 'D', 'Z', 'M', 'U', 'X', 'I', 'V', 'K', 'A', 'A'],
+    ['T', 'A', 'E', 'D', 'E', 'C', 'L', 'A', 'R', 'A', 'C', 'I', 'O', 'N', 'P'],
+    ['O', 'U', 'D', 'B', 'M', 'F', 'U', 'W', 'Z', 'C', 'D', 'A', 'T', 'T', 'N'],
+    ['S', 'E', 'A', 'Z', 'N', 'N', 'H', 'O', 'I', 'A', 'U', 'N', 'U', 'M', 'L'],
+    ['A', 'D', 'E', 'U', 'D', 'O', 'A', 'D', 'E', 'R', 'B', 'B', 'L', 'J', 'M'],
+    ['W', 'N', 'R', 'S', 'F', 'X', 'Z', 'Z', 'E', 'J', 'U', 'B', 'V', 'G', 'H'],
+    ['R', 'N', 'A', 'I', 'B', 'I', 'U', 'U', 'Z', 'U', 'O', 'L', 'A', 'I', 'D'],
+    ['U', 'O', 'T', 'P', 'B', 'R', 'U', 'Z', 'W', 'G', 'N', 'I', 'A', 'D', 'D'],
+    ['L', 'H', 'E', 'B', 'N', 'D', 'I', 'S', 'A', 'T', 'V', 'K', 'V', 'T', 'Z'],
 ];
 
-interface Position {
-    row: number;
-    col: number;
-}
-
-interface WordCell extends Position {
-    word: string;
-}
+interface Cell { row: number; col: number; word: string; }
 
 const Juego7: React.FC = () => {
     const router = useIonRouter();
-
-    const [correctCells, setCorrectCells] = useState<WordCell[]>([]);
-    const [scoredCells, setScoredCells] = useState<Position[]>([]);
+    const [cells, setCells] = useState<Cell[]>([]);
+    const [selected, setSelected] = useState<Cell[]>([]);
     const [completedWords, setCompletedWords] = useState<string[]>([]);
     const [score, setScore] = useState(0);
     const [toast, setToast] = useState('');
+    const [showWinModal, setShowWinModal] = useState(false);
+
+    const reiniciarJuego = () => {
+        setSelected([]);
+        setCompletedWords([]);
+        setScore(0);
+        setShowWinModal(false);
+    };
 
     useEffect(() => {
-        const directions = [
-            [0, 1], [0, -1], [1, 0], [-1, 0],
-            [1, 1], [1, -1], [-1, 1], [-1, -1]
-        ];
-
-        const found: WordCell[] = [];
-
-        for (const word of WORDS) {
-            const w = word.toUpperCase();
-
+        const directions = [[0, 1], [1, 0], [0, -1], [-1, 0], [1, 1], [1, -1], [-1, 1], [-1, -1]];
+        const found: Cell[] = [];
+        WORDS.forEach(word => {
             for (let r = 0; r < GRID.length; r++) {
                 for (let c = 0; c < GRID[0].length; c++) {
                     for (const [dx, dy] of directions) {
                         let ok = true;
-                        const temp: WordCell[] = [];
-
-                        for (let i = 0; i < w.length; i++) {
-                            const nr = r + dx * i;
-                            const nc = c + dy * i;
-
-                            if (
-                                nr < 0 || nc < 0 ||
-                                nr >= GRID.length || nc >= GRID[0].length ||
-                                GRID[nr][nc].toUpperCase() !== w[i]
-                            ) {
-                                ok = false;
-                                break;
+                        const temp: Cell[] = [];
+                        for (let i = 0; i < word.length; i++) {
+                            const nr = r + dx * i; const nc = c + dy * i;
+                            if (nr < 0 || nc < 0 || nr >= GRID.length || nc >= GRID[0].length || GRID[nr][nc] !== word[i]) {
+                                ok = false; break;
                             }
-
                             temp.push({ row: nr, col: nc, word });
                         }
-
                         if (ok) found.push(...temp);
                     }
                 }
             }
-        }
-
-        setCorrectCells(found);
+        });
+        setCells(found);
     }, []);
 
-    const handleSelect = (row: number, col: number) => {
-        const alreadyScored = scoredCells.some(c => c.row === row && c.col === col);
-        if (alreadyScored) return;
+    const handleClick = (r: number, c: number) => {
+        const cellData = cells.find(cell => cell.row === r && cell.col === c);
+        if (!cellData || selected.some(s => s.row === r && s.col === c)) return;
 
-        const match = correctCells.find(c => c.row === row && c.col === col);
-        if (!match) return;
+        const updatedSelected = [...selected, cellData];
+        setSelected(updatedSelected);
+        setScore(s => s + 1);
 
-        setScoredCells(prev => [...prev, { row, col }]);
-        setScore(prev => prev + 10);
+        const wordToTrack = cellData.word;
+        const totalLetters = cells.filter(cell => cell.word === wordToTrack).length;
+        const selectedLetters = updatedSelected.filter(cell => cell.word === wordToTrack).length;
 
-        const wordCells = correctCells.filter(c => c.word === match.word);
-        const scoredForWord = wordCells.every(cell =>
-            [...scoredCells, { row, col }].some(
-                s => s.row === cell.row && s.col === cell.col
-            )
-        );
+        if (totalLetters === selectedLetters && !completedWords.includes(wordToTrack)) {
+            const newCompleted = [...completedWords, wordToTrack];
+            setCompletedWords(newCompleted);
+            setScore(s => s + 1);
+            setToast(`✨ ¡Encontraste: ${wordToTrack}! ✨`);
 
-        if (scoredForWord && !completedWords.includes(match.word)) {
-            setCompletedWords(prev => [...prev, match.word]);
-            setScore(prev => prev + 50);
-            setToast(`🎉 Palabra completada: ${match.word} (+50)`);
+            if (newCompleted.length === WORDS.length) {
+                setShowWinModal(true);
+            }
         }
-    };
-
-    const getCellClass = (row: number, col: number) => {
-        let cls = 'sopa-cell';
-
-        if (scoredCells.some(c => c.row === row && c.col === col)) {
-            cls += ' correct';
-        }
-
-        return cls;
     };
 
     return (
         <IonApp>
             <IonHeader>
-                <IonToolbar>
-                    <IonTitle>
-                        <IonIcon icon={trophy} /> Sopa de Letras – Impuestos
-                    </IonTitle>
+                <IonToolbar className="kids-toolbar">
+                    <IonTitle><IonIcon icon={happyOutline} /> Sopa Tributaria</IonTitle>
                 </IonToolbar>
             </IonHeader>
 
-            <IonContent className="ion-padding">
-                <div className="score-board">
-                    <IonIcon icon={cash} />
-                    <strong>{score} puntos</strong>
-                </div>
+            <IonContent className="kids-bg ion-padding">
+                <div className="game-wrapper">
+                    <div className="piggy-score">
+                        <IonIcon icon={cash} color="success" />
+                        <span> {score} Piggy Pesos</span>
+                    </div>
 
-                <div className="words-grid">
-                    {WORDS.map(word => (
-                        <div
-                            key={word}
-                            className={`word-bubble ${completedWords.includes(word) ? 'found' : ''}`}
-                        >
-                            {completedWords.includes(word) ? '✅' : '🔍'} {word}
-                        </div>
-                    ))}
-                </div>
-
-                <div className="sopa-wrapper">
-                    <div className="sopa-grid">
-                        {GRID.map((row, i) => (
-                            <div className="sopa-row" key={i}>
-                                {row.map((letter, j) => (
-                                    <div
-                                        key={`${i}-${j}`}
-                                        className={getCellClass(i, j)}
-                                        onMouseDown={() => handleSelect(i, j)}
-                                        onTouchStart={() => handleSelect(i, j)}
-                                    >
-                                        {letter}
-                                    </div>
-                                ))}
+                    <div className="words-cloud">
+                        {WORDS.map(w => (
+                            <div key={w} className={`word-bubble ${completedWords.includes(w) ? 'is-found' : ''}`}>
+                                {completedWords.includes(w) ? '⭐ ' : ''}{w}
                             </div>
                         ))}
                     </div>
+
+                    <div className="sopa-container">
+                        <div className="sopa-grid-kids">
+                            {GRID.map((row, rowIndex) =>
+                                row.map((letter, colIndex) => {
+                                    const isSel = selected.some(s => s.row === rowIndex && s.col === colIndex);
+                                    const isDone = isSel && completedWords.includes(cells.find(c => c.row === rowIndex && c.col === colIndex)?.word || '');
+
+                                    return (
+                                        <div
+                                            key={`${rowIndex}-${colIndex}`}
+                                            className={`sopa-cell-kids ${isSel ? 'sel' : ''} ${isDone ? 'done' : ''}`}
+                                            onClick={() => handleClick(rowIndex, colIndex)}
+                                        >
+                                            {letter}
+                                        </div>
+                                    );
+                                })
+                            )}
+                        </div>
+                    </div>
+
+
                 </div>
 
-                <IonButton expand="block" onClick={() => router.push('/Mapa')}>
-                    Volver al mapa
-                </IonButton>
+                {/* MODAL DE VICTORIA: ÚNICA FORMA DE SALIR */}
+                <IonModal isOpen={showWinModal} backdropDismiss={false} className="win-modal">
+                    <div className="modal-container">
+                        <div className="modal-box">
+                            <div className="modal-header-white">
+                                <h2>¡Felicidades, has ganado! 🎉</h2>
+                            </div>
 
-                <IonToast
-                    isOpen={!!toast}
-                    message={toast}
-                    duration={2000}
-                    onDidDismiss={() => setToast('')}
-                />
+                            <div className="modal-body">
+                                <span className="party-emoji">🎊</span>
+                                <p>Has completado la sopa y ganaste <b>{score} Piggy Pesos</b></p>
+                            </div>
+
+                            <div className="modal-footer-buttons">
+                                <IonButton className="btn-pink" expand="block" onClick={reiniciarJuego}>
+                                    JUGAR DE NUEVO
+                                </IonButton>
+
+                                <IonButton className="btn-pink" expand="block" onClick={() => router.push('/ahorro')}>
+                                    IR A CAPÍTULOS
+                                </IonButton>
+                            </div>
+                        </div>
+                    </div>
+                </IonModal>
+
+                <IonToast isOpen={!!toast} message={toast} duration={1500} position="top" onDidDismiss={() => setToast('')} />
             </IonContent>
         </IonApp>
     );
 };
 
 export default Juego7;
+
+
+
+
+
+
+

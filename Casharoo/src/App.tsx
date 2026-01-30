@@ -56,6 +56,8 @@ import Cap4 from './pages/capitulos/FVerdes_cap4/Cap4';
 import Juego4 from './pages/capitulos/FVerdes_cap4/Juego4';
 import Cap6 from './pages/capitulos/Credito_cap6/Cap6';
 import Cap7 from './pages/capitulos/Impuestos_cap7/Cap7';
+import Cap8 from './pages/capitulos/Retiro_cap8/Cap8';
+
 import Juego7 from './pages/capitulos/Impuestos_cap7/Juego7';
 
 import Juego6 from './pages/capitulos/Credito_cap6/Juego6';
@@ -160,6 +162,10 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/Cap7">
           <Cap7 />
+        </Route>
+
+        <Route exact path="/Cap8">
+          <Cap8 />
         </Route>
         <Route exact path="/Juego6">
           <Juego6 />

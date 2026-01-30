@@ -1,0 +1,155 @@
+.kids-bg {
+    --background: #f0faff;
+}
+
+.kids-toolbar {
+    --background: #4cc9f0;
+    --color: white;
+    font-weight: bold;
+}
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.piggy-score {
+    background: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: 3px solid #4895ef;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #4895ef;
+    box-shadow: 0 4px 0 #4895ef;
+}
+
+/* Lista de palabras tipo burbujas */
+.words-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.word-bubble {
+    background: #e0e1dd;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #555;
+    transition: 0.3s;
+}
+
+.word-bubble.is-found {
+    background: #4361ee;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(67, 97, 238, 0.4);
+}
+
+/* EL GRID CORREGIDO (15 COLUMNAS) */
+.sopa-container {
+    background: white;
+    padding: 8px;
+    border-radius: 15px;
+    border: 4px solid #b5e48c;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 6px 0 #b5e48c;
+}
+
+.sopa-grid-kids {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    /* 15 columnas iguales */
+    gap: 3px;
+}
+
+.sopa-cell-kids {
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+}
+
+.sopa-cell-kids.sel {
+    background: #ffd60a;
+    transform: scale(0.9);
+}
+
+.sopa-cell-kids.done {
+    background: #72efdd;
+    color: #0077b6;
+    animation: bounce 0.3s;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* MODAL DE VICTORIA */
+.win-modal {
+    padding: 3px;
+    --height: 400px;
+    --width: 90%;
+    --border-radius: 20px;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+}
+
+.modal-content h2 {
+    color: #4361ee;
+    font-size: 1.6rem;
+}
+
+.win-icon {
+    font-size: 4rem;
+    margin: 10px 0;
+}
+
+.modal-box {
+    background-color: #bd96c5;
+}
+
+
+
+.modal-footer-buttons {
+    background-color: #bd96c5;
+
+}
+
+.ion-delegate-host {
+    background-color: #bd96c5;
+
+}
+
+.btn-pink {
+    color: black;
+}

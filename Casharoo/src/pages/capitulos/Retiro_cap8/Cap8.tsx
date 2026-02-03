@@ -166,12 +166,16 @@ const Cap8: React.FC = () => {
                 <img src="..\..\assets\Cap8-12.png" height="100%"></img>
             </div>
             <div className=' parte3CP4'>
-                <div className="botonesContainerCP4">
-                    <IonButton className='decidirCap42' onClick={() => handleDecision(false)}>3,000 </IonButton>
-                    <IonButton className='decidirCap42' onClick={() => handleDecision(false)}>1,330 </IonButton>
-                    <IonButton className='decidirCap42' onClick={() => handleDecision(true)}>1,331 </IonButton>
-                    <IonButton className='decidirCap42' onClick={() => handleDecision(false)}>2,500</IonButton>
+                <div className="botonesContainerCP48">
+                    <div >
+                        <IonButton className='decidirCap48' onClick={() => handleDecision(false)}>3,000 </IonButton>
 
+                        <IonButton className='decidirCap48' onClick={() => handleDecision(false)}>1,330 </IonButton>
+
+                    </div>
+
+                    <div className='row1'><IonButton className='decidirCap48' onClick={() => handleDecision(true)}>1,331 </IonButton>
+                        <IonButton className='decidirCap48' onClick={() => handleDecision(false)}>2,500</IonButton></div>
                 </div>
             </div>
         </div>,

@@ -16,7 +16,7 @@ interface Meta {
 
 const Ahorro: React.FC = () => {
   const history = useHistory();
-  
+
   const [usuario, setUsuario] = useState<any>(null);
   const [mostrarDetalles, setMostrarDetalles] = useState(false);
   const [metaSeleccionada, setMetaSeleccionada] = useState<{ index: number; meta: Meta } | null>(null);
@@ -79,8 +79,8 @@ const Ahorro: React.FC = () => {
     setLoading(true);
     try {
       const usuarioId = localStorage.getItem("usuarioId");
-      const cantidadAaportar = metaSeleccionada?.meta.plazo === 4 
-        ? parseFloat(montoAporte) 
+      const cantidadAaportar = metaSeleccionada?.meta.plazo === 4
+        ? parseFloat(montoAporte)
         : metaSeleccionada?.meta.aportePorPlazo || 0;
 
       const resultado = await aportarAMeta(usuarioId, metaSeleccionada!.index, cantidadAaportar);
@@ -193,16 +193,16 @@ const Ahorro: React.FC = () => {
           {metas.length > 0 ? (
             metas.map((meta: Meta, index: number) => {
               const porcentaje = getPorcentajeProgreso(meta);
-              const colorMeta = 
+              const colorMeta =
                 meta.color === 1
                   ? '#07DAFF'
                   : meta.color === 2
-                  ? '#ff6f9f'
-                  : meta.color === 3
-                  ? '#FFFC44'
-                  : meta.color === 4
-                  ? '#30DD39'
-                  : '#fff';
+                    ? '#ff6f9f'
+                    : meta.color === 3
+                      ? '#FFFC44'
+                      : meta.color === 4
+                        ? '#30DD39'
+                        : '#fff';
 
               return (
                 <div
@@ -218,10 +218,10 @@ const Ahorro: React.FC = () => {
                         meta.icono === 1
                           ? '../../assets/Candy.png'
                           : meta.icono === 2
-                          ? '../../assets/Flower.png'
-                          : meta.icono === 3
-                          ? '../../assets/Shoes.png'
-                          : '../../assets/Golden retriever.png'
+                            ? '../../assets/Flower.png'
+                            : meta.icono === 3
+                              ? '../../assets/Shoes.png'
+                              : '../../assets/Golden retriever.png'
                       }
                       alt={meta.nombre}
                     />
@@ -275,10 +275,10 @@ const Ahorro: React.FC = () => {
                     metaSeleccionada.meta.icono === 1
                       ? '../../assets/Candy.png'
                       : metaSeleccionada.meta.icono === 2
-                      ? '../../assets/Flower.png'
-                      : metaSeleccionada.meta.icono === 3
-                      ? '../../assets/Shoes.png'
-                      : '../../assets/Golden retriever.png'
+                        ? '../../assets/Flower.png'
+                        : metaSeleccionada.meta.icono === 3
+                          ? '../../assets/Shoes.png'
+                          : '../../assets/Golden retriever.png'
                   }
                   alt={metaSeleccionada.meta.nombre}
                 />
@@ -387,40 +387,46 @@ const Ahorro: React.FC = () => {
           </div>
         </div>
       )}
-
       <IonFooter>
         <IonToolbar>
-          {usuario && usuario.capitulos && usuario.capitulos[0]?.completed ? (
-            <>
-              <IonButton className='btnMenu1' onClick={() => history.push('/mapa')}>
-                <img src="../../assets/home.png" alt="Inicio" />
-              </IonButton>
-              <IonButton className='btnMenu1' onClick={() => history.push('/info-extra')}>
-                <img src="../../assets/info.png" alt="Información" />
-              </IonButton>
-              <IonButton className='btnMenu1' onClick={() => history.push('/ahorro')}>
-                <img src="../../assets/ahorro.png" alt="Ahorro" />
-              </IonButton>
-              <IonButton className='btnMenu1' onClick={() => history.push('/inversion')}>
-                <img src="../../assets/invest.png" alt="Inversión" />
-              </IonButton>
-              <IonButton className='btnMenu1' onClick={() => history.push('/perfil')}>
-                <img src="../../assets/perfil.png" alt="Perfil" />
-              </IonButton>
-            </>
-          ) : (
-            <>
-              <IonButton className='btnMenu' onClick={() => history.push('/mapa')}>
-                <img src="../../assets/home.png" alt="Inicio" />
-              </IonButton>
-              <IonButton className='btnMenu' onClick={() => history.push('/info-extra')}>
-                <img src="../../assets/info.png" alt="Información" />
-              </IonButton>
-              <IonButton className='btnMenu' onClick={() => history.push('/perfil')}>
-                <img src="../../assets/perfil.png" alt="Perfil" />
-              </IonButton>
-            </>
+          <IonButton
+            className="btnMenu1"
+            onClick={() => history.push('/mapa')}
+          >
+            <img src="../../assets/home.png" alt="Inicio" />
+          </IonButton>
+
+          <IonButton
+            className="btnMenu1"
+            onClick={() => history.push('/info-extra')}
+          >
+            <img src="../../assets/info.png" alt="Información" />
+          </IonButton>
+
+          {usuario.capitulos[0]?.completed && (
+            <IonButton
+              className="btnMenu1"
+              onClick={() => history.push('/ahorro')}
+            >
+              <img src="../../assets/ahorro.png" alt="Ahorro" />
+            </IonButton>
           )}
+
+          {usuario.capitulos[2]?.completed && (
+            <IonButton
+              className="btnMenu1"
+              onClick={() => history.push('/inversion')}
+            >
+              <img src="../../assets/invest.png" alt="Inversión" />
+            </IonButton>
+          )}
+
+          <IonButton
+            className="btnMenu1"
+            onClick={() => history.push('/perfil')}
+          >
+            <img src="../../assets/perfil.png" alt="Perfil" />
+          </IonButton>
         </IonToolbar>
       </IonFooter>
     </IonPage>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { IonButton, IonContent, IonHeader, IonPage, IonAlert } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
-import ExploreContainer from '../components/ExploreContainer';
 import './Cap7.css';
 
 const Cap7: React.FC = () => {

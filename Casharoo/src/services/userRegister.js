@@ -183,7 +183,7 @@ const MODO_TESTING = false;
 
 const TRES_HORAS = MODO_TESTING
     ? 2 * 1000           
-    : 2 * 60 * 60 * 1000;
+    : 1 * 60 * 60 * 1000;
 
 const randomConSeed = (seed) => {
     let x = Math.sin(seed) * 10000;

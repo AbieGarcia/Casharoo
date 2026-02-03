@@ -344,7 +344,7 @@ const Inversion: React.FC = () => {
                       type="number"
                       value={capital}
                       onChange={(e) => setCapital(e.target.value)}
-                      placeholder="Ej: 1000"
+                      placeholder="Ej: 200"
                       className="inversion-config-form-input"
                     />
                     <p className="inversion-config-form-hint">
@@ -656,37 +656,44 @@ const Inversion: React.FC = () => {
 
       <IonFooter>
         <IonToolbar>
-          {usuario && usuario.capitulos && usuario.capitulos[0]?.completed ? (
-            <>
-              <IonButton className='btnMenu1' onClick={() => history.push('/mapa')}>
-                <img src="../../assets/home.png" alt="Inicio" />
-              </IonButton>
-              <IonButton className='btnMenu1' onClick={() => history.push('/info-extra')}>
-                <img src="../../assets/info.png" alt="Información" />
-              </IonButton>
-              <IonButton className='btnMenu1' onClick={() => history.push('/ahorro')}>
-                <img src="../../assets/ahorro.png" alt="Ahorro" />
-              </IonButton>
-              <IonButton className='btnMenu1' onClick={() => history.push('/inversion')}>
-                <img src="../../assets/invest.png" alt="Inversión" />
-              </IonButton>
-              <IonButton className='btnMenu1' onClick={() => history.push('/perfil')}>
-                <img src="../../assets/perfil.png" alt="Perfil" />
-              </IonButton>
-            </>
-          ) : (
-            <>
-              <IonButton className='btnMenu' onClick={() => history.push('/mapa')}>
-                <img src="../../assets/home.png" alt="Inicio" />
-              </IonButton>
-              <IonButton className='btnMenu' onClick={() => history.push('/info-extra')}>
-                <img src="../../assets/info.png" alt="Información" />
-              </IonButton>
-              <IonButton className='btnMenu' onClick={() => history.push('/perfil')}>
-                <img src="../../assets/perfil.png" alt="Perfil" />
-              </IonButton>
-            </>
+          <IonButton
+            className="btnMenu1"
+            onClick={() => history.push('/mapa')}
+          >
+            <img src="../../assets/home.png" alt="Inicio" />
+          </IonButton>
+
+          <IonButton
+            className="btnMenu1"
+            onClick={() => history.push('/info-extra')}
+          >
+            <img src="../../assets/info.png" alt="Información" />
+          </IonButton>
+
+          {usuario.capitulos[0]?.completed && (
+            <IonButton
+              className="btnMenu1"
+              onClick={() => history.push('/ahorro')}
+            >
+              <img src="../../assets/ahorro.png" alt="Ahorro" />
+            </IonButton>
           )}
+
+          {usuario.capitulos[2]?.completed && (
+            <IonButton
+              className="btnMenu1"
+              onClick={() => history.push('/inversion')}
+            >
+              <img src="../../assets/invest.png" alt="Inversión" />
+            </IonButton>
+          )}
+
+          <IonButton
+            className="btnMenu1"
+            onClick={() => history.push('/perfil')}
+          >
+            <img src="../../assets/perfil.png" alt="Perfil" />
+          </IonButton>
         </IonToolbar>
       </IonFooter>
     </IonPage>

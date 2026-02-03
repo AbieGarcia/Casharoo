@@ -156,7 +156,7 @@ const Juego2: React.FC = () => {
       setUsuario({ ...usuario, dinero: nuevoDinero });
     }
 
-    await completarCap(usuarioId, 1);
+    await completarCap(usuarioId, 2);
   };
 
   return (

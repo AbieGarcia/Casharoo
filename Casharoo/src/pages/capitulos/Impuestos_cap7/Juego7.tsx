@@ -5,6 +5,8 @@ import {
 } from '@ionic/react';
 import { trophy, cash, happyOutline, lockClosedOutline } from 'ionicons/icons';
 import { useIonRouter } from '@ionic/react';
+import { completarCap, actualizarDinero } from "../../../services/userRegister.js"
+import { obtenerUsuario } from '../../../services/userRegister';
 import './Juego7.css';
 
 const WORDS = ['IVA', 'SAT', 'ISR', 'ADEUDO', 'DECLARACION', 'IMPUESTOS'];
@@ -31,6 +33,7 @@ interface Cell { row: number; col: number; word: string; }
 
 const Juego7: React.FC = () => {
     const router = useIonRouter();
+    const [usuario, setUsuario] = useState<any>(null);
     const [cells, setCells] = useState<Cell[]>([]);
     const [selected, setSelected] = useState<Cell[]>([]);
     const [completedWords, setCompletedWords] = useState<string[]>([]);
@@ -38,11 +41,36 @@ const Juego7: React.FC = () => {
     const [toast, setToast] = useState('');
     const [showWinModal, setShowWinModal] = useState(false);
 
+    useEffect(() => {
+        const cargarUsuario = async () => {
+            const usuarioId = localStorage.getItem("usuarioId");
+            const datosUsuario = await obtenerUsuario(usuarioId);
+            setUsuario(datosUsuario);
+        };
+
+        cargarUsuario();
+    }, []);
+
     const reiniciarJuego = () => {
         setSelected([]);
         setCompletedWords([]);
         setScore(0);
         setShowWinModal(false);
+    };
+
+    const usuarioId = localStorage.getItem("usuarioId");
+
+    const handleGameComplete = async () => {
+        setShowWinModal(false);
+
+        if (usuarioId && usuario) {
+            const nuevoDinero = (usuario.dinero || 0) + 10;
+            await actualizarDinero(usuarioId, nuevoDinero);
+
+            setUsuario({ ...usuario, dinero: nuevoDinero });
+        }
+
+        await completarCap(usuarioId, 7);
     };
 
     useEffect(() => {
@@ -150,7 +178,7 @@ const Juego7: React.FC = () => {
 
                             <div className="modal-body">
                                 <span className="party-emoji">🎊</span>
-                                <p>Has completado la sopa y ganaste <b>{score} Piggy Pesos</b></p>
+                                <p>Has completado la sopa y ganaste <b>10 Piggy Pesos</b></p>
                             </div>
 
                             <div className="modal-footer-buttons">
@@ -158,7 +186,7 @@ const Juego7: React.FC = () => {
                                     JUGAR DE NUEVO
                                 </IonButton>
 
-                                <IonButton className="btn-pink" expand="block" onClick={() => router.push('/ahorro')}>
+                                <IonButton routerLink="/mapa" className="btn-pink" expand="block" onClick={handleGameComplete}>
                                     IR A CAPÍTULOS
                                 </IonButton>
                             </div>

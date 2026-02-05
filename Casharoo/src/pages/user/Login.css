@@ -110,7 +110,7 @@
 
 #NomTexto1 {
     position: relative;
-    font-size: clamp(16px, 5.5vw, 32px);
+    font-size: clamp(12px, 4.5vw, 25px);
 }
 
 #InputNombre {

@@ -48,6 +48,9 @@ const Registro: React.FC = () => {
   return (
     <IonPage>
       <IonContent className="ion-padding">
+        <div className='Logo'>
+          <img src='../../assets/logo.png' id='LogoImgRegistro' alt='logo' />
+        </div>
         <div className="rectangle">
           <div className='rectangulotitulo'>
             <h1>Escoge tu personaje</h1>
@@ -112,10 +115,6 @@ const Registro: React.FC = () => {
         <div className='contenedorBtnSiguiente'>
           <IonButton id='btnSiguiente' onClick={registroUsuario}>Siguiente</IonButton>
           {error && <h1 style={{ color: "#F09" }}>{error}</h1>}
-        </div>
-
-        <div className='Logo'>
-          <img src="..\..\assets\logo.png" id='LogoImgRegistro'></img>
         </div>
       </IonContent>
     </IonPage>

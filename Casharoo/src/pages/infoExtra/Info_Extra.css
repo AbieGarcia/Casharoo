@@ -1,3 +1,32 @@
+.body-web {
+    background-color: #333;
+    /* Fondo oscuro para resaltar el "teléfono" */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.mobile-simulator {
+    width: 100%;
+    max-width: 370px;
+    /* Ancho típico de un smartphone */
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+@media (max-width: 430px) {
+    body {
+        background-color: white;
+    }
+
+    .mobile-simulator {
+        box-shadow: none;
+    }
+}
+
 #logo {
     position: absolute;
     top: 4%;
@@ -142,4 +171,171 @@ h2 {
     width: 55px;
     height: 57.292px;
     margin-left: 5px;
+}
+
+/* ===== Responsive media queries ===== */
+
+/* Mobile phones (<= 480px) */
+@media (max-width: 480px) {
+    #logo {
+        position: relative;
+        top: 2%;
+        left: 5%;
+        width: 90%;
+    }
+
+    .contenedorBtns {
+        position: static;
+        display: flex;
+        width: 100%;
+        left: 0;
+        top: 0;
+        padding: 0 14px;
+        margin-top: 12px;
+    }
+
+    #Cap1,
+    #Cap2,
+    #Cap3,
+    #Cap4,
+    #Cap5,
+    #Cap6,
+    #Cap7,
+    #Cap8 {
+        flex-direction: column;
+        height: auto;
+        margin: 1% 0;
+        padding: 6px 0;
+    }
+
+    .btnInfo {
+        font-size: 16px;
+        padding: 10px 12px;
+        border-radius: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    #candado {
+        width: 36px;
+        height: auto;
+        margin-left: 3px;
+    }
+}
+
+/* Small tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    #logo {
+        top: 3%;
+        left: 8%;
+        width: 85%;
+    }
+
+    .contenedorBtns {
+        top: 14%;
+        padding: 0 12px;
+        width: 92%;
+    }
+
+    #Cap1,
+    #Cap2,
+    #Cap3,
+    #Cap4,
+    #Cap5,
+    #Cap6,
+    #Cap7,
+    #Cap8 {
+        height: auto;
+        margin: 1.5% 0;
+    }
+
+    .btnInfo {
+        font-size: 18px;
+        padding: 12px 14px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    #candado {
+        width: 45px;
+        height: auto;
+    }
+}
+
+/* Larger tablets and small desktops (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    h2 {
+        font-size: 30px;
+    }
+
+    .btnInfo {
+        font-size: 20px;
+        padding: 14px 16px;
+    }
+
+    #candado {
+        width: 50px;
+    }
+}
+
+/* Utility: ensure images and buttons scale nicely */
+img,
+.btnInfo,
+#logo {
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+/* Desktop / Large screens (>= 1200px) - prevent logo and buttons overlapping */
+@media (min-width: 1200px) {
+
+    /* place logo in normal flow and limit its height so it doesn't overlap content */
+    #logo {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 60%;
+        max-width: 1100px;
+        margin: 20px auto;
+        display: block;
+        height: auto;
+        max-height: 320px;
+        /* ensure the logo cannot grow too tall */
+        z-index: 1;
+    }
+
+    /* ensure buttons sit below the logo and are centered */
+    .contenedorBtns {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 85%;
+        margin: 18px auto 40px;
+        padding: 0 12px;
+        z-index: 2;
+    }
+
+    /* give each chapter row some extra breathing room */
+    #Cap1,
+    #Cap2,
+    #Cap3,
+    #Cap4,
+    #Cap5,
+    #Cap6,
+    #Cap7,
+    #Cap8 {
+        margin-top: 18px;
+    }
+
+    /* tighten up button sizing for wide screens */
+    .btnInfo {
+        max-width: 100%;
+        font-size: 20px;
+        padding: 14px 20px;
+    }
 }

@@ -1,3 +1,32 @@
+.body-web {
+  background-color: #333;
+  /* Fondo oscuro para resaltar el "teléfono" */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.mobile-simulator {
+  width: 100%;
+  max-width: 370px;
+  /* Ancho típico de un smartphone */
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+@media (max-width: 430px) {
+  body {
+    background-color: white;
+  }
+
+  .mobile-simulator {
+    box-shadow: none;
+  }
+}
+
 .inversion-content {
   --background: #FFFFFF;
 }
@@ -13,7 +42,7 @@
   background: #f8a0d6;
   text-align: center;
   color: white;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 80%;
   margin-left: 10%;
   border-radius: 15px;
@@ -22,7 +51,8 @@
 }
 
 .inversion-header-title {
-  font-size: 9vw;
+  font-size: clamp(28px, 6vw, 48px);
+  line-height: 1.05;
 }
 
 .inversion-header-subtitle {
@@ -70,7 +100,7 @@
   color: #f5c02f;
   margin-bottom: 30px;
   text-shadow: none;
-  font-size: 6vw;
+  font-size: 40px;
 }
 
 .inversion-planes-grid {
@@ -89,7 +119,7 @@
 
 .inversion-plan-card-inactive {
   border: 2px solid #E5E7EB;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .inversion-plan-card-header {
@@ -150,7 +180,7 @@
   border-radius: 15px;
   padding: 25px;
   background: #FFF;
-  box-shadow: 0 4px 12px rgba(255,123,204,0.2);
+  box-shadow: 0 4px 12px rgba(255, 123, 204, 0.2);
 }
 
 .inversion-config-form-title {
@@ -219,7 +249,7 @@
   border: none;
   background: linear-gradient(135deg, #FF7BCC 0%, #FFB1CA 100%);
   color: white;
-  box-shadow: 0 4px 12px rgba(255,123,204,0.4);
+  box-shadow: 0 4px 12px rgba(255, 123, 204, 0.4);
   transition: all 0.3s;
 }
 
@@ -355,7 +385,7 @@
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid #E5E7EB;
 }
 
@@ -369,7 +399,7 @@
   background: #FFFFFF;
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid #E5E7EB;
   margin-bottom: 20px;
 }
@@ -443,7 +473,7 @@
   text-align: center;
   color: white;
   margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(34,197,94,0.4);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
 }
 
 .inversion-completada-emoji {
@@ -462,7 +492,7 @@
 }
 
 .inversion-completada-result-box {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   padding: 15px;
   margin-top: 15px;
@@ -488,13 +518,13 @@
   background: linear-gradient(135deg, #FF7BCC 0%, #FFB1CA 100%);
   color: white;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(255,123,204,0.4);
+  box-shadow: 0 4px 12px rgba(255, 123, 204, 0.4);
   transition: all 0.3s;
 }
 
 .inversion-completada-new-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255,123,204,0.5);
+  box-shadow: 0 6px 16px rgba(255, 123, 204, 0.5);
 }
 
 .inversion-modal-completada {
@@ -511,6 +541,7 @@
     opacity: 0;
     transform: translateY(100px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -608,6 +639,7 @@
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -706,4 +738,38 @@
 
 .inversion-modal-button:active {
   transform: translateY(0);
+}
+
+/* Desktop / Large screens (>=1200px) - reduce pink header size and prevent overlap */
+@media (min-width: 1200px) {
+  .inversion-header {
+    width: 60%;
+    margin: 3% auto;
+    max-height: 160px;
+    overflow: hidden;
+    padding: 6px;
+    border-radius: 12px;
+  }
+
+  .inversion-header-title {
+    font-size: clamp(32px, 3.5vw, 44px);
+    line-height: 1.05;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .inversion-header-subtitle {
+    font-size: 14px;
+  }
+
+  .inversion-demo-buttons-container {
+    margin-top: 18px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .inversion-container {
+    padding-top: 20px;
+  }
 }

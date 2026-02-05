@@ -1,3 +1,32 @@
+.body-web {
+    background-color: #333;
+    /* Fondo oscuro para resaltar el "teléfono" */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.mobile-simulator {
+    width: 100%;
+    max-width: 370px;
+    /* Ancho típico de un smartphone */
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+@media (max-width: 430px) {
+    body {
+        background-color: white;
+    }
+
+    .mobile-simulator {
+        box-shadow: none;
+    }
+}
+
 .carruselContainerCP3 {
     display: flex;
     flex-direction: column;
@@ -190,4 +219,70 @@
     margin-left: 0px;
     margin-right: 0px;
     --border-radius: 5vw;
+}
+
+@media (min-width: 1025px) {
+
+    .slide1CP3,
+    .slide2CP3,
+    .slide3CP3,
+    .slide4CP3,
+    .slide5CP3,
+    .slide6CP3,
+    .slide7CP3,
+    .slide8CP3,
+    .slide9CP3,
+    .slide10CP3,
+    .slide11CP3,
+    .slide12CP3,
+    .slide13CP3,
+    .slide14CP3,
+    .slide15CP3,
+    .slide16CP3,
+    .slide17CP3,
+    .slide18CP3,
+    .slide19CP3 {
+        height: 700px;
+    }
+
+    .parte1CP3 {
+        font-size: 10px;
+        height: 50px;
+    }
+
+    .parte2CP3 {
+        height: 400px;
+    }
+
+    .parte2CP3 img {
+        margin-top: 20px;
+        height: 400px;
+    }
+
+    .parte3CP3 {
+        font-size: 30px;
+        margin-top: 50px;
+        height: 250px;
+    }
+
+    .carruselSlidesCP3 {
+        margin-top: 20px;
+        width: 60%;
+        height: 700px;
+    }
+
+    .carruselButtonsCP3 {
+        display: flex;
+        gap: 10px;
+
+        .button {
+            width: 130px;
+            font-size: 20px;
+            font-family: 'Itim', sans-serif;
+            font-weight: bolder;
+            color: #483089;
+            --background: #FFEFD1;
+        }
+    }
+
 }

@@ -1,3 +1,32 @@
+.body-web {
+    background-color: #333;
+    /* Fondo oscuro para resaltar el "teléfono" */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.mobile-simulator {
+    width: 100%;
+    max-width: 370px;
+    /* Ancho típico de un smartphone */
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+@media (max-width: 430px) {
+    body {
+        background-color: white;
+    }
+
+    .mobile-simulator {
+        box-shadow: none;
+    }
+}
+
 /*     FONTS     */
 @font-face {
     font-family: 'Quicksand';
@@ -7,34 +36,42 @@
 /*     STYLES    */
 .bodyExtra_rosa {
     background: #f3d9e1;
-    overflow: scroll;
     font-family: baloo;
     font-size: 1.3em;
+    width: 100%;
+    min-height: 100vh;
 }
+
+/* HEADER */
 
 .headerExtra {
     display: flex;
     background: #FFB1CA;
     color: #ffffff;
     font-size: 2em;
-    height: 10%;
+    min-height: 70px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .text-cap1-extra {
     align-self: center;
-    padding-left: 10%;
 }
+
+/* RECTÁNGULOS */
 
 .Erect1 {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
     background-color: #7F004C;
     margin-top: 5%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding: 2%;
     color: #ffffff;
+    gap: 20px;
 }
 
 [class^="rect"] p {
@@ -44,68 +81,77 @@
 .rect2 {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
     margin-top: 5%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
-    text-align: justify;
-    gap: 6%;
+    padding: 5%;
+    gap: 20px;
 }
 
 .rect3 {
-    margin-top: -6%;
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .Erect4 {
     display: flex;
     flex-direction: row;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-top: -10%;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 5%;
+    margin-top: 5%;
     align-items: center;
     background-color: #7F004C;
     color: #ffffff;
     font-family: baloo;
-    text-align: center;
-    gap: 9%;
-
+    gap: 20px;
 }
 
+/* LISTAS */
+
 .liItem {
-    margin-top: -2%;
-    margin-left: -20%;
+    margin-top: 2%;
     justify-content: center;
-    padding-left: 10%;
     display: flex;
     flex-direction: row;
     gap: 6%;
     align-items: center;
 }
 
+/* TITULOS */
+
 .title {
-    margin-top: -7%;
+    margin-top: 5%;
     font-size: 1.8em;
     justify-content: center;
     background-color: #ffe65a;
     color: #d88200;
+    text-align: center;
+    padding: 10px;
 }
 
 .piggyTips {
-    margin-top: -2%;
+    margin-top: 5%;
     font-size: 1.8em;
     justify-content: center;
     background-color: #d359a4;
     color: #ffc8f6;
+    text-align: center;
+    padding: 10px;
 }
+
+/* IMÁGENES */
 
 .imgCap {
     background-color: azure;
     padding: 3%;
     margin: 2%;
-    width: 30%;
+    width: 140px;
+    max-width: 35%;
     border-radius: 10px;
     box-shadow: 4px 4px 18px 6px #3a2833;
 }
@@ -115,12 +161,21 @@
     height: 10%;
 }
 
+/* LISTAS TEXTO */
+
 li {
     margin-bottom: 5%;
     text-align: justify;
     margin-right: 5%;
     font-family: 'Quicksand', sans-serif;
+}
 
+/* TABLA */
+
+table {
+    width: 95%;
+    margin: auto;
+    border-collapse: collapse;
 }
 
 th,
@@ -129,7 +184,6 @@ td {
     text-align: center;
     border: 4px solid #d359a4;
     color: #333;
-
 }
 
 th {
@@ -137,52 +191,59 @@ th {
     color: #ce0983;
 }
 
+/* TEXTOS */
+
 #txt {
     text-align: justify;
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: -5%;
+    margin-top: 2%;
     font-family: 'Quicksand', sans-serif;
-
 }
 
 #txtEjemplo {
-    margin-top: -5%;
-    margin-bottom: -0.1%;
+    margin-top: 2%;
     font-size: 1.4em;
     color: #7F004C;
 }
+
+/* INFORMACIÓN EXTRA */
 
 .informacionExtra {
     padding-left: 3%;
     padding-right: 3%;
     font-family: baloo;
     color: #7F004C;
-
-
-    p {
-        font-size: 1.3em;
-        padding-left: 2%;
-        padding-right: 2%;
-    }
 }
+
+.informacionExtra p {
+    font-size: 1.3em;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+/* IMG TEXTO */
 
 .imgTextExtra {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .TextExtra1 {
-    width: 60%
+    width: 60%;
 }
 
 .imgExtra {
     width: 40%;
-
-    img {
-        margin-top: 30%;
-        width: 70%;
-    }
 }
+
+.imgExtra img {
+    margin-top: 30%;
+    width: 70%;
+}
+
+/* PIGGY TIP */
 
 .piggy-tip-container {
     margin: 1.5rem 0;
@@ -261,6 +322,8 @@ th {
     color: #af0083;
 }
 
+/* ANIMACIÓN */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -271,4 +334,27 @@ th {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ================================================= */
+/* RESPONSIVE DESKTOP */
+/* ================================================= */
+
+@media (min-width: 900px) {
+
+    .bodyExtra_rosa {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bodyExtra_rosa>* {
+        width: 100%;
+        max-width: 850px;
+    }
+
+    table {
+        width: 85%;
+    }
+
 }

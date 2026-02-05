@@ -16,7 +16,7 @@ const Info_Extra_Ahorro: React.FC = () => {
         <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet"></link>
       </IonHeader>
       <IonContent>
-        <body className='bodyExtra_rosa'>
+        <div className='bodyExtra_rosa'>
 
           <header className='headerExtra'>
             <IonButton className='regresar-info-ahorro' onClick={() => history.goBack()}>
@@ -46,19 +46,15 @@ const Info_Extra_Ahorro: React.FC = () => {
           </div>
           <div className='rect3'>
             <div className='liItem'>
-              <img className='check' src='..\..\assets\checkmark.png'></img>
               <p>Meta</p>
             </div>
             <div className='liItem'>
-              <img className='check' src='..\..\assets\checkmark.png'></img>
               <p>Ingresos</p>
             </div>
             <div className='liItem'>
-              <img className='check' src='..\..\assets\checkmark.png'></img>
               <p>Egresos</p>
             </div>
             <div className='liItem'>
-              <img className='check' src='..\..\assets\checkmark.png'></img>
               <p>Lapsos</p>
             </div>
           </div>
@@ -133,7 +129,7 @@ const Info_Extra_Ahorro: React.FC = () => {
           </div>
 
 
-        </body>
+        </div>
       </IonContent>
     </IonPage >
   );

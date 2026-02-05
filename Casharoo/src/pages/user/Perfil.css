@@ -1,3 +1,32 @@
+.body-web {
+    background-color: #333;
+    /* Fondo oscuro para resaltar el "teléfono" */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.mobile-simulator {
+    width: 100%;
+    max-width: 370px;
+    /* Ancho típico de un smartphone */
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+@media (max-width: 430px) {
+    body {
+        background-color: white;
+    }
+
+    .mobile-simulator {
+        box-shadow: none;
+    }
+}
+
 #contenedorRacha {
     width: clamp(60px, 23%, 150px);
     height: auto;
@@ -142,7 +171,7 @@
     font-size: clamp(24px, 5vw, 40px);
     font-weight: bold;
     color: #FF6B00;
-    text-shadow: 
+    text-shadow:
         2px 2px 0px #FFFFFF,
         -2px -2px 0px #FFFFFF,
         2px -2px 0px #FFFFFF,
@@ -157,7 +186,7 @@
     font-size: clamp(10px, 2vw, 14px);
     font-weight: 600;
     color: #FF6B00;
-    text-shadow: 
+    text-shadow:
         1px 1px 0px #FFFFFF,
         -1px -1px 0px #FFFFFF,
         1px -1px 0px #FFFFFF,
@@ -169,11 +198,12 @@
     .racha-numero {
         font-size: clamp(20px, 4.5vw, 30px);
     }
-    
+
     .racha-texto {
         font-size: clamp(8px, 1.8vw, 12px);
     }
 }
+
 @media (max-width: 380px) {
     #contenedorUsuario {
         top: 76%;

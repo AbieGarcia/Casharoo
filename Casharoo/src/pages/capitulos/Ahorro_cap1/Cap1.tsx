@@ -67,7 +67,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\5.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\5.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'></div>
       </div>
@@ -76,7 +79,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\6.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\6.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'></div>
       </div>
@@ -85,7 +91,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\7.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\7.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'></div>
       </div>
@@ -94,7 +103,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\8.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\8.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'></div>
       </div>
@@ -103,7 +115,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\9.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\9.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'></div>
       </div>
@@ -112,7 +127,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\10.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\10.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'></div>
       </div>
@@ -121,7 +139,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\11.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\11.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className="botones-container">
           <IonButton className='decidir' onClick={() => handleDecision(false)}>Gastar $100</IonButton>
@@ -134,7 +155,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\12.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\12.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'></div>
       </div>
@@ -143,7 +167,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\13.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\13.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'></div>
       </div>
@@ -152,7 +179,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\14.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\14.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'></div>
       </div>
@@ -161,7 +191,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\15.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\15.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'></div>
       </div>
@@ -170,7 +203,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\16.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\16.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'>
           El hermano se gasta su dinero comprando dulces en la cafetería todos los días, se lo termina acabando en 3 días.
@@ -181,7 +217,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\17.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\17.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className="botones-container">
           <IonButton className='decidir2' onClick={() => handleDecision(false)}>Que siga gastando su dinero en dulces</IonButton>
@@ -193,7 +232,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\18.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\18.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'></div>
       </div>
@@ -202,7 +244,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\19.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\19.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'></div>
       </div>
@@ -211,7 +256,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\20.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\20.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'></div>
       </div>
@@ -220,7 +268,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\21.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\21.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className='3interno'></div>
       </div>
@@ -229,7 +280,10 @@ const Cap1: React.FC = () => {
       <div className='parte1'>
         Capítulo 1 - Ahorro
       </div>
-      <img className='parte2' src="..\..\assets\22.PNG"></img>
+      <div className='parte2'>
+        <img src="..\..\assets\22.PNG"></img>
+
+      </div>
       <div className='parte3'>
         <div className="botones-container">
           <IonButton className='decidir3' onClick={() => setCurrentIndex(0)}>Repetir la historia</IonButton>

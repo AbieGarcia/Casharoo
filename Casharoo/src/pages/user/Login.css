@@ -1,99 +1,132 @@
+.body-web {
+    background-color: #333;
+    /* Fondo oscuro para resaltar el "teléfono" */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.mobile-simulator {
+    width: 100%;
+    max-width: 370px;
+    /* Ancho típico de un smartphone */
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+@media (max-width: 430px) {
+    body {
+        background-color: white;
+    }
+
+    .mobile-simulator {
+        box-shadow: none;
+    }
+}
+
 .Logo {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .contenedorBtnSiguienteLogin {
-    width: 60%;
-    height: 7%;
-    border-radius: 21px;
+    width: clamp(250px, 60%, 600px);
+    height: clamp(50px, 7%, 80px);
+    border-radius: clamp(16px, 3vw, 25px);
     position: absolute;
     top: 56%;
-    left: 20%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
-
 }
 
 #LogoImg {
     position: absolute;
-    top: 7%;
+    top: clamp(20px, 7%, 80px);
     width: auto;
-    height: 10%;
+    height: clamp(60px, 10%, 150px);
 }
 
 #lblBienvenido {
-    font-size: 55px;
+    font-size: clamp(28px, 8vw, 65px);
     font-family: Baloo;
     color: rgb(255, 62, 178);
 }
 
 .contBienvenida {
-    height: 7%;
+    height: clamp(50px, 7%, 100px);
     position: absolute;
     top: 20%;
-    left: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
-    width: 80%;
+    width: clamp(280px, 80%, 700px);
 }
 
 .UsernameLogin {
-    width: 90%;
-    height: 9%;
-    border-radius: 21px;
+    width: clamp(280px, 90%, 650px);
+    height: clamp(50px, 9%, 90px);
+    border-radius: clamp(16px, 3vw, 25px);
     background-color: #FF7BCC;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     position: absolute;
     top: 32%;
-    left: 5%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 5%;
-    padding-right: 4%;
-    padding-left: 4%;
+    gap: clamp(10px, 5%, 40px);
+    padding-right: clamp(10px, 4%, 25px);
+    padding-left: clamp(10px, 4%, 25px);
 }
 
 .ContrasenaLogin {
-    width: 90%;
-    height: 9%;
-    border-radius: 21px;
+    width: clamp(280px, 90%, 650px);
+    height: clamp(50px, 9%, 90px);
+    border-radius: clamp(16px, 3vw, 25px);
     background-color: #FF7BCC;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     position: absolute;
     top: 43%;
-    left: 5%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 5%;
-    padding-right: 4%;
-    padding-left: 4%;
+    gap: clamp(10px, 5%, 40px);
+    padding-right: clamp(10px, 4%, 25px);
+    padding-left: clamp(10px, 4%, 25px);
 }
 
 #NomTexto1 {
     position: relative;
-    font-size: 5.5vw;
+    font-size: clamp(16px, 5.5vw, 32px);
 }
 
 #InputNombre {
-    border-radius: 14px;
+    border-radius: clamp(10px, 2vw, 16px);
     background-color: rgba(255, 238, 122, 0.80);
     color: #684f06;
     z-index: 2;
-    width: 55%;
+    width: clamp(150px, 55%, 300px);
 }
 
 #InputCon {
-    border-radius: 14px;
+    border-radius: clamp(10px, 2vw, 16px);
     background-color: rgba(255, 238, 122, 0.80);
     color: #684f06;
     z-index: 2;
-    width: 40%;
+    width: clamp(100px, 40%, 250px);
 }
 
 #InputNombre .input-wrapper,
@@ -104,7 +137,7 @@
 }
 
 .InputConLogIn {
-    width: 95px;
+    width: clamp(80px, 95px, 150px);
     position: relative;
 }
 
@@ -112,7 +145,7 @@ h1 {
     color: #F09;
     text-align: center;
     font-family: Baloo;
-    font-size: 30px;
+    font-size: clamp(18px, 6vw, 36px);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -120,9 +153,8 @@ h1 {
 
 #btnSiguiente {
     --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 250px;
     font-family: Baloo;
-    font-size: 24px;
+    font-size: clamp(16px, 4vw, 28px);
     --color: rgb(231, 177, 0);
     --background: #FFEE7A;
     --background-hover: #FFEE7A;
@@ -130,23 +162,24 @@ h1 {
     --background-focused: #fff7c5;
     width: 100%;
     height: 100%;
+    transition: all 0.3s ease;
 }
 
 .contenedorBtnCrear {
-    width: 60%;
-    height: 7%;
-    border-radius: 21px;
+    width: clamp(250px, 60%, 600px);
+    height: clamp(50px, 7%, 80px);
+    border-radius: clamp(16px, 3vw, 25px);
     position: absolute;
     top: 68%;
-    left: 20%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
 }
 
 #btnCrearUsuario {
     --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 250px;
     font-family: Baloo;
-    font-size: 24px;
+    font-size: clamp(16px, 4vw, 28px);
     --color: #1c8da7;
     --background: #52D9F6;
     --background-hover: #52D9F6;
@@ -154,4 +187,122 @@ h1 {
     --background-focused: #8be8fd;
     width: 100%;
     height: 100%;
+    transition: all 0.3s ease;
+}
+
+/* Media Queries para optimizar en diferentes tamaños */
+@media (max-width: 480px) {
+    #lblBienvenido {
+        font-size: clamp(24px, 7vw, 40px);
+    }
+
+    .UsernameLogin,
+    .ContrasenaLogin {
+        width: clamp(260px, 90%, 380px);
+        height: clamp(48px, 9%, 65px);
+    }
+
+    .contBienvenida {
+        width: clamp(260px, 85%, 380px);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    #LogoImg {
+        height: clamp(70px, 12%, 120px);
+    }
+
+    .UsernameLogin,
+    .ContrasenaLogin {
+        width: clamp(350px, 85%, 500px);
+        height: clamp(55px, 8.5%, 80px);
+    }
+
+    .contBienvenida {
+        width: clamp(350px, 85%, 500px);
+    }
+
+    .contenedorBtnSiguienteLogin,
+    .contenedorBtnCrear {
+        width: clamp(350px, 70%, 500px);
+        height: clamp(55px, 7%, 80px);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #lblBienvenido {
+        font-size: clamp(40px, 7vw, 55px);
+    }
+
+    #LogoImg {
+        height: clamp(100px, 12%, 150px);
+    }
+
+    .UsernameLogin,
+    .ContrasenaLogin {
+        width: clamp(400px, 70%, 550px);
+        height: clamp(60px, 8%, 90px);
+    }
+
+    .contBienvenida {
+        width: clamp(400px, 75%, 600px);
+    }
+
+    .contenedorBtnSiguienteLogin,
+    .contenedorBtnCrear {
+        width: clamp(400px, 65%, 550px);
+        height: clamp(60px, 7%, 90px);
+    }
+
+}
+
+@media (min-width: 1025px) {
+    #lblBienvenido {
+        font-size: 65px;
+    }
+
+    #LogoImg {
+        height: 150px;
+    }
+
+    .UsernameLogin,
+    .ContrasenaLogin {
+        width: 600px;
+        height: 70px;
+        margin-top: 90px;
+    }
+
+    .ContrasenaLogin {
+        margin-top: 100px;
+    }
+
+    .contBienvenida {
+        width: 700px;
+        margin-top: 50px;
+    }
+
+    .contenedorBtnSiguienteLogin,
+    .contenedorBtnCrear {
+        width: 600px;
+        height: 90px;
+        margin-top: 100px;
+    }
+
+    #btnSiguiente,
+    #btnCrearUsuario {
+        width: 600px;
+        height: 70px;
+    }
+
+    #NomTexto1 {
+        font-size: 24px;
+    }
+
+    #InputNombre {
+        width: 320px;
+    }
+
+    #InputCon {
+        width: 250px;
+    }
 }

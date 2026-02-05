@@ -228,40 +228,43 @@ const Cap4: React.FC = () => {
     };
 
     return (
-        <IonPage>
-            <IonHeader>
-                <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet"></link>
-            </IonHeader>
-            <IonContent>
-                <div className="carruselContainerCP4">
-                    <div className="carruselSlidesCP4">
-                        {slides[currentIndex]}
-                    </div>
+        <IonPage className='body-web'>
+            <div className='mobile-simulator'>
 
-                    <div className="carruselButtonsCP4">
-                        <IonButton onClick={prevSlide} className='1button'> Anterior </IonButton>
-                        <IonButton onClick={nextSlide} className='1button' disabled={([5, 9, 12].includes(currentIndex) && !isCorrect)} // Solo se desactiva en las slides de decisiones si no es correcta
-                        >
-                            Siguiente
-                        </IonButton>
-                    </div>
-                </div>
-            </IonContent>
+                <IonHeader>
+                    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet"></link>
+                </IonHeader>
+                <IonContent>
+                    <div className="carruselContainerCP4">
+                        <div className="carruselSlidesCP4">
+                            {slides[currentIndex]}
+                        </div>
 
-            {/*Mensaje de alerta de retroalimentación*/}
-            <IonAlert
-                isOpen={showAlert}
-                onDidDismiss={() => setShowAlert(false)}
-                message={alertMessage}
-                buttons={[
-                    {
-                        text: 'Aceptar',
-                        handler: () => {
-                            // No hacer nada por ahora, solo cerrar la alerta
+                        <div className="carruselButtonsCP4">
+                            <IonButton onClick={prevSlide} className='1button'> Anterior </IonButton>
+                            <IonButton onClick={nextSlide} className='1button' disabled={([5, 9, 12].includes(currentIndex) && !isCorrect)} // Solo se desactiva en las slides de decisiones si no es correcta
+                            >
+                                Siguiente
+                            </IonButton>
+                        </div>
+                    </div>
+                </IonContent>
+
+                {/*Mensaje de alerta de retroalimentación*/}
+                <IonAlert
+                    isOpen={showAlert}
+                    onDidDismiss={() => setShowAlert(false)}
+                    message={alertMessage}
+                    buttons={[
+                        {
+                            text: 'Aceptar',
+                            handler: () => {
+                                // No hacer nada por ahora, solo cerrar la alerta
+                            },
                         },
-                    },
-                ]}
-            />
+                    ]}
+                />
+            </div>
 
         </IonPage>
     );

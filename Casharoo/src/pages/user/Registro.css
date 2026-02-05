@@ -1,3 +1,32 @@
+.body-web {
+    background-color: #333;
+    /* Fondo oscuro para resaltar el "teléfono" */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.mobile-simulator {
+    width: 100%;
+    max-width: 370px;
+    /* Ancho típico de un smartphone */
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+@media (max-width: 430px) {
+    body {
+        background-color: white;
+    }
+
+    .mobile-simulator {
+        box-shadow: none;
+    }
+}
+
 #BtnRosa {
     --background: #FFEAF1;
     --background-hover: #FFEAF1;
@@ -46,10 +75,12 @@
 }
 
 #LogoImgRegistro {
-    position: absolute;
-    top: 2%;
+    position: relative;
+    top: auto;
     width: auto;
-    height: 10%;
+    height: clamp(48px, 8vh, 140px);
+    display: block;
+    margin: 8px auto 18px;
 }
 
 .rectangle-container {
@@ -99,16 +130,14 @@
     flex-direction: column;
     align-items: center;
     width: 90%;
-    height: 45%;
+    height: auto;
     background-color: #FF7BCC;
     border-radius: 46px;
     box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25), 2px 6px 4px 0px rgba(0, 0, 0, 0.25) inset;
-    position: absolute;
-    flex-shrink: 0;
-    top: 15%;
-    left: 5%;
+    position: relative;
+    margin: 8px auto 24px;
     padding: 4%;
-    gap: 4%;
+    gap: 12px;
     z-index: 1;
 }
 
@@ -224,7 +253,7 @@
 
 #InputNombre .input-wrapper,
 #InputUsuario .input-wrapper,
-#InputContrasena .input-wrapper{
+#InputContrasena .input-wrapper {
     background-color: rgba(255, 238, 122, 0.80) !important;
     color: #684f06 !important;
     border-radius: 14px !important;
@@ -249,4 +278,179 @@ h1 {
     --background-hover: #FFEE7A;
     --background-activated: #fff7c5;
     --background-focused: #fff7c5;
+}
+
+/* --- Media queries: tablet & desktop adjustments to avoid cramped layout --- */
+@media (min-width: 768px) {
+
+    /* make the main container less vertically constrained and center it */
+    .rectangle-container {
+        height: auto;
+        padding: 32px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* place logo at the top and force it before the rectangle */
+    .Logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        order: -1;
+        /* ensure logo sits above the rectangle */
+        margin-bottom: 18px;
+    }
+
+    #LogoImgRegistro {
+        position: relative;
+        top: 0;
+        display: block;
+        height: clamp(72px, 10vw, 140px);
+        margin: 0 auto 18px;
+    }
+
+    /* give the character selection more breathing room and keep it centered */
+    .rectangulochico {
+        width: 80%;
+        height: auto;
+        padding: 32px;
+        flex-direction: row;
+        gap: 32px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        border-radius: 28px;
+    }
+
+    .rectangulotitulo {
+        width: clamp(260px, 40%, 420px);
+        height: clamp(64px, 8vw, 110px);
+        margin: 0 auto 12px;
+    }
+
+    /* make the pink rectangle a natural block so inputs flow inside it */
+    .rectangle {
+        position: relative;
+        width: 85%;
+        max-width: 1000px;
+        height: auto;
+        top: auto;
+        left: auto;
+        transform: none;
+        padding: 6% 6%;
+        gap: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contPersonajes {
+        gap: 28px;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    /* make inputs flow inside the rectangle instead of being absolutely positioned */
+    .Nombre,
+    .Username,
+    .Contrasena {
+        position: static;
+        transform: none;
+        width: 75%;
+        max-width: 900px;
+        margin: 12px auto;
+        height: clamp(56px, 6.5vw, 80px);
+        padding-right: 6%;
+        padding-left: 6%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8%;
+    }
+
+    /* reduce huge vw-based headings on desktop */
+    #NomTexto,
+    #NomTexto2,
+    #NomTexto3 {
+        font-size: clamp(20px, 3.5vw, 36px);
+        width: auto;
+        text-align: left;
+    }
+
+    /* place the next button below the rectangle and center it */
+    .contenedorBtnSiguiente {
+        position: relative;
+        width: clamp(320px, 55%, 720px);
+        height: clamp(48px, 6.5vw, 72px);
+        margin: 24px auto 0;
+        left: auto;
+        transform: none;
+        bottom: auto;
+        top: auto;
+    }
+
+    /* ensure images in the character cards scale nicely */
+    .imgbtn img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+@media (min-width: 1025px) {
+    .rectangle-container {
+        padding: 52px 80px;
+    }
+
+    .rectangulochico {
+        width: 70%;
+        padding: 42px;
+        gap: 48px;
+    }
+
+    .rectangulotitulo {
+        width: 480px;
+        height: 120px;
+    }
+
+    .rectangle {
+        width: 70%;
+        max-width: 1200px;
+        padding: 6% 6.5%;
+        gap: 36px;
+    }
+
+    .contPersonajes {
+        gap: 40px;
+        justify-content: space-around;
+    }
+
+    .Nombre,
+    .Username,
+    .Contrasena {
+        width: 60%;
+        height: 84px;
+        margin: 18px auto;
+    }
+
+    #NomTexto,
+    #NomTexto2,
+    #NomTexto3 {
+        font-size: 36px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .contenedorBtnSiguiente {
+        width: 420px;
+        margin: 30px auto;
+        height: 64px;
+    }
 }

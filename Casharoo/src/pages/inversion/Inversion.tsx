@@ -385,7 +385,7 @@ const Inversion: React.FC = () => {
                       </button>
                     </div>
                     <p className="inversion-config-form-hint">
-                      Cada año = 2 horas
+                      Cada año = 1 hora
                     </p>
                   </div>
 

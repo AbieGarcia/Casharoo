@@ -56,6 +56,9 @@ const Login: React.FC = () => {
   return (
     <IonPage>
       <IonContent className="ion-padding" scrollY={false}>
+        <div className='Logo'>
+          <img src="..\..\assets\logo.png" id='LogoImg'></img>
+        </div>
         <div className='contBienvenida'>
           <IonText id='lblBienvenido'> ¡Bienvenido! </IonText>
         </div>
@@ -96,9 +99,6 @@ const Login: React.FC = () => {
           <IonButton id='btnCrearUsuario' onClick={irARegistro}>Crear una cuenta</IonButton>
         </div>
 
-        <div className='Logo'>
-          <img src="..\..\assets\logo.png" id='LogoImg'></img>
-        </div>
       </IonContent>
     </IonPage >
   );
